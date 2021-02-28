@@ -14,7 +14,8 @@ var movement = Vector2()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+func _ready():
+	$BackgroundTrack.play()
 
 
 func _physics_process(delta):
@@ -84,9 +85,14 @@ func MovementLoop():
 	moving = false
 	
 func _process(delta):
+	if !$BackgroundTrack.playing:
+		$BackgroundTrack.play()
 	if moving == true:
+		if !$walksound.playing:
+			$walksound.play()
 		anim_mode="Walk"
 	else:
+		$walksound.stop()
 		anim_mode="Idle"
 	AnimationLoop()
 	
@@ -96,9 +102,7 @@ func AnimationLoop():
 
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

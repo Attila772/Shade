@@ -1,7 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Resources/male_unarmored.png" type="Texture" id=2]
+[ext_resource path="res://Player/Sound.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/walking.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/518909__samihil__ambient-track.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack_E"
@@ -142,6 +145,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=9]
 resource_name = "Death_W"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -284,6 +288,10 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Animation" id=26]
+resource_name = "Sound"
+loop = true
+
 [sub_resource type="Animation" id=18]
 resource_name = "Walk_E"
 length = 0.4
@@ -420,6 +428,13 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="DynamicFontData" id=27]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=28]
+size = 20
+font_data = SubResource( 27 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -432,7 +447,7 @@ position = Vector2( -3.79732, -27.5569 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-frame = 1
+frame = 43
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack_E = SubResource( 1 )
@@ -452,6 +467,7 @@ anims/Idle_S = SubResource( 14 )
 anims/Idle_SE = SubResource( 15 )
 anims/Idle_SW = SubResource( 16 )
 anims/Idle_W = SubResource( 17 )
+anims/Sound = SubResource( 26 )
 anims/Walk_E = SubResource( 18 )
 anims/Walk_N = SubResource( 19 )
 anims/Walk_NE = SubResource( 20 )
@@ -460,6 +476,27 @@ anims/Walk_S = SubResource( 22 )
 anims/Walk_SE = SubResource( 23 )
 anims/Walk_SW = SubResource( 24 )
 anims/Walk_W = SubResource( 25 )
+script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="Label" type="Label" parent="Camera2D"]
+margin_left = 361.568
+margin_top = -297.773
+margin_right = 507.568
+margin_bottom = -269.773
+custom_fonts/font = SubResource( 28 )
+custom_colors/font_color = Color( 0.694118, 0.870588, 0.882353, 1 )
+text = "Get Artifact"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="walksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 4.782
+
+[node name="BackgroundTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -27.876

@@ -1,6 +1,5 @@
 extends Node2D
 
-var Player = preload("res://Player/Player.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
