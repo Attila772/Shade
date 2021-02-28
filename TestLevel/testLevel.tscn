@@ -29,7 +29,7 @@ tile_data = PoolIntArray( -786438, 185, 0, -786437, 177, 0, -786436, 177, 0, -78
 [node name="Test" type="YSort" parent="."]
 
 [node name="Player" parent="Test" instance=ExtResource( 3 )]
-position = Vector2( 1000.41, 223.984 )
+position = Vector2( 981.342, 599.034 )
 collision_mask = 3
 
 [node name="CollisionTest" parent="Test" instance=ExtResource( 4 )]
