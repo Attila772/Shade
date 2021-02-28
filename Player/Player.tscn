@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Resources/male_unarmored.png" type="Texture" id=2]
@@ -288,12 +288,11 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=18]
 resource_name = "Sound"
 loop = true
 
-[sub_resource type="Animation" id=18]
-resource_name = "Walk_E"
+[sub_resource type="Animation" id=19]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -309,8 +308,7 @@ tracks/0/keys = {
 "values": [ 32, 33, 34, 35 ]
 }
 
-[sub_resource type="Animation" id=19]
-resource_name = "Walk_N"
+[sub_resource type="Animation" id=20]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -326,8 +324,7 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19 ]
 }
 
-[sub_resource type="Animation" id=20]
-resource_name = "Walk_NE"
+[sub_resource type="Animation" id=21]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -343,8 +340,7 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27 ]
 }
 
-[sub_resource type="Animation" id=21]
-resource_name = "Walk_NW"
+[sub_resource type="Animation" id=22]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -360,8 +356,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=22]
-resource_name = "Walk_S"
+[sub_resource type="Animation" id=23]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -377,8 +372,7 @@ tracks/0/keys = {
 "values": [ 48, 49, 50, 51 ]
 }
 
-[sub_resource type="Animation" id=23]
-resource_name = "Walk_SE"
+[sub_resource type="Animation" id=24]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -394,8 +388,7 @@ tracks/0/keys = {
 "values": [ 40, 41, 42, 43 ]
 }
 
-[sub_resource type="Animation" id=24]
-resource_name = "Walk_SW"
+[sub_resource type="Animation" id=25]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -411,8 +404,7 @@ tracks/0/keys = {
 "values": [ 56, 57, 58, 59 ]
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "Walk_W"
+[sub_resource type="Animation" id=26]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -427,13 +419,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
-
-[sub_resource type="DynamicFontData" id=27]
-font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
-
-[sub_resource type="DynamicFont" id=28]
-size = 20
-font_data = SubResource( 27 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -467,35 +452,23 @@ anims/Idle_S = SubResource( 14 )
 anims/Idle_SE = SubResource( 15 )
 anims/Idle_SW = SubResource( 16 )
 anims/Idle_W = SubResource( 17 )
-anims/Sound = SubResource( 26 )
-anims/Walk_E = SubResource( 18 )
-anims/Walk_N = SubResource( 19 )
-anims/Walk_NE = SubResource( 20 )
-anims/Walk_NW = SubResource( 21 )
-anims/Walk_S = SubResource( 22 )
-anims/Walk_SE = SubResource( 23 )
-anims/Walk_SW = SubResource( 24 )
-anims/Walk_W = SubResource( 25 )
+anims/Sound = SubResource( 18 )
+anims/Walk_E = SubResource( 19 )
+anims/Walk_N = SubResource( 20 )
+anims/Walk_NE = SubResource( 21 )
+anims/Walk_NW = SubResource( 22 )
+anims/Walk_S = SubResource( 23 )
+anims/Walk_SE = SubResource( 24 )
+anims/Walk_SW = SubResource( 25 )
+anims/Walk_W = SubResource( 26 )
 script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Label" type="Label" parent="Camera2D"]
-margin_left = 361.568
-margin_top = -297.773
-margin_right = 507.568
-margin_bottom = -269.773
-custom_fonts/font = SubResource( 28 )
-custom_colors/font_color = Color( 0.694118, 0.870588, 0.882353, 1 )
-text = "Get Artifact"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="walksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 4.782
+volume_db = -8.344
 
 [node name="BackgroundTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

@@ -18,5 +18,5 @@ polygon = PoolVector2Array( -56.5841, 52.0382, -124.491, 22.4881, 91.4754, -18.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-volume_db = -16.156
+volume_db = -36.35
 attenuation = 1.27456

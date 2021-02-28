@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/456965__funwithsound__short-success-sound-glockenspiel-treasure-video-game.wav-8203eceb257d29ae770e750a66c290c1.sample"
+
+[deps]
+
+source_file="res://Sounds/456965__funwithsound__short-success-sound-glockenspiel-treasure-video-game.wav"
+dest_files=[ "res://.import/456965__funwithsound__short-success-sound-glockenspiel-treasure-video-game.wav-8203eceb257d29ae770e750a66c290c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

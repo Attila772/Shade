@@ -10,6 +10,7 @@ var move_direction = "S"
 var moving = false
 var destination = Vector2()
 var movement = Vector2()
+var HasTreasure = false
 
 # Declare member variables here. Examples:
 # var a = 2
