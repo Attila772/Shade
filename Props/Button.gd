@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _button_pressed():
-	get_tree().change_scene("res://TestLevel/testLevel.tscn")
+	get_tree().change_scene("res://Props/MainMenu.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

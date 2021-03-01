@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Props/ColorRect.gd" type="Script" id=1]
 [ext_resource path="res://Props/Button.gd" type="Script" id=2]
@@ -9,6 +9,13 @@ font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 [sub_resource type="DynamicFont" id=2]
 size = 100
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = SubResource( 3 )
 
 [node name="EndMenu" type="ColorRect"]
 __meta__ = {
@@ -41,7 +48,8 @@ margin_left = 94.7736
 margin_top = 269.638
 margin_right = 296.774
 margin_bottom = 366.638
-text = "Play again"
+custom_fonts/font = SubResource( 4 )
+text = "Main menu"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

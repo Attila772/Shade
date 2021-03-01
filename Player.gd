@@ -11,7 +11,8 @@ var moving = false
 var destination = Vector2()
 var movement = Vector2()
 var HasTreasure = false
-
+var Gadget = ""
+var timer =1
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -20,6 +21,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	particles(delta)
 	MovementLoop()
 	move_and_slide(movement)
 	pass
@@ -102,9 +104,24 @@ func AnimationLoop():
 	$AnimationPlayer.play(animation)
 
 
+func gadgetpickedup():
+	var path = "res://Assets/gadgets/" + Gadget + ".png"
+	$Camera2D/MarginContainer/Sprite.texture = load(path)
+	$Camera2D/MarginContainer/Sprite.scale = Vector2(0.3,0.3)
 
-
-
+func particles(delta):
+	if Input.is_action_pressed("Gadget"):
+		if Gadget =="Emp":
+			$Particles2D.visible = true
+			timer = 1
+	print(timer)
+	if $Particles2D.visible == true:
+		if !$Emp.playing:
+			$Emp.play()
+		timer -= delta
+	if timer < 0:
+		timer =1
+		$Particles2D.visible =false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

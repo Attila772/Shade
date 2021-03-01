@@ -1,10 +1,12 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Resources/male_unarmored.png" type="Texture" id=2]
 [ext_resource path="res://Player/Sound.gd" type="Script" id=3]
 [ext_resource path="res://Sounds/walking.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/518909__samihil__ambient-track.wav" type="AudioStream" id=5]
+[ext_resource path="res://Resources/floaty_32.png" type="Texture" id=6]
+[ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack_E"
@@ -420,6 +422,36 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="CanvasItemMaterial" id=27]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=28]
+colors = PoolColorArray( 0.504196, 0.51492, 0.675781, 1, 0.0899582, 0.0666504, 0.8125, 1 )
+
+[sub_resource type="GradientTexture" id=29]
+gradient = SubResource( 28 )
+
+[sub_resource type="ParticlesMaterial" id=30]
+flag_disable_z = true
+gravity = Vector3( 0, 200, 0 )
+angular_velocity = 35.26
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 720.0
+angle_random = 1.0
+scale = 5.0
+scale_random = 1.0
+color_ramp = SubResource( 29 )
+anim_speed = 4.41
+anim_speed_random = 1.0
+anim_offset = 0.55
+anim_offset_random = 1.0
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -466,6 +498,17 @@ script = ExtResource( 3 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D"]
+margin_left = 366.574
+margin_top = -259.568
+margin_right = 406.574
+margin_bottom = -219.568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Camera2D/MarginContainer"]
+
 [node name="walksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -8.344
@@ -473,3 +516,14 @@ volume_db = -8.344
 [node name="BackgroundTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -27.876
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+material = SubResource( 27 )
+position = Vector2( 3.17841, -95.3517 )
+process_material = SubResource( 30 )
+texture = ExtResource( 6 )
+
+[node name="Emp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -1.01

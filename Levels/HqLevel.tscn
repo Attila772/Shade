@@ -1,0 +1,178 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Props/CollisionTest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Props/WallCorner_S.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Props/WallCorner_W.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Props/WallCorner_N.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Props/WallCorner_E.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Props/Wall_S.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Props/Table.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/gadgets/Emp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=12]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 0.388235, 0.372549, 0.372549, 1 )
+material = SubResource( 1 )
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 254, 128 )
+format = 1
+tile_data = PoolIntArray( -458755, 260, 0, -458754, 260, 0, -458753, 260, 0, -524288, 260, 0, -524287, 260, 0, -524286, 260, 0, -524285, 260, 0, -524284, 260, 0, -393219, 260, 0, -393218, 260, 0, -393217, 260, 0, -458752, 260, 0, -458751, 262, 0, -458750, 260, 0, -458749, 260, 0, -458748, 262, 0, -327683, 260, 0, -327682, 260, 0, -327681, 260, 0, -393216, 262, 0, -393215, 262, 0, -393214, 260, 0, -393213, 260, 0, -393212, 259, 0, -262147, 260, 0, -262146, 260, 0, -262145, 259, 0, -327680, 260, 0, -327679, 260, 0, -327678, 262, 0, -327677, 262, 0, -327676, 260, 0, -196611, 260, 0, -196610, 260, 0, -196609, 260, 0, -262144, 260, 0, -262143, 260, 0, -262142, 260, 0, -262141, 260, 0, -262140, 260, 0, -131075, 260, 0, -131074, 260, 0, -131073, 260, 0, -196608, 259, 0, -196607, 260, 0, -196606, 260, 0, -196605, 260, 0, -196604, 260, 0, -65539, 260, 0, -65538, 260, 0, -65537, 261, 0, -131072, 260, 0, -131071, 260, 0, -131070, 260, 0, -131069, 260, 0, -131068, 260, 0, -3, 260, 0, -2, 260, 0, -1, 260, 0, -65536, 261, 0, -65535, 260, 0, -65534, 260, 0, -65533, 260, 0, -65532, 260, 0, 65533, 260, 0, 65534, 260, 0, 65535, 260, 0, 0, 260, 0, 1, 260, 0, 2, 260, 0, 3, 259, 0, 4, 260, 0, 131069, 260, 0, 131070, 261, 0, 131071, 260, 0, 65536, 260, 0, 65537, 260, 0, 65538, 260, 0, 65539, 260, 0, 65540, 260, 0 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="CollisionTest10" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 1347.37, 316.652 )
+
+[node name="CollisionTest24" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 1455, 251.062 )
+
+[node name="CollisionTest11" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 1219.55, 378.879 )
+
+[node name="CollisionTest12" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 1098.46, 444.469 )
+
+[node name="CollisionTest21" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 970.644, 508.377 )
+
+[node name="CollisionTest22" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 847.873, 575.648 )
+
+[node name="CollisionTest23" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 720.057, 637.875 )
+
+[node name="CollisionTest25" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 592.921, 697.205 )
+
+[node name="CollisionTest26" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( -414.002, 204.603 )
+
+[node name="CollisionTest27" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( -287.495, 147.585 )
+
+[node name="CollisionTest28" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( -160.987, 83.4404 )
+
+[node name="CollisionTest29" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( -36.2611, 24.6411 )
+
+[node name="CollisionTest30" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 92.0284, -41.2855 )
+
+[node name="CollisionTest31" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 222.1, -100.085 )
+
+[node name="CollisionTest32" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 346.825, -160.666 )
+
+[node name="CollisionTest33" parent="YSort" instance=ExtResource( 1 )]
+modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
+position = Vector2( 473.333, -221.247 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 183.254, 193.303 )
+
+[node name="CollisionTest" parent="YSort" instance=ExtResource( 6 )]
+modulate = Color( 0.498039, 0.470588, 0.501961, 1 )
+position = Vector2( 395.849, 789.011 )
+
+[node name="CollisionTest6" parent="YSort" instance=ExtResource( 7 )]
+modulate = Color( 0.509804, 0.486275, 0.509804, 1 )
+position = Vector2( -520.59, 329.28 )
+
+[node name="CollisionTest7" parent="YSort" instance=ExtResource( 4 )]
+modulate = Color( 0.47451, 0.454902, 0.478431, 1 )
+position = Vector2( 611.653, -262.272 )
+
+[node name="CollisionTest8" parent="YSort" instance=ExtResource( 5 )]
+modulate = Color( 0.47451, 0.431373, 0.486275, 1 )
+position = Vector2( 1548.97, 205.54 )
+
+[node name="DiagonalWall5" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 1426.04, 63.5151 )
+
+[node name="DiagonalWall6" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 1313.36, 9.69772 )
+
+[node name="DiagonalWall7" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 1183.87, -50.8469 )
+
+[node name="DiagonalWall11" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( -437.711, 364.458 )
+
+[node name="DiagonalWall12" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 58.7673, 619.304 )
+
+[node name="DiagonalWall16" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 192.798, 679.712 )
+
+[node name="DiagonalWall13" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( -63.9363, 555.12 )
+
+[node name="DiagonalWall14" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( -182.865, 494.713 )
+
+[node name="DiagonalWall15" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( -309.344, 430.529 )
+
+[node name="DiagonalWall8" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 1051, -116.437 )
+
+[node name="DiagonalWall9" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 919.824, -180.345 )
+
+[node name="DiagonalWall10" parent="YSort" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 793.689, -237.526 )
+
+[node name="StaticBody2D" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 706.703, -160.74 )
+
+[node name="StaticBody2D2" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 886.308, -78.7156 )
+
+[node name="StaticBody2D3" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 1068.74, 3.30878 )
+
+[node name="CollisionTest2" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 684.183, 476.666 )
+
+[node name="CollisionTest3" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 838.332, 366.358 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 662.792, -183.678 )

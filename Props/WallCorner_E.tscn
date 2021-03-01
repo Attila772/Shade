@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/stoneWallCorner_E.png" type="Texture" id=1]
+[ext_resource path="res://Props/WallCorner_E.gd" type="Script" id=2]
+
+[node name="CollisionTest" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 18.237, -212.762 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -4.71097, -96.4211 )
+scale = Vector2( 1.06825, 1.18719 )
+polygon = PoolVector2Array( -68.6217, 79.913, -99.1411, 49.2729, 39.4817, -39.6703, 49.3995, 106.685, 23.6133, 117.394 )

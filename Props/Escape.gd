@@ -25,8 +25,9 @@ func _process(delta):
 				$AudioStreamPlayer2D.play()
 				var escape = load("res://Props/EndMenu.tscn").instance()
 				
-				
-				get_parent().get_node("Player").get_node("Camera2D").add_child(escape)
+				var camerapos = player.get_position_in_parent()
+				escape.rect_position = player.position
+				get_parent().get_parent().add_child(escape)
 				escape.rect_position+= Vector2(-300,-300)
 				
 				count +=1
