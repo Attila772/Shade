@@ -18,10 +18,13 @@ func _process(delta):
 	var dist = pow(pow(x,2)+pow(y,2),0.5)
 	print(dist)
 	if dist < 100:
+		if !$Sparkle.playing and visible:
+			$Sparkle.play()
 		$Label.visible = true
 		if Input.is_action_pressed("interact"):
-			visible=false		
-			$AudioStreamPlayer2D.play()
+			visible=false	
+			$Sparkle.stop()	
+			$Pickup_sound.play()
 			$CollisionPolygon2D.disabled = true
 			get_parent().get_node("Player").HasTreasure = true
 	else:

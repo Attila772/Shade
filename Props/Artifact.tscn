@@ -1,19 +1,61 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Props/letöltés.png" type="Texture" id=1]
 [ext_resource path="res://Props/Artifact.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/456965__funwithsound__short-success-sound-glockenspiel-treasure-video-game.wav" type="AudioStream" id=3]
+[ext_resource path="res://Resources/floaty_32.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/Sparkle.wav" type="AudioStream" id=5]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.0888889, 0.511111, 1 )
+colors = PoolColorArray( 0.903809, 0.898571, 0.879095, 1, 0.919434, 0.745142, 0.0969715, 1, 0.884277, 0.509674, 0.0449047, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 35.15
+flag_disable_z = true
+direction = Vector3( 0.5, 0, 0 )
+spread = 90.0
+gravity = Vector3( 0, -40, 0 )
+angular_velocity = 44.76
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 100.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 1.0
+color_ramp = SubResource( 3 )
+anim_speed = 0.3
+anim_speed_random = 0.39
+anim_offset = 0.33
+anim_offset_random = 0.63
+
+[sub_resource type="DynamicFontData" id=5]
 font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=6]
 size = 50
-font_data = SubResource( 1 )
+font_data = SubResource( 5 )
 
 [node name="CollisionTest" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 1 )
+process_material = SubResource( 4 )
+texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.262016, -1.10622 )
@@ -31,13 +73,19 @@ margin_left = -42.0475
 margin_top = -88.7669
 margin_right = -2.04745
 margin_bottom = -22.7669
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.0235294, 0.984314, 0.129412, 1 )
 text = "E"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Pickup_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = 9.087
+
+[node name="Sparkle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = 6.058
+autoplay = true
+attenuation = 24.2515
