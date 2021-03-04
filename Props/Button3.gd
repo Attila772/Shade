@@ -9,7 +9,7 @@ extends Button
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("pressed",self,"button_pressed")
-	modulate.a = 0.5
+	modulate.a = 0.1
 	pass # Replace with function body.
 
 

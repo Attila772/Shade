@@ -109,8 +109,14 @@ func gadgetpickedup():
 	$Camera2D/MarginContainer/Sprite.texture = load(path)
 	$Camera2D/MarginContainer/Sprite.scale = Vector2(0.3,0.3)
 
-func particles(delta):
-	if Input.is_action_pressed("Gadget"):
+func particles(delta): # Press F to pay respect
+	if Input.is_action_just_released("Gadget"):
+		if Gadget =="RangeFinder":
+			if $Dist.visible == false:
+				$Dist.visible = true
+			else:
+				 $Dist.visible = false
+				
 		if Gadget =="Emp":
 			$Particles2D.visible = true
 			timer = 1

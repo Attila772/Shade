@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Resources/male_unarmored.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sounds/518909__samihil__ambient-track.wav" type="AudioStream" id=5]
 [ext_resource path="res://Resources/floaty_32.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
+[ext_resource path="res://Player/Dist.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack_E"
@@ -268,10 +269,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.001 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 9, 56 ]
+"values": [ 56 ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -452,6 +453,13 @@ anim_speed_random = 1.0
 anim_offset = 0.55
 anim_offset_random = 1.0
 
+[sub_resource type="DynamicFontData" id=31]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=32]
+size = 20
+font_data = SubResource( 31 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -464,7 +472,7 @@ position = Vector2( -3.79732, -27.5569 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-frame = 43
+frame = 56
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack_E = SubResource( 1 )
@@ -511,11 +519,12 @@ __meta__ = {
 
 [node name="walksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -8.344
+volume_db = -11.227
 
 [node name="BackgroundTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -27.876
+volume_db = 0.393
+pitch_scale = 0.43
 
 [node name="Particles2D" type="Particles2D" parent="."]
 visible = false
@@ -526,4 +535,17 @@ texture = ExtResource( 6 )
 
 [node name="Emp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -1.01
+volume_db = -12.955
+pitch_scale = 0.89
+
+[node name="Dist" type="Label" parent="."]
+visible = false
+margin_left = -24.8743
+margin_top = -115.528
+margin_right = 15.1257
+margin_bottom = -88.5278
+custom_fonts/font = SubResource( 32 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

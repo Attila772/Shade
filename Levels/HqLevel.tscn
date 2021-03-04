@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Props/CollisionTest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/gadgets/Emp.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/gadgets/RangeFinder.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -171,8 +172,11 @@ position = Vector2( 1068.74, 3.30878 )
 [node name="CollisionTest2" parent="YSort" instance=ExtResource( 11 )]
 position = Vector2( 684.183, 476.666 )
 
-[node name="CollisionTest3" parent="YSort" instance=ExtResource( 12 )]
-position = Vector2( 838.332, 366.358 )
+[node name="Artifact" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 831.658, 366.358 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 662.792, -183.678 )
+position = Vector2( 615.595, -203.905 )
+
+[node name="Node2D" parent="." instance=ExtResource( 13 )]
+position = Vector2( 727.753, -149.558 )

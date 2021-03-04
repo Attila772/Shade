@@ -60,7 +60,7 @@ position = Vector2( 777.841, 519.41 )
 [node name="CollisionTest7" parent="Test" instance=ExtResource( 4 )]
 position = Vector2( 647.027, 583.483 )
 
-[node name="CollisionTest8" parent="Test" instance=ExtResource( 6 )]
+[node name="Artifact" parent="Test" instance=ExtResource( 6 )]
 position = Vector2( 1501.94, 492.872 )
 
 [node name="CollisionTest9" parent="Test" instance=ExtResource( 7 )]

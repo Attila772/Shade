@@ -20,7 +20,6 @@ func _process(delta):
 	
 	
 	var dist = pow(pow(x,2)+pow(y,2),0.5)
-	print(dist)
 	if dist < 100:
 		
 		$Label.visible = true
