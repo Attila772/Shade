@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://TestLevel/testLevel.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Props/Radio.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/Guard.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PhysicsMaterial" id=1]
 rough = true
@@ -35,6 +36,9 @@ tile_data = PoolIntArray( -786438, 185, 0, -786437, 177, 0, -786436, 177, 0, -78
 [node name="Player" parent="Test" instance=ExtResource( 3 )]
 position = Vector2( 903.592, 73.0364 )
 collision_mask = 3
+
+[node name="Guard" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -147.056, 67.4796 )
 
 [node name="CollisionTest" parent="Test" instance=ExtResource( 4 )]
 position = Vector2( 902.502, 460.978 )
