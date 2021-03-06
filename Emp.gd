@@ -13,7 +13,7 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	var player = get_parent().get_node("YSort").get_node("Player")
+	var player = get_parent().get_node("YSort").get_node("Dudes").get_node("Player")
 	var vektor = player.position - position
 	var x = abs(vektor.x)
 	var y = abs(vektor.y)
