@@ -88,6 +88,8 @@ func MovementLoop():
 	moving = false
 	
 func _process(delta):
+	if movement ==Vector2(0,0):
+		$AnimationPlayer.stop()
 	if !$BackgroundTrack.playing:
 		$BackgroundTrack.play()
 	if moving == true:
