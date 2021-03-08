@@ -1,6 +1,7 @@
 extends StaticBody2D
 
-
+var dudes
+var IsBehind = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,14 +9,16 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	if get_parent().get_node("Player").position.y < position.y and get_parent().get_node("Player").position.y > position.y-128 and get_parent().get_node("Player").position.x> position.x-80 and  get_parent().get_node("Player").position.x< position.x+70 :
+	dudes = get_tree().get_nodes_in_group("dudes")
+	for i in dudes:
+		if i.position.y < position.y and i.position.y > position.y-128 and i.position.x> position.x-80 and  i.position.x< position.x+70 :
+			IsBehind = true 
+	if IsBehind :
 		$Sprite.modulate.a = 0.5
 	else:
 		$Sprite.modulate.a = 1
-	if get_parent().get_node("Guard").position.y < position.y and get_parent().get_node("Guard").position.y > position.y-128 and get_parent().get_node("Guard").position.x> position.x-80 and  get_parent().get_node("Guard").position.x< position.x+70:
-		$Sprite.modulate.a = 0.5
-	else:
-		$Sprite.modulate.a = 1
+	IsBehind= false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

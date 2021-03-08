@@ -120,7 +120,7 @@ func particles(delta): # Press F to pay respect
 		if Gadget =="Emp":
 			$Particles2D.visible = true
 			timer = 1
-	print(timer)
+#	print(timer)
 	if $Particles2D.visible == true:
 		if !$Emp.playing:
 			$Emp.play()

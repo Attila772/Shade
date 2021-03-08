@@ -16,7 +16,7 @@ func _process(delta):
 	
 	
 	var dist = pow(pow(x,2)+pow(y,2),0.5)
-	print(dist)
+#	print(dist)
 	if dist < 100:
 		if count ==0:
 			if get_parent().get_node("Player").HasTreasure ==true:

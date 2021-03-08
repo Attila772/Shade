@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var movement = Vector2(1,1)
-var speed = 200
+var speed = 125
 var animation
 var anim_mode="Walk"
 var angle
@@ -16,7 +16,7 @@ func _ready():
 	pass # Replace with function body.
 
 func movementloop():
-	movement = $'../Player'.position-self.position
+	movement = $'../../Navigation2D/Line2D'.points[1]-self.position
 	movement=movement.normalized()*speed
 	angle = rad2deg(Vector2(0,-1).angle_to(movement))
 	if (angle>-22.5 && angle<22.5):
@@ -31,7 +31,7 @@ func movementloop():
 		move_direction="S"
 	if (angle>-157.5 && angle<-112.5):
 		move_direction="SW"
-	if (angle>112.5 && angle<-67.5):
+	if (angle>-112.5 && angle<-67.5):
 		move_direction="W"
 	if (angle>-67.5 && angle<-22.5):
 		move_direction="NW"
@@ -46,6 +46,5 @@ func _process(delta):
 	
 func Animationloop():
 	animation = "Walk_" + move_direction
-	print(animation)
 	$GuardAnimationPlayer.play(animation)
 	pass
