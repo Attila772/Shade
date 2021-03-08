@@ -3,7 +3,7 @@ extends KinematicBody2D
 var anim_direction="S"
 var anim_mode= "Idle"
 var animation
-var speed = 200
+var speed = 150
 var max_speed=200
 var acceleration=600
 var move_direction = "S"
@@ -31,28 +31,28 @@ func MovementLoop():
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left"):
 		moving = true
 		movement.x -=1
-		movement.y -=1
+		movement.y -=0.5
 		move_direction="NW"
 		movement = movement.normalized() * speed
 		return
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right"):
 		moving = true
 		movement.x +=1
-		movement.y +=-1
+		movement.y +=-0.5
 		move_direction="NE"
 		movement = movement.normalized() * speed
 		return
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left"):
 		moving = true
 		movement.x +=-1
-		movement.y +=1
+		movement.y +=0.5
 		move_direction="SW"
 		movement = movement.normalized() * speed
 		return
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right"):
 		moving = true
 		movement.x +=1
-		movement.y +=1
+		movement.y +=0.5
 		move_direction="SE"
 		movement = movement.normalized() * speed
 		return

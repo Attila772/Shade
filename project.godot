@@ -78,6 +78,4 @@ Gadget={
 
 [rendering]
 
-limits/buffers/canvas_polygon_buffer_size_kb=256
-limits/buffers/canvas_polygon_index_buffer_size_kb=256
 environment/default_environment="res://default_env.tres"
