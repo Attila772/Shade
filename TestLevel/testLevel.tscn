@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://TestLevel/testLevel.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Props/CollisionTest.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Props/Radio.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/Guard.tscn" type="PackedScene" id=8]
@@ -15,9 +14,9 @@
 rough = true
 
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 1004.58, -77.1368, 2601.77, -130.291, 4132.34, -125.706, 997.446, -58.4602, 528.899, -79.8049, 455.168, -100.387, 811.93, -52.7428, 652.576, -66.0833, 878.923, 130.898, 804.795, -35.2096, 2287.48, -142.164, 255.381, -100.769, -1505.08, -62.6916, 540.791, -55.7921, 524.142, -64.1775, 160.245, -90.8584, 1676.43, -323.114, 581.224, -111.06, 2401.97, -154.396, 2592.79, -146.84 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 3, 6, 7 ), PoolIntArray( 6, 3, 2, 8, 9 ), PoolIntArray( 10, 1, 0 ), PoolIntArray( 5, 4, 11 ), PoolIntArray( 9, 8, 12, 13 ), PoolIntArray( 4, 7, 13, 14 ), PoolIntArray( 14, 13, 12, 15 ), PoolIntArray( 15, 12, 16, 11 ), PoolIntArray( 5, 11, 16, 17 ), PoolIntArray( 10, 0, 17, 16, 18 ), PoolIntArray( 2, 1, 19 ), PoolIntArray( 16, 2, 19, 18 ) ]
-outlines = [ PoolVector2Array( -1505.08, -62.6916, 878.923, 130.898, 4132.34, -125.706, 1676.43, -323.114 ), PoolVector2Array( 160.245, -90.8584, 255.381, -100.769, 528.899, -79.8049, 524.142, -64.1775 ), PoolVector2Array( 455.168, -100.387, 581.224, -111.06, 1004.58, -77.1368, 997.446, -58.4602 ), PoolVector2Array( 540.791, -55.7921, 652.576, -66.0833, 811.93, -52.7428, 804.795, -35.2096 ), PoolVector2Array( 2287.48, -142.164, 2401.97, -154.396, 2592.79, -146.84, 2601.77, -130.291 ) ]
+vertices = PoolVector2Array( 528.899, -79.8049, 455.168, -100.387, 997.446, -58.4602, 811.93, -52.7428, 652.576, -66.0833, 4132.34, -125.706, 878.923, 130.898, 804.795, -35.2096, 1004.58, -77.1368, 1676.43, -323.114, 255.381, -100.769, -1505.08, -62.6916, 540.791, -55.7921, 524.142, -64.1775, 160.245, -90.8584, 581.224, -111.06, 698.798, -101.639 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 3, 2, 5, 6, 7 ), PoolIntArray( 8, 9, 5, 2 ), PoolIntArray( 1, 0, 10 ), PoolIntArray( 7, 6, 11, 12 ), PoolIntArray( 0, 4, 12, 13 ), PoolIntArray( 13, 12, 11, 14 ), PoolIntArray( 14, 11, 9, 10 ), PoolIntArray( 1, 10, 9, 15 ), PoolIntArray( 15, 9, 8, 16 ) ]
+outlines = [ PoolVector2Array( -1505.08, -62.6916, 878.923, 130.898, 4132.34, -125.706, 1676.43, -323.114 ), PoolVector2Array( 160.245, -90.8584, 255.381, -100.769, 528.899, -79.8049, 524.142, -64.1775 ), PoolVector2Array( 455.168, -100.387, 581.224, -111.06, 698.798, -101.639, 1004.58, -77.1368, 997.446, -58.4602 ), PoolVector2Array( 540.791, -55.7921, 652.576, -66.0833, 811.93, -52.7428, 804.795, -35.2096 ) ]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 12, -4 )
@@ -74,11 +73,6 @@ position = Vector2( 316.85, 537.469 )
 ] instance=ExtResource( 4 )]
 position = Vector2( 715.287, 312.058 )
 
-[node name="CollisionTest5" parent="Test" groups=[
-"colliders",
-] instance=ExtResource( 5 )]
-position = Vector2( 2453.35, 889.104 )
-
 [node name="CollisionTest6" parent="Test" groups=[
 "colliders",
 ] instance=ExtResource( 4 )]
@@ -99,6 +93,7 @@ position = Vector2( 1131.1, -42.9867 )
 script = ExtResource( 9 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -0.273193, -4.19958 )
 scale = Vector2( 1, -6.24 )
 navpoly = SubResource( 2 )
 

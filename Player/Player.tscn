@@ -181,7 +181,7 @@ position = Vector2( 9, 24.5 )
 polygon = PoolVector2Array( -17.9945, 13.4661, -40.5, 10, -30.8819, -31.7603, -2.53365, -35.855, 21.7198, -14.4363, 16.9951, 4.1475, 2.19107, 11.0771 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.521569, 0.470588, 0.470588, 1 )
+modulate = Color( 0.980392, 0.984314, 0.972549, 1 )
 position = Vector2( -5.78989, -23.9747 )
 scale = Vector2( 0.522972, 0.560203 )
 texture = ExtResource( 2 )
