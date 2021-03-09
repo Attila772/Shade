@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Playeranim/PlayerWalkTP.png" type="Texture" id=2]
@@ -46,7 +46,126 @@ size = 20
 font_data = SubResource( 5 )
 
 [sub_resource type="Animation" id=7]
-resource_name = "Walk_E"
+resource_name = "Idle_E"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 104, 105 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Idle_N"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 52, 53 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Idle_NE"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 78, 79 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Idle_NW"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 26, 27 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Idle_S"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 156, 157 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Idle_SE"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 130, 131 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Idle_SW"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 182, 183 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Idle_W"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=15]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -61,8 +180,7 @@ tracks/0/keys = {
 "values": [ 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "Walk_N"
+[sub_resource type="Animation" id=16]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -77,8 +195,7 @@ tracks/0/keys = {
 "values": [ 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "Walk_NE"
+[sub_resource type="Animation" id=17]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -93,8 +210,7 @@ tracks/0/keys = {
 "values": [ 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "Walk_NW"
+[sub_resource type="Animation" id=18]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -109,8 +225,7 @@ tracks/0/keys = {
 "values": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "Walk_S"
+[sub_resource type="Animation" id=19]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -125,8 +240,7 @@ tracks/0/keys = {
 "values": [ 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181 ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "Walk_SE"
+[sub_resource type="Animation" id=20]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -141,8 +255,7 @@ tracks/0/keys = {
 "values": [ 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155 ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "Walk_SW"
+[sub_resource type="Animation" id=21]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -157,7 +270,7 @@ tracks/0/keys = {
 "values": [ 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=22]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -186,7 +299,7 @@ scale = Vector2( 0.522972, 0.560203 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 26
-frame = 6
+frame = 157
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -236,11 +349,19 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Walk_E = SubResource( 7 )
-anims/Walk_N = SubResource( 8 )
-anims/Walk_NE = SubResource( 9 )
-anims/Walk_NW = SubResource( 10 )
-anims/Walk_S = SubResource( 11 )
-anims/Walk_SE = SubResource( 12 )
-anims/Walk_SW = SubResource( 13 )
-anims/Walk_W = SubResource( 14 )
+anims/Idle_E = SubResource( 7 )
+anims/Idle_N = SubResource( 8 )
+anims/Idle_NE = SubResource( 9 )
+anims/Idle_NW = SubResource( 10 )
+anims/Idle_S = SubResource( 11 )
+anims/Idle_SE = SubResource( 12 )
+anims/Idle_SW = SubResource( 13 )
+anims/Idle_W = SubResource( 14 )
+anims/Walk_E = SubResource( 15 )
+anims/Walk_N = SubResource( 16 )
+anims/Walk_NE = SubResource( 17 )
+anims/Walk_NW = SubResource( 18 )
+anims/Walk_S = SubResource( 19 )
+anims/Walk_SE = SubResource( 20 )
+anims/Walk_SW = SubResource( 21 )
+anims/Walk_W = SubResource( 22 )
