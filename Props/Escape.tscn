@@ -29,19 +29,6 @@ position = Vector2( 16.9706, -2.82843 )
 stream = ExtResource( 3 )
 volume_db = 9.087
 
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_left = 20.2043
-margin_top = -135.818
-margin_right = 216.204
-margin_bottom = -69.8179
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.956863, 0.941176, 0.0235294, 1 )
-text = "VICTORY"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label2" type="Label" parent="."]
 margin_left = -142.553
 margin_top = -110.001

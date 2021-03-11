@@ -45,5 +45,5 @@ func _process(delta):
 	
 func Animationloop():
 	animation = "Walk_" + move_direction
-	$GuardAnimationPlayer.play(animation)
+	$AnimationPlayer.play(animation)
 	pass

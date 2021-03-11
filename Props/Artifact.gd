@@ -22,7 +22,7 @@ func _process(delta):
 		
 		$Label.visible = true
 		if Input.is_action_pressed("interact"):
-			visible=false	
+			visible=false
 			$Pickup_sound.play()
 			$CollisionPolygon2D.disabled = true
 			get_parent().get_node("Player").HasTreasure = true

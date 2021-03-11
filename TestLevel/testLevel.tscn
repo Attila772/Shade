@@ -93,7 +93,7 @@ position = Vector2( 1131.1, -42.9867 )
 script = ExtResource( 9 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-position = Vector2( -0.273193, -4.19958 )
+position = Vector2( -3.10156, 1.45722 )
 scale = Vector2( 1, -6.24 )
 navpoly = SubResource( 2 )
 

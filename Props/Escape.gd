@@ -20,7 +20,6 @@ func _process(delta):
 	if dist < 100:
 		if count ==0:
 			if get_parent().get_node("Player").HasTreasure ==true:
-				$Label.visible = true
 				$Label2.visible = false
 				$AudioStreamPlayer2D.play()
 				var escape = load("res://Props/EndMenu.tscn").instance()
@@ -33,7 +32,6 @@ func _process(delta):
 				count +=1
 			
 	else:
-		$Label.visible = false
 		$Label2.visible = true
 		
 		
