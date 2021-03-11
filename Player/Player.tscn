@@ -8,7 +8,7 @@
 [ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
 [ext_resource path="res://Player/Dist.gd" type="Script" id=8]
 
-[sub_resource type="CircleShape2D" id=24]
+[sub_resource type="CircleShape2D" id=1]
 radius = 36.0
 
 [sub_resource type="CanvasItemMaterial" id=2]
@@ -285,7 +285,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 15.749 )
-shape = SubResource( 24 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.980392, 0.984314, 0.972549, 1 )
@@ -294,7 +294,7 @@ scale = Vector2( 0.522972, 0.560203 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 26
-frame = 157
+frame = 104
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

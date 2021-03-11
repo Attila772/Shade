@@ -5,11 +5,10 @@
 [ext_resource path="res://Player/Sound.gd" type="Script" id=3]
 [ext_resource path="res://Sounds/walking.wav" type="AudioStream" id=4]
 
-[sub_resource type="CircleShape2D" id=27]
+[sub_resource type="CircleShape2D" id=1]
 radius = 36.0
 
-[sub_resource type="Animation" id=1]
-resource_name = "Attack_E"
+[sub_resource type="Animation" id=2]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -25,8 +24,7 @@ tracks/0/keys = {
 "values": [ 33, 37 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Attack_N"
+[sub_resource type="Animation" id=3]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -42,8 +40,7 @@ tracks/0/keys = {
 "values": [ 17, 21 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Attack_NE"
+[sub_resource type="Animation" id=4]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -59,8 +56,7 @@ tracks/0/keys = {
 "values": [ 25, 29 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Attack_NW"
+[sub_resource type="Animation" id=5]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -76,8 +72,7 @@ tracks/0/keys = {
 "values": [ 9, 13 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Attack_S"
+[sub_resource type="Animation" id=6]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -93,8 +88,7 @@ tracks/0/keys = {
 "values": [ 49, 53 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Attack_SE"
+[sub_resource type="Animation" id=7]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -110,8 +104,7 @@ tracks/0/keys = {
 "values": [ 41, 45 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "Attack_SW"
+[sub_resource type="Animation" id=8]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -127,8 +120,7 @@ tracks/0/keys = {
 "values": [ 57, 61 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "Attack_W"
+[sub_resource type="Animation" id=9]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -144,8 +136,7 @@ tracks/0/keys = {
 "values": [ 1, 5 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "Death_W"
+[sub_resource type="Animation" id=10]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -161,8 +152,7 @@ tracks/0/keys = {
 "values": [ 6, 7 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "Idle_E"
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -176,8 +166,7 @@ tracks/0/keys = {
 "values": [ 32 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "Idle_N"
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -191,8 +180,7 @@ tracks/0/keys = {
 "values": [ 16 ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "Idle_NE"
+[sub_resource type="Animation" id=13]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -208,8 +196,7 @@ tracks/0/keys = {
 "values": [ 9 ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "Idle_NW"
+[sub_resource type="Animation" id=14]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -225,8 +212,7 @@ tracks/0/keys = {
 "values": [ 24 ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "Idle_S"
+[sub_resource type="Animation" id=15]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -240,8 +226,7 @@ tracks/0/keys = {
 "values": [ 48 ]
 }
 
-[sub_resource type="Animation" id=15]
-resource_name = "Idle_SE"
+[sub_resource type="Animation" id=16]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -257,8 +242,7 @@ tracks/0/keys = {
 "values": [ 9, 40 ]
 }
 
-[sub_resource type="Animation" id=16]
-resource_name = "Idle_SW"
+[sub_resource type="Animation" id=17]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -274,8 +258,7 @@ tracks/0/keys = {
 "values": [ 56 ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "Idle_W"
+[sub_resource type="Animation" id=18]
 step = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -290,11 +273,10 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=18]
-resource_name = "Sound"
+[sub_resource type="Animation" id=19]
 loop = true
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=20]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -310,7 +292,7 @@ tracks/0/keys = {
 "values": [ 32, 33, 34, 35 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -326,7 +308,7 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=22]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -342,7 +324,7 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27 ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=23]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -358,7 +340,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=24]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -374,7 +356,7 @@ tracks/0/keys = {
 "values": [ 48, 49, 50, 51 ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=25]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -390,7 +372,7 @@ tracks/0/keys = {
 "values": [ 40, 41, 42, 43 ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=26]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -406,7 +388,7 @@ tracks/0/keys = {
 "values": [ 56, 57, 58, 59 ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=27]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -427,7 +409,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 15.749 )
-shape = SubResource( 27 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -3.79732, -27.5569 )
@@ -441,30 +423,30 @@ stream = ExtResource( 4 )
 volume_db = -11.227
 
 [node name="GuardAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Attack_E = SubResource( 1 )
-anims/Attack_N = SubResource( 2 )
-anims/Attack_NE = SubResource( 3 )
-anims/Attack_NW = SubResource( 4 )
-anims/Attack_S = SubResource( 5 )
-anims/Attack_SE = SubResource( 6 )
-anims/Attack_SW = SubResource( 7 )
-anims/Attack_W = SubResource( 8 )
-anims/Death_W = SubResource( 9 )
-anims/Idle_E = SubResource( 10 )
-anims/Idle_N = SubResource( 11 )
-anims/Idle_NE = SubResource( 12 )
-anims/Idle_NW = SubResource( 13 )
-anims/Idle_S = SubResource( 14 )
-anims/Idle_SE = SubResource( 15 )
-anims/Idle_SW = SubResource( 16 )
-anims/Idle_W = SubResource( 17 )
-anims/Sound = SubResource( 18 )
-anims/Walk_E = SubResource( 19 )
-anims/Walk_N = SubResource( 20 )
-anims/Walk_NE = SubResource( 21 )
-anims/Walk_NW = SubResource( 22 )
-anims/Walk_S = SubResource( 23 )
-anims/Walk_SE = SubResource( 24 )
-anims/Walk_SW = SubResource( 25 )
-anims/Walk_W = SubResource( 26 )
+anims/Attack_E = SubResource( 2 )
+anims/Attack_N = SubResource( 3 )
+anims/Attack_NE = SubResource( 4 )
+anims/Attack_NW = SubResource( 5 )
+anims/Attack_S = SubResource( 6 )
+anims/Attack_SE = SubResource( 7 )
+anims/Attack_SW = SubResource( 8 )
+anims/Attack_W = SubResource( 9 )
+anims/Death_W = SubResource( 10 )
+anims/Idle_E = SubResource( 11 )
+anims/Idle_N = SubResource( 12 )
+anims/Idle_NE = SubResource( 13 )
+anims/Idle_NW = SubResource( 14 )
+anims/Idle_S = SubResource( 15 )
+anims/Idle_SE = SubResource( 16 )
+anims/Idle_SW = SubResource( 17 )
+anims/Idle_W = SubResource( 18 )
+anims/Sound = SubResource( 19 )
+anims/Walk_E = SubResource( 20 )
+anims/Walk_N = SubResource( 21 )
+anims/Walk_NE = SubResource( 22 )
+anims/Walk_NW = SubResource( 23 )
+anims/Walk_S = SubResource( 24 )
+anims/Walk_SE = SubResource( 25 )
+anims/Walk_SW = SubResource( 26 )
+anims/Walk_W = SubResource( 27 )
 script = ExtResource( 3 )
