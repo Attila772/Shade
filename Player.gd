@@ -15,7 +15,7 @@ var Gadget = ""
 var timer =1
 var dashcooldown = 0
 var dashtimer = 0.5
-var dashvector = Vector3(0,0,0)
+var dashrot =0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -35,6 +35,7 @@ func _physics_process(delta):
 		
 	if dashtimer <0:
 		$Particles2D2.visible = false
+		$Sprite.visible = true
 		speed = 150
 		
 	if Input.is_action_just_released("IngameMenu"):
@@ -49,10 +50,11 @@ func _physics_process(delta):
 	pass
 	
 func MovementLoop():
-	$Particles2D2.process_material.gravity = dashvector
+	$Particles2D2.rotation_degrees = dashrot
 	movement = Vector2(0,0)
 	if Input.is_action_pressed("dash"):
 		if dashcooldown <=0:
+			$Sprite.visible = false
 			dashtimer =0.3
 			dashcooldown = 1
 			
@@ -65,7 +67,7 @@ func MovementLoop():
 		movement.y -=0.5
 		move_direction="NW"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(180,180,0)
+		dashrot = -45
 		return
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right"):
 		moving = true
@@ -73,7 +75,7 @@ func MovementLoop():
 		movement.y +=-0.5
 		move_direction="NE"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(-180,180,0)
+		dashrot = 45
 		return
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left"):
 		moving = true
@@ -81,7 +83,7 @@ func MovementLoop():
 		movement.y +=0.5
 		move_direction="SW"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(180,-180,0)
+		dashrot = 225
 		return
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right"):
 		moving = true
@@ -89,7 +91,7 @@ func MovementLoop():
 		movement.y +=0.5
 		move_direction="SE"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(-180,-180,0)
+		dashrot = -225
 		return
 	if Input.is_action_pressed("ui_up"):
 		moving = true
@@ -97,7 +99,7 @@ func MovementLoop():
 		movement.y +=-1
 		move_direction="N"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(0,180,0)
+		dashrot = 0
 		return
 	if Input.is_action_pressed("ui_down"):
 		moving = true
@@ -105,7 +107,7 @@ func MovementLoop():
 		movement.y +=1
 		move_direction="S"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(0,-180,0)
+		dashrot = 180
 		return
 	if Input.is_action_pressed("ui_right"):
 		moving = true
@@ -113,7 +115,7 @@ func MovementLoop():
 		movement.y +=0
 		move_direction="E"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(-180,0,0)
+		dashrot = 90
 		return
 	if Input.is_action_pressed("ui_left"):
 		moving = true
@@ -121,7 +123,7 @@ func MovementLoop():
 		movement.y +=0
 		move_direction="W"
 		movement = movement.normalized() * speed
-		dashvector = Vector3(180,0,0)
+		dashrot = -90
 		return
 	
 	moving = false

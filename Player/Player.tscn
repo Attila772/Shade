@@ -1,46 +1,16 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Playeranim/PlayerWalkTP.png" type="Texture" id=2]
-[ext_resource path="res://Player/Particles2D2.gd" type="Script" id=3]
+[ext_resource path="res://Resources/trace_02.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/walking.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/518909__samihil__ambient-track.wav" type="AudioStream" id=5]
-[ext_resource path="res://Resources/floaty_32.png" type="Texture" id=6]
+[ext_resource path="res://Resources/spark_05.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
 [ext_resource path="res://Player/Dist.gd" type="Script" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.0
-
-[sub_resource type="CanvasItemMaterial" id=2]
-blend_mode = 1
-particles_animation = true
-particles_anim_h_frames = 7
-particles_anim_v_frames = 7
-particles_anim_loop = false
-
-[sub_resource type="Gradient" id=3]
-colors = PoolColorArray( 0.504196, 0.51492, 0.675781, 1, 0.0899582, 0.0666504, 0.8125, 1 )
-
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
-
-[sub_resource type="ParticlesMaterial" id=5]
-flag_disable_z = true
-gravity = Vector3( 0, 200, 0 )
-angular_velocity = 35.26
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-angle = 720.0
-angle_random = 1.0
-scale = 5.0
-scale_random = 1.0
-color_ramp = SubResource( 4 )
-anim_speed = 4.41
-anim_speed_random = 1.0
-anim_offset = 0.55
-anim_offset_random = 1.0
 
 [sub_resource type="DynamicFontData" id=6]
 font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
@@ -283,45 +253,48 @@ tracks/0/keys = {
 
 [sub_resource type="CanvasItemMaterial" id=24]
 blend_mode = 1
-particles_animation = true
-particles_anim_h_frames = 6
-particles_anim_v_frames = 7
-particles_anim_loop = false
 
-[sub_resource type="Gradient" id=25]
-offsets = PoolRealArray( 0, 0.0413793, 0.172414, 0.689655, 1 )
-colors = PoolColorArray( 0.58136, 0.620117, 0.584009, 1, 0.84668, 0.84668, 0.84668, 1, 0.729492, 0.7036, 0.683899, 1, 0.823242, 0.733577, 0.684963, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=26]
-gradient = SubResource( 25 )
-
-[sub_resource type="Curve" id=27]
-_data = [ Vector2( 0, 0.259 ), 0.0, 0.0, 0, 0, Vector2( 0.988095, 0.613546 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=28]
-curve = SubResource( 27 )
-
-[sub_resource type="GradientTexture" id=29]
-
-[sub_resource type="ParticlesMaterial" id=30]
-lifetime_randomness = 1.0
-trail_color_modifier = SubResource( 29 )
-emission_shape = 2
-emission_box_extents = Vector3( 10, 30, 1 )
+[sub_resource type="ParticlesMaterial" id=25]
+emission_shape = 1
+emission_sphere_radius = 12.79
 flag_disable_z = true
-gravity = Vector3( 180, -188, 0 )
+gravity = Vector3( 0, 98, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-linear_accel = 100.0
-angle = -140.8
-angle_random = 1.0
-scale_random = 1.0
-scale_curve = SubResource( 28 )
-color_ramp = SubResource( 26 )
-hue_variation = -0.02
-anim_speed = 5.62
-anim_speed_random = 1.0
-anim_offset_random = 1.0
+linear_accel = 13.16
+linear_accel_random = 0.22
+tangential_accel = 2.63
+scale = 0.3
+
+[sub_resource type="CanvasItemMaterial" id=26]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=27]
+offsets = PoolRealArray( 0.062069, 0.531034, 1 )
+colors = PoolColorArray( 0.817246, 0.876953, 0.212387, 1, 0.24099, 0.348633, 0.842166, 1, 0.804868, 0.833984, 0.156372, 1 )
+
+[sub_resource type="GradientTexture" id=28]
+gradient = SubResource( 27 )
+
+[sub_resource type="ParticlesMaterial" id=29]
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+linear_accel = -100.0
+radial_accel = 6.52
+radial_accel_random = 1.0
+angle = 359.9
+angle_random = 0.08
+scale = 0.2
+color_ramp = SubResource( 28 )
+anim_speed = 15.87
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -362,13 +335,6 @@ stream = ExtResource( 5 )
 volume_db = 0.393
 pitch_scale = 0.43
 
-[node name="Particles2D" type="Particles2D" parent="."]
-visible = false
-material = SubResource( 2 )
-position = Vector2( 3.17841, -95.3517 )
-process_material = SubResource( 5 )
-texture = ExtResource( 6 )
-
 [node name="Emp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -12.955
@@ -405,9 +371,18 @@ anims/Walk_SW = SubResource( 22 )
 anims/Walk_W = SubResource( 23 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
+visible = false
+modulate = Color( 0.654902, 0.631373, 0.631373, 0.439216 )
 material = SubResource( 24 )
-position = Vector2( -14.2866, -30.5575 )
-amount = 100
-process_material = SubResource( 30 )
+process_material = SubResource( 25 )
+texture = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+material = SubResource( 26 )
+position = Vector2( 0, -75 )
+rotation = -1.41023
+amount = 1
+lifetime = 0.5
+process_material = SubResource( 29 )
 texture = ExtResource( 6 )
-script = ExtResource( 3 )

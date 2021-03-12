@@ -1,5 +1,6 @@
 extends Node2D
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -7,10 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(self.filename)
-	Global.path = self.filename
-	#var PlayerInstance= Player.instance()
-	#add_child(PlayerInstance)
+	Global.path= self.filename
 	pass # Replace with function body.
 
 
