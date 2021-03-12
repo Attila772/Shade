@@ -253,7 +253,7 @@ scale = Vector2( 0.526181, 0.473779 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 26
-frame = 181
+frame = 105
 
 [node name="walksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

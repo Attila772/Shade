@@ -1,19 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Sunrise.png" type="Texture" id=1]
+[ext_resource path="res://Props/EndMenuButton.gd" type="Script" id=2]
+[ext_resource path="res://Props/TimeData.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 150
+size = 100
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=3]
 font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 
 [sub_resource type="DynamicFont" id=4]
-size = 75
+size = 50
 font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFontData" id=5]
@@ -26,14 +28,15 @@ font_data = SubResource( 5 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.532988, 0.555148 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Victory" type="Label" parent="."]
-margin_left = 72.9197
-margin_top = 64.847
-margin_right = 2937.92
-margin_bottom = 716.847
+margin_left = 332.468
+margin_top = 5.98975
+margin_right = 913.468
+margin_bottom = 201.99
 custom_fonts/font = SubResource( 2 )
 text = "VICTORY"
 __meta__ = {
@@ -41,10 +44,10 @@ __meta__ = {
 }
 
 [node name="Time" type="Label" parent="."]
-margin_left = 123.271
-margin_top = 354.898
-margin_right = 439.271
-margin_bottom = 452.898
+margin_left = 35.2696
+margin_top = 169.382
+margin_right = 351.27
+margin_bottom = 267.382
 custom_fonts/font = SubResource( 4 )
 text = "Time:"
 __meta__ = {
@@ -52,40 +55,41 @@ __meta__ = {
 }
 
 [node name="gadgetsData" type="Label" parent="."]
-margin_left = 947.16
-margin_top = 581.428
-margin_right = 1263.16
-margin_bottom = 679.428
+margin_left = 617.725
+margin_top = 385.076
+margin_right = 933.725
+margin_bottom = 483.076
 custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PointsData" type="Label" parent="."]
-margin_left = 947.16
-margin_top = 471.938
-margin_right = 1263.16
-margin_bottom = 569.938
+margin_left = 599.188
+margin_top = 277.814
+margin_right = 915.188
+margin_bottom = 375.814
 custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TimeData" type="Label" parent="."]
-margin_left = 950.936
-margin_top = 343.572
-margin_right = 1266.94
-margin_bottom = 441.572
+margin_left = 619.123
+margin_top = 147.145
+margin_right = 935.127
+margin_bottom = 245.145
 custom_fonts/font = SubResource( 4 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="gadgetscollected" type="Label" parent="."]
-margin_left = 114.486
-margin_top = 583.378
-margin_right = 902.486
-margin_bottom = 681.378
+margin_left = 21.7278
+margin_top = 407.375
+margin_right = 809.728
+margin_bottom = 505.375
 custom_fonts/font = SubResource( 4 )
 text = "Gadgets collected"
 __meta__ = {
@@ -93,10 +97,10 @@ __meta__ = {
 }
 
 [node name="points" type="Label" parent="."]
-margin_left = 126.065
-margin_top = 466.766
-margin_right = 442.065
-margin_bottom = 564.766
+margin_left = 35.6852
+margin_top = 288.385
+margin_right = 351.685
+margin_bottom = 386.385
 custom_fonts/font = SubResource( 4 )
 text = "POINTS"
 __meta__ = {
@@ -104,10 +108,10 @@ __meta__ = {
 }
 
 [node name="points2" type="Label" parent="."]
-margin_left = 165.632
-margin_top = 875.801
-margin_right = 481.632
-margin_bottom = 973.801
+margin_left = 717.424
+margin_top = 480.984
+margin_right = 1033.42
+margin_bottom = 578.984
 custom_fonts/font = SubResource( 4 )
 text = "Next"
 __meta__ = {
@@ -116,11 +120,12 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0.0352941 )
-margin_left = 114.295
-margin_top = 855.453
-margin_right = 591.295
-margin_bottom = 1003.45
+margin_left = 628.01
+margin_top = 486.892
+margin_right = 1010.01
+margin_bottom = 589.892
 custom_fonts/font = SubResource( 6 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

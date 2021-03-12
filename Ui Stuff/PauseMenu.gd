@@ -1,4 +1,4 @@
-extends ColorRect
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,10 +8,15 @@ extends ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	modulate.a = 0.5
+	get_tree().paused = true
+	
 	pass # Replace with function body.
 
-
+func _physics_process(delta):
+	if Input.is_action_just_released("IngameMenu"):
+		get_tree().paused = false
+		get_parent().remove_child(self)
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -20,16 +20,8 @@ func _process(delta):
 	if dist < 100:
 		if count ==0:
 			if get_parent().get_node("Player").HasTreasure ==true:
-				$Label2.visible = false
-				$AudioStreamPlayer2D.play()
-				var escape = load("res://Props/EndMenu.tscn").instance()
-				
-				var camerapos = player.get_position_in_parent()
-				escape.rect_position = player.position
-				get_parent().get_parent().add_child(escape)
-				escape.rect_position+= Vector2(-300,-300)
-				
-				count +=1
+				get_tree().change_scene("res://Props/EndScreen.tscn")
+			
 			
 	else:
 		$Label2.visible = true

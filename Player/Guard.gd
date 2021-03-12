@@ -8,7 +8,7 @@ var angle
 var move_direction = "S"
 var center = position
 var radius = 500
-var color = Color(1.0, 0.0, 0.0,0.5)
+var color = Color(1.0, 0.0, 0.0,0.2)
 var angle_from = 0 
 var angle_to = 90
 # Declare member variables here. Examples:

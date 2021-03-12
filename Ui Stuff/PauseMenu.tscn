@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Ui Stuff/PauseMenu.gd" type="Script" id=1]
+[ext_resource path="res://Ui Stuff/resume.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = SubResource( 3 )
+
+[node name="PauseMenu" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.192157, 0.152941, 0.152941, 0.396078 )
+margin_right = 422.0
+margin_bottom = 506.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.882353, 0.917647, 0.92549, 1 )
+margin_left = 39.8672
+margin_top = 12.7755
+margin_right = 475.867
+margin_bottom = 52.7755
+custom_fonts/font = SubResource( 2 )
+text = "GAME PAUSED"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0.54902 )
+margin_left = 81.1796
+margin_top = 75.5291
+margin_right = 341.18
+margin_bottom = 155.529
+custom_fonts/font = SubResource( 4 )
+text = "Resume game"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume2" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0.54902 )
+margin_left = 86.3695
+margin_top = 306.34
+margin_right = 346.369
+margin_bottom = 386.34
+custom_fonts/font = SubResource( 4 )
+text = "EXIT TO MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume3" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.54902 )
+margin_left = 84.0081
+margin_top = 176.053
+margin_right = 344.009
+margin_bottom = 256.053
+custom_fonts/font = SubResource( 4 )
+text = "SETTINGS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume4" type="Button" parent="."]
+self_modulate = Color( 1, 1, 1, 0.54902 )
+margin_left = 86.8365
+margin_top = 406.851
+margin_right = 346.837
+margin_bottom = 486.851
+custom_fonts/font = SubResource( 4 )
+text = "EXIT GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
