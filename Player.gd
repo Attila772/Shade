@@ -36,6 +36,7 @@ func _physics_process(delta):
 	if dashtimer <0:
 		$Particles2D2.visible = false
 		$Sprite.visible = true
+		$CollisionShape2D.disabled = false
 		speed = 150
 		
 	if Input.is_action_just_released("IngameMenu"):
@@ -57,7 +58,7 @@ func MovementLoop():
 			$Sprite.visible = false
 			dashtimer =0.3
 			dashcooldown = 1
-			
+			$CollisionShape2D.disabled = true
 			$Particles2D2.visible = true
 			speed *=5
 	
