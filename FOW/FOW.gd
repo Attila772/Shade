@@ -5,7 +5,7 @@ var radius = 500
 var color = Color(1.0, 0.0, 0.0,0.2)
 var angle_from = 0 
 var angle_to = 90
-var movement
+var movement = Vector2(1,1)
 var breee = true
 # Declare member variables here. Examples:
 # var a = 2

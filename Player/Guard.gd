@@ -5,7 +5,7 @@ var speed = 125
 var animation
 var anim_mode="Walk"
 var angle
-var dir
+var dir = Vector2(1,1)
 var move_direction = "S"
 var FOW_location = preload("res://FOW/FOW.tscn")
 var Line_location = preload("res://Line/Line2D.tscn")
@@ -25,6 +25,7 @@ func _ready():
 	var FOW= FOW_location.instance()
 	var Line = Line_location.instance()
 	FOW.parent_body = self
+	FOW.name = "FOW_of_"+str(self.name)
 	Line_name = "Line_of_"+str(self.name)
 	Line.name = Line_name
 	Line.guard= self
