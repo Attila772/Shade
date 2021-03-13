@@ -7,6 +7,12 @@ var angle_from = 0
 var angle_to = 90
 var movement = Vector2(1,1)
 var breee = true
+var seen = false
+enum {
+	Patrol
+	Chase
+}
+var state = Patrol
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -21,7 +27,8 @@ func _ready():
 		var raycast = RayCast2D.new()
 		raycast.enabled=true
 		for j in dudes:
-			raycast.add_exception(j)
+			if !j.name=="Player":
+				raycast.add_exception(j)
 		raycast.name = String(i)
 		add_child(raycast)
 
@@ -33,12 +40,19 @@ func draw_circle_arc_poly(center, radius ,color):
 	for i in range(31):
 		var angle_point
 		var raycast =get_node(String(i))
-		if raycast.is_colliding():
+		if raycast.is_colliding()&& !raycast.get_collider().name=="Player" :
 			angle_point = raycast.get_collision_point()-global_position
 		else :
 			angle_point = raycast.cast_to
 		points_arc.push_back(angle_point)
+		if raycast.is_colliding() && raycast.get_collider().name == "Player":
+			seen = true
 	draw_polygon(points_arc, colors)
+	if seen :
+		parent_body.Line.state= Chase
+		seen = false
+	else :
+		parent_body.Line.state= Patrol
 	
 func _draw():
    draw_circle_arc_poly(center, radius, color )

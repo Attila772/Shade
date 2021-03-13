@@ -7,6 +7,8 @@ var anim_mode="Walk"
 var angle
 var dir = Vector2(1,1)
 var move_direction = "S"
+var FOW
+var Line
 var FOW_location = preload("res://FOW/FOW.tscn")
 var Line_location = preload("res://Line/Line2D.tscn")
 var Line_name
@@ -23,8 +25,8 @@ onready var Patrol_path = get_parent().get_parent().get(str(self.name))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var FOW= FOW_location.instance()
-	var Line = Line_location.instance()
+	FOW= FOW_location.instance()
+	Line = Line_location.instance()
 	FOW.parent_body = self
 	FOW.name = "FOW_of_"+str(self.name)
 	Line_name = "Line_of_"+str(self.name)
