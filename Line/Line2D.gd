@@ -1,12 +1,14 @@
 extends Line2D
 var path = PoolVector2Array()
 var player
+var player_last_position=Vector2(0,0)
 var guard
 var Patrol_path
 var index = 1
 enum {
 	Patrol
 	Chase
+	Search
 }
 var state = Patrol
 # Declare member variables here. Examples:
@@ -31,7 +33,12 @@ func _process(delta):
 			path=get_parent().get_simple_path(guard.position,Patrol_path[index])
 			self.points = path
 		Chase :
-			path=get_parent().get_simple_path(guard.position,player.position)
+			player_last_position= player.position
+			path=get_parent().get_simple_path(guard.position,player_last_position)
 			self.points = path
-			
-#	pass
+		Search :
+			path= get_parent().get_simple_path(guard.position,player_last_position)
+			self.points = path
+			print((guard.position-player_last_position).length())
+			if (guard.position-player_last_position).length()<100:
+				state = Patrol
