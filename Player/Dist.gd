@@ -13,6 +13,8 @@ func _ready():
 func _process(delta):
 	var strarr = str(get_parent().get_parent().get_node("Artifact").dist).split(".")
 	text = strarr[0]
+	if get_parent().get_parent().get_node("Player").Gadget != "RangeFinder":
+		visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

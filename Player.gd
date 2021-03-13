@@ -14,6 +14,7 @@ var HasTreasure = false
 var Gadget = ""
 var timer =1
 var dashcooldown = 0
+const DASHCOOLDOWN = 2
 var dashtimer = 0.5
 var dashrot =0
 # Declare member variables here. Examples:
@@ -55,12 +56,18 @@ func MovementLoop():
 	movement = Vector2(0,0)
 	if Input.is_action_pressed("dash"):
 		if dashcooldown <=0:
-			$Sprite.visible = false
-			dashtimer =0.3
-			dashcooldown = 1
-			$CollisionShape2D.disabled = true
-			$Particles2D2.visible = true
+			dashcooldown = DASHCOOLDOWN
+			if Gadget == "RingOfY":
+				$Sprite.visible = false
+				$Particles2D2.visible = true
+				$CollisionShape2D.disabled = true
+				#dashcooldown += 20
+				speed *=2
 			speed *=5
+			dashtimer =0.3
+			
+			
+			
 	
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left"):
 		moving = true
@@ -130,6 +137,13 @@ func MovementLoop():
 	moving = false
 	
 func _process(delta):
+	$DaschcooldownNum.text = str(stepify(dashcooldown,0.1))
+	if dashcooldown <=0:
+		$DashCooldown.modulate = Color(0,255,0)
+	else:
+		$DashCooldown.modulate = Color(205,0,0)
+		
+	
 	Global.time += delta
 	if movement ==Vector2(0,0):
 		$AnimationPlayer.stop()
@@ -175,5 +189,4 @@ func particles(delta): # Press F to pay respect
 		$Particles2D.visible =false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+

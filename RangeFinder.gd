@@ -12,21 +12,22 @@ func _ready():
 
 
 func _process(delta):
-	var player = get_parent().get_node("YSort").get_node("Player")
+	var player = get_parent().get_node("Test").get_node("Player")
 	var vektor = player.position - position
 	var x = abs(vektor.x)
 	var y = abs(vektor.y)
-	
+	if player.Gadget !="RangeFinder":
+		visible = true
+		
 	
 	var dist = pow(pow(x,2)+pow(y,2),0.5)
-	print(dist)
 	if dist < 100:
 		
 		$Label.visible = true
-		if Input.is_action_pressed("interact"):
+		if Input.is_action_pressed("interact") and visible ==true:
 			visible=false	
-			get_parent().get_node("YSort").get_node("Player").Gadget = "RangeFinder"
-			get_parent().get_node("YSort").get_node("Player").gadgetpickedup()
+			get_parent().get_node("Test").get_node("Player").Gadget = "RangeFinder"
+			get_parent().get_node("Test").get_node("Player").gadgetpickedup()
 	else:
 		$Label.visible = false
 		

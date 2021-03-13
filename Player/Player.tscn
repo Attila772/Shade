@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Playeranim/PlayerWalkTP.png" type="Texture" id=2]
@@ -8,18 +8,19 @@
 [ext_resource path="res://Resources/spark_05.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
 [ext_resource path="res://Player/Dist.gd" type="Script" id=8]
+[ext_resource path="res://Resources/Dash.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.0
 
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=3]
 size = 20
-font_data = SubResource( 6 )
+font_data = SubResource( 2 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -33,7 +34,7 @@ tracks/0/keys = {
 "values": [ 104, 105 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -47,7 +48,7 @@ tracks/0/keys = {
 "values": [ 52, 53 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -61,7 +62,7 @@ tracks/0/keys = {
 "values": [ 78, 79 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -75,7 +76,7 @@ tracks/0/keys = {
 "values": [ 26, 27 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -89,7 +90,7 @@ tracks/0/keys = {
 "values": [ 156, 157 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -103,7 +104,7 @@ tracks/0/keys = {
 "values": [ 130, 131 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -117,7 +118,7 @@ tracks/0/keys = {
 "values": [ 182, 183 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -131,7 +132,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=12]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -146,7 +147,7 @@ tracks/0/keys = {
 "values": [ 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=13]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -161,7 +162,7 @@ tracks/0/keys = {
 "values": [ 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=14]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -176,7 +177,7 @@ tracks/0/keys = {
 "values": [ 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=15]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -191,7 +192,7 @@ tracks/0/keys = {
 "values": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=16]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -206,7 +207,7 @@ tracks/0/keys = {
 "values": [ 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=17]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -221,7 +222,7 @@ tracks/0/keys = {
 "values": [ 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155 ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=18]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -236,7 +237,7 @@ tracks/0/keys = {
 "values": [ 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207 ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=19]
 step = 0.04
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -251,10 +252,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 ]
 }
 
-[sub_resource type="CanvasItemMaterial" id=24]
+[sub_resource type="CanvasItemMaterial" id=20]
 blend_mode = 1
 
-[sub_resource type="ParticlesMaterial" id=25]
+[sub_resource type="ParticlesMaterial" id=21]
 emission_shape = 1
 emission_sphere_radius = 12.79
 flag_disable_z = true
@@ -266,21 +267,21 @@ linear_accel_random = 0.22
 tangential_accel = 2.63
 scale = 0.3
 
-[sub_resource type="CanvasItemMaterial" id=26]
+[sub_resource type="CanvasItemMaterial" id=22]
 blend_mode = 1
 particles_animation = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id=27]
+[sub_resource type="Gradient" id=23]
 offsets = PoolRealArray( 0.062069, 0.531034, 1 )
 colors = PoolColorArray( 0.817246, 0.876953, 0.212387, 1, 0.24099, 0.348633, 0.842166, 1, 0.804868, 0.833984, 0.156372, 1 )
 
-[sub_resource type="GradientTexture" id=28]
-gradient = SubResource( 27 )
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
 
-[sub_resource type="ParticlesMaterial" id=29]
+[sub_resource type="ParticlesMaterial" id=25]
 flag_disable_z = true
 direction = Vector3( 0, 0, 0 )
 spread = 0.0
@@ -293,8 +294,17 @@ radial_accel_random = 1.0
 angle = 359.9
 angle_random = 0.08
 scale = 0.2
-color_ramp = SubResource( 28 )
+color_ramp = SubResource( 24 )
 anim_speed = 15.87
+
+[sub_resource type="CanvasItemMaterial" id=26]
+
+[sub_resource type="DynamicFontData" id=27]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=28]
+size = 30
+font_data = SubResource( 27 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -346,43 +356,61 @@ margin_left = -24.8743
 margin_top = -115.528
 margin_right = 15.1257
 margin_bottom = -88.5278
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 3 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle_E = SubResource( 8 )
-anims/Idle_N = SubResource( 9 )
-anims/Idle_NE = SubResource( 10 )
-anims/Idle_NW = SubResource( 11 )
-anims/Idle_S = SubResource( 12 )
-anims/Idle_SE = SubResource( 13 )
-anims/Idle_SW = SubResource( 14 )
-anims/Idle_W = SubResource( 15 )
-anims/Walk_E = SubResource( 16 )
-anims/Walk_N = SubResource( 17 )
-anims/Walk_NE = SubResource( 18 )
-anims/Walk_NW = SubResource( 19 )
-anims/Walk_S = SubResource( 20 )
-anims/Walk_SE = SubResource( 21 )
-anims/Walk_SW = SubResource( 22 )
-anims/Walk_W = SubResource( 23 )
+anims/Idle_E = SubResource( 4 )
+anims/Idle_N = SubResource( 5 )
+anims/Idle_NE = SubResource( 6 )
+anims/Idle_NW = SubResource( 7 )
+anims/Idle_S = SubResource( 8 )
+anims/Idle_SE = SubResource( 9 )
+anims/Idle_SW = SubResource( 10 )
+anims/Idle_W = SubResource( 11 )
+anims/Walk_E = SubResource( 12 )
+anims/Walk_N = SubResource( 13 )
+anims/Walk_NE = SubResource( 14 )
+anims/Walk_NW = SubResource( 15 )
+anims/Walk_S = SubResource( 16 )
+anims/Walk_SE = SubResource( 17 )
+anims/Walk_SW = SubResource( 18 )
+anims/Walk_W = SubResource( 19 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 visible = false
 modulate = Color( 0.654902, 0.631373, 0.631373, 0.439216 )
-material = SubResource( 24 )
-process_material = SubResource( 25 )
+material = SubResource( 20 )
+process_material = SubResource( 21 )
 texture = ExtResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 visible = false
-material = SubResource( 26 )
+material = SubResource( 22 )
 position = Vector2( 0, -75 )
 rotation = -1.41023
 amount = 1
 lifetime = 0.5
-process_material = SubResource( 29 )
+process_material = SubResource( 25 )
 texture = ExtResource( 6 )
+
+[node name="DashCooldown" type="Sprite" parent="."]
+modulate = Color( 0.313726, 1, 0, 1 )
+material = SubResource( 26 )
+position = Vector2( -466.69, -257.387 )
+scale = Vector2( 0.688873, 0.717157 )
+texture = ExtResource( 9 )
+
+[node name="DaschcooldownNum" type="Label" parent="."]
+margin_left = -422.51
+margin_top = -291.612
+margin_right = -353.51
+margin_bottom = -225.612
+custom_fonts/font = SubResource( 28 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
