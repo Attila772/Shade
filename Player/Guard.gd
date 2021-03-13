@@ -8,6 +8,8 @@ var angle
 var dir
 var move_direction = "S"
 var FOW_location = preload("res://FOW/FOW.tscn")
+var Line_location = preload("res://Line/Line2D.tscn")
+var Line_name
 #var center = position
 #var radius = 500
 #var color = Color(1.0, 0.0, 0.0,0.2)
@@ -21,8 +23,14 @@ var FOW_location = preload("res://FOW/FOW.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var FOW= FOW_location.instance()
+	var Line = Line_location.instance()
 	FOW.parent_body = self
+	Line_name = "Line_of_"+str(self.name)
+	Line.name = Line_name
+	Line.guard= self
+	Line.player = get_parent().get_node("Player")
 	get_parent().get_parent().get_node("Floor").add_child(FOW)
+	get_parent().get_parent().get_node("Navigation2D").add_child(Line)
 #	for i in 31 :
 #		var raycast = RayCast2D.new()
 #		raycast.enabled=true
@@ -30,7 +38,7 @@ func _ready():
 #		add_child(raycast)
 
 func movementloop():
-	movement = $'../../Navigation2D/Line2D'.points[1]-self.position
+	movement = $'../../Navigation2D'.get_node(Line_name).points[1]-self.position
 	angle = rad2deg(Vector2(0,-1).angle_to(movement))
 	if (angle>-22.5 && angle<22.5):
 		move_direction="N"
