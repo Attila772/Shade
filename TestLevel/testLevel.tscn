@@ -1,21 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://TestLevel/testLevel.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Props/CollisionTest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/gadgets/RingOfY.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/Guard.tscn" type="PackedScene" id=8]
 [ext_resource path="res://TestLevel/Navigation2D.gd" type="Script" id=9]
+[ext_resource path="res://Assets/gadgets/RangeFinder.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/gadgets/Emp.tscn" type="PackedScene" id=12]
 
 [sub_resource type="PhysicsMaterial" id=1]
 rough = true
 
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 810.573, -51.8715, 964.899, -67.7189, 4132.34, -125.706, 878.923, 130.898, 798.587, -44.1878, 1676.43, -323.114, 993.367, -73.9619, 975.387, -80.6851, 746.146, -43.9477, -1505.08, -62.6916, 596.315, -56.9138, 527.393, -67.7189, 593.319, -61.476, 489.136, -67.8694, 924.444, -68.4393, 548.369, -72.2811, 540.878, -79.0043, 504.595, -101.602, 283.403, -100.839, 492.703, -107.51, 241.78, -102.745, 615.793, -111.66, 558.11, -113.799, 672.729, -65.5579, 623.285, -65.0777, 780.607, -55.7133, 207.293, -91.3105, 189.455, -97.9808 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 2, 6, 7 ), PoolIntArray( 8, 4, 3 ), PoolIntArray( 8, 3, 9, 10 ), PoolIntArray( 11, 12, 10, 9, 13 ), PoolIntArray( 14, 15, 16 ), PoolIntArray( 17, 14, 16, 18 ), PoolIntArray( 19, 17, 18, 20 ), PoolIntArray( 5, 7, 21 ), PoolIntArray( 5, 21, 22 ), PoolIntArray( 9, 5, 22, 20 ), PoolIntArray( 11, 15, 14, 23, 24 ), PoolIntArray( 1, 6, 2 ), PoolIntArray( 14, 1, 0, 25 ), PoolIntArray( 14, 25, 23 ), PoolIntArray( 11, 24, 12 ), PoolIntArray( 26, 13, 9 ), PoolIntArray( 27, 26, 9 ), PoolIntArray( 22, 19, 20 ), PoolIntArray( 9, 20, 27 ) ]
-outlines = [ PoolVector2Array( -1505.08, -62.6916, 878.923, 130.898, 4132.34, -125.706, 1676.43, -323.114 ), PoolVector2Array( 207.293, -91.3105, 189.455, -97.9808, 241.78, -102.745, 283.403, -100.839, 540.878, -79.0043, 548.369, -72.2811, 527.393, -67.7189, 489.136, -67.8694 ), PoolVector2Array( 504.595, -101.602, 492.703, -107.51, 558.11, -113.799, 615.793, -111.66, 975.387, -80.6851, 993.367, -73.9619, 964.899, -67.7189, 924.444, -68.4393 ), PoolVector2Array( 593.319, -61.476, 623.285, -65.0777, 672.729, -65.5579, 780.607, -55.7133, 810.573, -51.8715, 798.587, -44.1878, 746.146, -43.9477, 596.315, -56.9138 ) ]
+vertices = PoolVector2Array( 529.622, -64.8589, 552.072, -70.0754, 666.209, -82.69, 941.153, -62.1724, 627.556, -64.1712, 823.554, -45.8963, 4132.34, -125.706, 878.923, 130.898, 800.391, -38.7577, 1676.43, -323.114, 1017.77, -67.5977, 1007.08, -74.7363, 525.994, -97.0088, 542.03, -76.1641, 263.19, -100.766, 517.085, -103.005, -1505.08, -62.6916, 761.191, -39.3288, 593.702, -54.7482, 586.575, -60.4591, 489.214, -63.7796, 622.211, -106.717, 805.736, -51.0361, 991.043, -61.8868, 558.066, -109.002, 223.991, -100.48, 666.756, -63.029, 196.361, -89.8702, 190.137, -96.197 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 6, 10, 11 ), PoolIntArray( 12, 2, 1, 13 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 8, 7, 16, 17 ), PoolIntArray( 18, 17, 16 ), PoolIntArray( 19, 18, 16, 20 ), PoolIntArray( 9, 11, 21 ), PoolIntArray( 6, 5, 22, 23 ), PoolIntArray( 9, 21, 24 ), PoolIntArray( 16, 9, 24, 25 ), PoolIntArray( 23, 10, 6 ), PoolIntArray( 3, 23, 22, 26 ), PoolIntArray( 24, 15, 14, 25 ), PoolIntArray( 3, 26, 4 ), PoolIntArray( 0, 4, 19, 20 ), PoolIntArray( 27, 20, 16 ), PoolIntArray( 28, 27, 16 ), PoolIntArray( 25, 28, 16 ) ]
+outlines = [ PoolVector2Array( -1505.08, -62.6916, 878.923, 130.898, 4132.34, -125.706, 1676.43, -323.114 ), PoolVector2Array( 196.361, -89.8702, 190.137, -96.197, 223.991, -100.48, 263.19, -100.766, 542.03, -76.1641, 552.072, -70.0754, 529.622, -64.8589, 489.214, -63.7796 ), PoolVector2Array( 525.994, -97.0088, 517.085, -103.005, 558.066, -109.002, 622.211, -106.717, 1007.08, -74.7363, 1017.77, -67.5977, 991.043, -61.8868, 941.153, -62.1724, 666.209, -82.69 ), PoolVector2Array( 586.575, -60.4591, 627.556, -64.1712, 666.756, -63.029, 805.736, -51.0361, 823.554, -45.8963, 800.391, -38.7577, 761.191, -39.3288, 593.702, -54.7482 ) ]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 34.2236, -29.3984 )
@@ -33,7 +36,7 @@ tile_data = PoolIntArray( -786438, 141, 0, -786437, 141, 0, -786436, 141, 0, -78
 [node name="Player" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 3 )]
-position = Vector2( 865.59, 565.71 )
+position = Vector2( 79.2902, 447.777 )
 collision_mask = 3
 
 [node name="CollisionTest" parent="Test" groups=[
@@ -78,17 +81,7 @@ position = Vector2( 1131.1, -42.9867 )
 [node name="Guard" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 8 )]
-position = Vector2( 972.5, 673.306 )
-
-[node name="Guard2" parent="Test" groups=[
-"dudes",
-] instance=ExtResource( 8 )]
-position = Vector2( 395.849, 617.243 )
-
-[node name="Guard3" parent="Test" groups=[
-"dudes",
-] instance=ExtResource( 8 )]
-position = Vector2( 569.379, 374.302 )
+position = Vector2( 1219.7, 112.207 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
@@ -103,16 +96,25 @@ navpoly = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -9.51367, 0 )
-polygon = PoolVector2Array( 909.635, -916.716, 4122.54, 823.076, 5153.58, 435.432, 850.691, -1511.2 )
+polygon = PoolVector2Array( 909.635, -916.716, 4122.54, 823.076, 6779.28, -177.262, 884.383, -3058.7 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -3720.11, 89.7969 )
-polygon = PoolVector2Array( 2136.13, 385.296, 4632.49, -943.699, 4569.63, -1635.14, 435.454, 96.7339 )
+polygon = PoolVector2Array( 2136.13, 385.296, 4632.49, -943.699, 4556.88, -3199.29, -2770.56, 280.291 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -6663.47, 1517.57 )
-polygon = PoolVector2Array( 8395.65, 606.655, 4419.68, -1387.61, 3129.92, -1127.39, 7225.48, 1395.57 )
+polygon = PoolVector2Array( 8395.65, 606.655, 4419.68, -1387.61, 566.474, -1058.59, 7436.75, 3449.63 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( 690.442, 1494.94 )
-polygon = PoolVector2Array( -406.265, 1349.28, 4373.8, -1134.84, 4974.05, 3.97974, 1285.78, 1644.47 )
+polygon = PoolVector2Array( -406.265, 1349.28, 4373.8, -1134.84, 7349.1, -2012.93, 9521.33, -225.362, -27.4361, 3960.71 )
+
+[node name="Node2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -279.775, 510.282 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 12 )]
+position = Vector2( -69.8358, 389.981 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 142.876, 285.213 )
