@@ -96,7 +96,7 @@ navpoly = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -9.51367, 0 )
-polygon = PoolVector2Array( 909.635, -916.716, 4122.54, 823.076, 6779.28, -177.262, 884.383, -3058.7 )
+polygon = PoolVector2Array( 918.142, -851.346, 4122.54, 823.076, 6779.28, -177.262, 847.232, -3112.37 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -3720.11, 89.7969 )
