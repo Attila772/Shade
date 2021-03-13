@@ -10,6 +10,7 @@ var move_direction = "S"
 var FOW_location = preload("res://FOW/FOW.tscn")
 var Line_location = preload("res://Line/Line2D.tscn")
 var Line_name
+onready var Patrol_path = get_parent().get_parent().get(str(self.name))
 #var center = position
 #var radius = 500
 #var color = Color(1.0, 0.0, 0.0,0.2)
@@ -29,6 +30,7 @@ func _ready():
 	Line_name = "Line_of_"+str(self.name)
 	Line.name = Line_name
 	Line.guard= self
+	Line.Patrol_path = Patrol_path
 	Line.player = get_parent().get_node("Player")
 	get_parent().get_parent().get_node("Floor").add_child(FOW)
 	get_parent().get_parent().get_node("Navigation2D").add_child(Line)

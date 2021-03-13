@@ -36,7 +36,7 @@ tile_data = PoolIntArray( -786438, 141, 0, -786437, 141, 0, -786436, 141, 0, -78
 [node name="Player" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 3 )]
-position = Vector2( 79.2902, 447.777 )
+position = Vector2( 400.273, 555.839 )
 collision_mask = 3
 
 [node name="CollisionTest" parent="Test" groups=[
@@ -81,7 +81,7 @@ position = Vector2( 1131.1, -42.9867 )
 [node name="Guard" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 8 )]
-position = Vector2( 1219.7, 112.207 )
+position = Vector2( 43.873, 544.285 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
@@ -96,7 +96,7 @@ navpoly = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -9.51367, 0 )
-polygon = PoolVector2Array( 918.142, -851.346, 4122.54, 823.076, 6779.28, -177.262, 847.232, -3112.37 )
+polygon = PoolVector2Array( 820.465, -898.943, 4122.54, 823.076, 6779.28, -177.262, 718.526, -3175.57 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -3720.11, 89.7969 )
