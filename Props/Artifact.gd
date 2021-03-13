@@ -10,7 +10,7 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	var player = get_parent().get_node("Player")
+	var player = get_parent().get_node("Dudes").get_node("Player")
 	var vektor = player.position - position
 	var x = abs(vektor.x)
 	var y = abs(vektor.y)
@@ -25,7 +25,7 @@ func _process(delta):
 			visible=false	
 			$Pickup_sound.play()
 			$CollisionPolygon2D.disabled = true
-			get_parent().get_node("Player").HasTreasure = true
+			get_parent().get_node("Dudes").get_node("Player").HasTreasure = true
 	else:
 		$Label.visible = false
 		

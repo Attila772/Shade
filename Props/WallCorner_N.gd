@@ -8,7 +8,7 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	if get_parent().get_node("Player").position.y < position.y and get_parent().get_node("Player").position.y > position.y-128 and get_parent().get_node("Player").position.x> position.x-80 and  get_parent().get_node("Player").position.x< position.x+70 :
+	if get_parent().get_parent().get_node("Dudes").get_node("Player").position.y < position.y and get_parent().get_parent().get_node("Dudes").get_node("Player").position.y > position.y-128 and get_parent().get_parent().get_node("Dudes").get_node("Player").position.x> position.x-80 and  get_parent().get_parent().get_node("Dudes").get_node("Player").position.x< position.x+70 :
 		$Sprite.modulate.a = 0.5
 	else:
 		$Sprite.modulate.a = 1

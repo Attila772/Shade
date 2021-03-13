@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://TestLevel/testLevel.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Props/Radio.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/Guard.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PhysicsMaterial" id=1]
 rough = true
@@ -32,36 +33,43 @@ tile_data = PoolIntArray( -786438, 185, 0, -786437, 177, 0, -786436, 177, 0, -78
 
 [node name="Test" type="YSort" parent="."]
 
-[node name="Player" parent="Test" instance=ExtResource( 3 )]
-position = Vector2( 903.592, 73.0364 )
+[node name="Dudes" type="Node" parent="Test"]
+
+[node name="Guard" parent="Test/Dudes" instance=ExtResource( 8 )]
+position = Vector2( -135.056, 63.4796 )
+
+[node name="Player" parent="Test/Dudes" instance=ExtResource( 3 )]
+position = Vector2( 915.592, 69.0364 )
 collision_mask = 3
 
-[node name="CollisionTest" parent="Test" instance=ExtResource( 4 )]
-position = Vector2( 902.502, 460.978 )
+[node name="Walls" type="Node" parent="Test"]
+
+[node name="CollisionTest" parent="Test/Walls" instance=ExtResource( 4 )]
+position = Vector2( 914.502, 456.978 )
 collision_layer = 2147483649
 collision_mask = 15
 physics_material_override = SubResource( 1 )
 
-[node name="CollisionTest2" parent="Test" instance=ExtResource( 4 )]
-position = Vector2( 443.65, 478.461 )
+[node name="CollisionTest2" parent="Test/Walls" instance=ExtResource( 4 )]
+position = Vector2( 455.65, 474.461 )
 
-[node name="CollisionTest3" parent="Test" instance=ExtResource( 4 )]
-position = Vector2( 316.85, 537.469 )
+[node name="CollisionTest3" parent="Test/Walls" instance=ExtResource( 4 )]
+position = Vector2( 328.85, 533.469 )
 
-[node name="CollisionTest4" parent="Test" instance=ExtResource( 4 )]
-position = Vector2( 715.287, 312.058 )
+[node name="CollisionTest4" parent="Test/Walls" instance=ExtResource( 4 )]
+position = Vector2( 727.287, 308.058 )
 
-[node name="CollisionTest5" parent="Test" instance=ExtResource( 5 )]
-position = Vector2( 2453.35, 889.104 )
+[node name="CollisionTest6" parent="Test/Walls" instance=ExtResource( 4 )]
+position = Vector2( 789.841, 515.41 )
 
-[node name="CollisionTest6" parent="Test" instance=ExtResource( 4 )]
-position = Vector2( 777.841, 519.41 )
-
-[node name="CollisionTest7" parent="Test" instance=ExtResource( 4 )]
-position = Vector2( 647.027, 583.483 )
+[node name="CollisionTest7" parent="Test/Walls" instance=ExtResource( 4 )]
+position = Vector2( 659.027, 579.483 )
 
 [node name="Artifact" parent="Test" instance=ExtResource( 6 )]
 position = Vector2( 1501.94, 492.872 )
 
 [node name="CollisionTest9" parent="Test" instance=ExtResource( 7 )]
 position = Vector2( 1131.1, -42.9867 )
+
+[node name="CollisionTest5" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2453.35, 889.104 )

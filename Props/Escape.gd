@@ -9,7 +9,7 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	var player = get_parent().get_node("Player")
+	var player = get_parent().get_node("Dudes").get_node("Player")
 	var vektor = player.position - position
 	var x = abs(vektor.x)
 	var y = abs(vektor.y)
@@ -19,7 +19,7 @@ func _process(delta):
 	print(dist)
 	if dist < 100:
 		if count ==0:
-			if get_parent().get_node("Player").HasTreasure ==true:
+			if get_parent().get_node("Dudes").get_node("Player").HasTreasure ==true:
 				$Label.visible = true
 				$Label2.visible = false
 				$AudioStreamPlayer2D.play()
