@@ -8,6 +8,7 @@ var angle_to = 90
 var movement = Vector2(1,1)
 var breee = true
 var got_track = false
+var is_camera = false
 enum {
 	Patrol
 	Chase
@@ -49,12 +50,13 @@ func draw_circle_arc_poly(center, radius ,color):
 		if raycast.is_colliding() && raycast.get_collider().name == "Player":
 			seen = true
 	draw_polygon(points_arc, colors)
-	if seen :
-		parent_body.Line.state= Chase
-		got_track= true
-	if got_track && !seen :
-		parent_body.Line.state = Search
-		got_track=false
+	if !is_camera:
+		if seen :
+			parent_body.Line.state= Chase
+			got_track= true
+		if got_track && !seen :
+			parent_body.Line.state = Search
+			got_track=false
 	seen= false
 func _draw():
    draw_circle_arc_poly(center, radius, color )

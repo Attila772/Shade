@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://TestLevel/testLevel.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/Guard.tscn" type="PackedScene" id=8]
 [ext_resource path="res://TestLevel/Navigation2D.gd" type="Script" id=9]
+[ext_resource path="res://Props/CCTV.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/gadgets/RangeFinder.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/gadgets/Emp.tscn" type="PackedScene" id=12]
 
@@ -87,6 +88,9 @@ position = Vector2( 43.873, 544.285 )
 "dudes",
 ] instance=ExtResource( 8 )]
 position = Vector2( 639.148, 723.661 )
+
+[node name="Camera" parent="Test" instance=ExtResource( 10 )]
+position = Vector2( -500.067, 497.948 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 script = ExtResource( 9 )
