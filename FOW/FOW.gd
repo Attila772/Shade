@@ -10,6 +10,7 @@ var breee = true
 var got_track = false
 var spot_time = 1
 var delta_for_timer
+var is_camera = false
 enum {
 	Patrol
 	Chase
@@ -52,17 +53,14 @@ func draw_circle_arc_poly(center, radius ,color):
 			spot_time -= delta_for_timer
 			seen = true
 	draw_polygon(points_arc, colors)
-	if !seen : 
-		spot_time = 1
-		color = Color(0.0, 1.0, 0.0,0.2)
-	if seen && spot_time<0 :
-		parent_body.Line.state= Chase
-		got_track= true
-		color = Color(1.0, 0.0, 0.0,0.2)
-	if got_track && !seen :
-		parent_body.Line.state = Search
-		got_track=false
-		
+	if !is_camera:
+		if seen :
+			parent_body.Line.state= Chase
+			got_track= true
+		if got_track && !seen :
+			parent_body.Line.state = Search
+			got_track=false
+	seen= false
 func _draw():
    draw_circle_arc_poly(center, radius, color )
 
