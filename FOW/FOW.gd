@@ -8,14 +8,15 @@ var angle_to = 90
 var movement = Vector2(1,1)
 var breee = true
 var got_track = false
-var spot_time = 1
+var timer = 2
 var delta_for_timer
 var is_camera = false
 enum {
 	Patrol
 	Chase
 	Search
-}
+	Sus
+	}
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -38,6 +39,8 @@ func _ready():
 func draw_circle_arc_poly(center, radius ,color):
 	var points_arc = PoolVector2Array()
 	points_arc.push_back(center)
+	color[0]+=1-timer/2 
+	color[1]-=1-timer/2
 	var colors = PoolColorArray([color])
 	var seen = false
 	for i in range(31):
@@ -50,17 +53,20 @@ func draw_circle_arc_poly(center, radius ,color):
 		points_arc.push_back(angle_point)
 		draw_line(points_arc[i-1],points_arc[i],Color(0,0,1,1)) 
 		if raycast.is_colliding() && raycast.get_collider().name == "Player":
-			spot_time -= delta_for_timer
 			seen = true
 	draw_polygon(points_arc, colors)
 	if !is_camera:
-		if seen :
+		if seen &&timer >0 :
+			timer-=delta_for_timer
+		if timer <0 && !got_track:
 			parent_body.Line.state= Chase
+			timer = 0
 			got_track= true
-		if got_track && !seen :
-			parent_body.Line.state = Search
+		if got_track && !seen  && timer < 2:
+			timer = 2
+			parent_body.Line.state= Search
 			got_track=false
-	seen= false
+		
 func _draw():
    draw_circle_arc_poly(center, radius, color )
 

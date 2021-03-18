@@ -5,6 +5,7 @@ var player_last_position=Vector2(0,0)
 var guard
 var Patrol_path
 var index = 1
+var timer = 2
 enum {
 	Patrol
 	Chase
@@ -25,6 +26,7 @@ func _ready():
 func _process(delta):
 	match state:
 		Patrol:
+			timer = 2
 			var dist = (guard.position-Patrol_path[index]).length()
 			if dist< 5: 
 				index+=1
@@ -33,12 +35,17 @@ func _process(delta):
 			path=get_parent().get_simple_path(guard.position,Patrol_path[index])
 			self.points = path
 		Chase :
-			player_last_position= player.position
+			guard.speed = 125
+			player_last_position = player.global_position
 			path=get_parent().get_simple_path(guard.position,player_last_position)
 			self.points = path
 		Search :
-			path= get_parent().get_simple_path(guard.position,player_last_position)
-			self.points = path
-			print((guard.position-player_last_position).length())
-			if (guard.position-player_last_position).length()<100:
-				state = Patrol
+			if (guard.position-player_last_position).length()>100:
+				path= get_parent().get_simple_path(guard.position,player_last_position)
+				self.points = path
+			else:
+				guard.speed = 0
+				timer-=delta
+				if timer<0:
+					guard.speed = 125
+					state = Patrol
