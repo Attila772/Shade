@@ -2,18 +2,21 @@ extends Node2D
 var parent_body
 var center = Vector2(0,0)
 var radius = 500
-var color = Color(1.0, 0.0, 0.0,0.2)
+var color = Color(0.0, 1.0, 0.0,0.2)
 var angle_from = 0 
 var angle_to = 90
 var movement = Vector2(1,1)
 var breee = true
 var got_track = false
+var timer = 2
+var delta_for_timer
 var is_camera = false
 enum {
 	Patrol
 	Chase
 	Search
-}
+	Sus
+	}
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -36,6 +39,8 @@ func _ready():
 func draw_circle_arc_poly(center, radius ,color):
 	var points_arc = PoolVector2Array()
 	points_arc.push_back(center)
+	color[0]+=1-timer/2 
+	color[1]-=1-timer/2
 	var colors = PoolColorArray([color])
 	var seen = false
 	for i in range(31):
@@ -51,13 +56,17 @@ func draw_circle_arc_poly(center, radius ,color):
 			seen = true
 	draw_polygon(points_arc, colors)
 	if !is_camera:
-		if seen :
+		if seen &&timer >0 :
+			timer-=delta_for_timer
+		if timer <0 && !got_track:
 			parent_body.Line.state= Chase
+			timer = 0
 			got_track= true
-		if got_track && !seen :
-			parent_body.Line.state = Search
+		if got_track && !seen  && timer < 2:
+			timer = 2
+			parent_body.Line.state= Search
 			got_track=false
-	seen= false
+		
 func _draw():
    draw_circle_arc_poly(center, radius, color )
 
@@ -68,6 +77,7 @@ func Organise_RayCasts():
 		raycast.cast_to = (movement.normalized().rotated(deg2rad((i-15)*3))*radius)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	delta_for_timer=delta
 	position = parent_body.position
 	movement = parent_body.dir
 	Organise_RayCasts()
