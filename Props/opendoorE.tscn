@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/DoorWClosed.png" type="Texture" id=1]
+[ext_resource path="res://Props/opendoorE.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = SubResource( 1 )
+
+[node name="CollisionTest" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2( 64.1272, -17.6779 )
+scale = Vector2( 1.06825, 1.18719 )
+polygon = PoolVector2Array( -107.221, 18.3753, -127.057, 3.20433, -4.0765, -19.106, -6.06002, -3.93497 )
+
+[node name="Etoopen" type="Label" parent="."]
+visible = false
+margin_left = -66.8325
+margin_top = -251.108
+margin_right = 65.1675
+margin_bottom = -211.108
+custom_fonts/font = SubResource( 2 )
+text = "E to open"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="find" type="Label" parent="."]
+visible = false
+margin_left = -66.8325
+margin_top = -251.108
+margin_right = 65.1675
+margin_bottom = -211.108
+custom_fonts/font = SubResource( 2 )
+text = "Find the key"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -94.7523 )
+texture = ExtResource( 1 )

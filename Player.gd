@@ -17,6 +17,7 @@ var dashcooldown = 0
 const DASHCOOLDOWN = 2
 var dashtimer = 0.5
 var dashrot =0
+var haskey = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

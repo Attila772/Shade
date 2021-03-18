@@ -1,4 +1,5 @@
 extends StaticBody2D
+
 var dudes
 var IsBehind = false
 # Declare member variables here. Examples:
@@ -12,13 +13,8 @@ func _process(delta):
 	for i in dudes:
 		if i.position.y < position.y and i.position.y > position.y-128 and i.position.x> position.x-80 and  i.position.x< position.x+70 :
 			IsBehind = true 
-	
 	if IsBehind :
 		$Sprite.modulate.a = 0.5
 	else:
 		$Sprite.modulate.a = 1
 	IsBehind= false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
