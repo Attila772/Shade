@@ -22,7 +22,16 @@ var haskey = false
 # var a = 2
 # var b = "text"
 func _ready():
-	
+#	var uinode =$Camera2D/MarginContainer/Sprite
+#	var label = $DaschcooldownNum
+#	remove_child($Camera2D/MarginContainer/Sprite)
+#	remove_child($DaschcooldownNum)
+#	get_parent().get_parent().add_child(uinode)
+#	get_parent().get_parent().add_child(label)
+#
+#	var temp = get_parent().get_parent().get_node("label")
+#	print(temp.get_path())
+#	print("YEET")
 	Global.time = 0
 	$BackgroundTrack.play()
 
@@ -138,11 +147,11 @@ func MovementLoop():
 	moving = false
 	
 func _process(delta):
-	$DaschcooldownNum.text = str(stepify(dashcooldown,0.1))
+	get_parent().get_parent().get_node("Camera2D").get_node("label").text = str(stepify(dashcooldown,0.1))
 	if dashcooldown <=0:
-		$DashCooldown.modulate = Color(0,255,0)
+		get_parent().get_parent().get_node("Camera2D").get_node("uinode").modulate = Color(0,255,0)
 	else:
-		$DashCooldown.modulate = Color(205,0,0)
+		get_parent().get_parent().get_node("Camera2D").get_node("uinode").modulate  = Color(205,0,0)
 		
 	
 	Global.time += delta
@@ -166,8 +175,8 @@ func AnimationLoop():
 
 func gadgetpickedup():
 	var path = "res://Assets/gadgets/" + Gadget + ".png"
-	$Camera2D/MarginContainer/Sprite.texture = load(path)
-	$Camera2D/MarginContainer/Sprite.scale = Vector2(0.3,0.3)
+	get_parent().get_parent().get_node("Camera2D").get_node("MarginContainer").get_node("Sprite").texture = load(path)
+	get_parent().get_parent().get_node("Camera2D").get_node("MarginContainer").get_node("Sprite").scale = Vector2(0.3,0.3)
 
 func particles(delta): # Press F to pay respect
 	if Input.is_action_just_released("Gadget"):

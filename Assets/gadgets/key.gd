@@ -23,7 +23,7 @@ func _process(delta):
 	if dist < 100:
 		
 		$Label.visible = true
-		if Input.is_action_pressed("interact") and visible ==true:
+		if Input.is_action_just_released("interact") and visible ==true:
 			visible=false	
 			get_parent().get_node("Test").get_node("Player").haskey = true
 	else:

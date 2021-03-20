@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Playeranim/PlayerWalkTP.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Resources/spark_05.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
 [ext_resource path="res://Player/Dist.gd" type="Script" id=8]
-[ext_resource path="res://Resources/Dash.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.0
@@ -297,15 +296,6 @@ scale = 0.2
 color_ramp = SubResource( 24 )
 anim_speed = 15.87
 
-[sub_resource type="CanvasItemMaterial" id=26]
-
-[sub_resource type="DynamicFontData" id=27]
-font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
-
-[sub_resource type="DynamicFont" id=28]
-size = 30
-font_data = SubResource( 27 )
-
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -321,20 +311,6 @@ texture = ExtResource( 2 )
 vframes = 8
 hframes = 26
 frame = 104
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D"]
-margin_left = 366.574
-margin_top = -259.568
-margin_right = 406.574
-margin_bottom = -219.568
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="Camera2D/MarginContainer"]
 
 [node name="walksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -396,21 +372,3 @@ amount = 1
 lifetime = 0.5
 process_material = SubResource( 25 )
 texture = ExtResource( 6 )
-
-[node name="DashCooldown" type="Sprite" parent="."]
-modulate = Color( 0.313726, 1, 0, 1 )
-material = SubResource( 26 )
-position = Vector2( -466.69, -257.387 )
-scale = Vector2( 0.688873, 0.717157 )
-texture = ExtResource( 9 )
-
-[node name="DaschcooldownNum" type="Label" parent="."]
-margin_left = -422.51
-margin_top = -291.612
-margin_right = -353.51
-margin_bottom = -225.612
-custom_fonts/font = SubResource( 28 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Ui Stuff/Camera.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Dash.png" type="Texture" id=9]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D"]
+current = true
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 366.574
+margin_top = -259.568
+margin_right = 406.574
+margin_bottom = -219.568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="MarginContainer"]
+
+[node name="uinode" type="Sprite" parent="."]
+modulate = Color( 0.313726, 1, 0, 1 )
+material = SubResource( 1 )
+position = Vector2( -465.568, -257.387 )
+scale = Vector2( 0.688873, 0.717157 )
+texture = ExtResource( 9 )
+
+[node name="label" type="Label" parent="."]
+margin_left = -422.51
+margin_top = -291.612
+margin_right = -353.51
+margin_bottom = -225.612
+custom_fonts/font = SubResource( 3 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
