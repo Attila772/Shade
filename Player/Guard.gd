@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var movement = Vector2(1,1)
-var speed = 125
+var speed = 100
 var animation
 var anim_mode="Walk"
 var angle

@@ -9,16 +9,30 @@ var FOW
 var animation
 var dir
 var viewDir=Vector2(0,-1)
-var viewStart=-180
-var viewEnd=180
+var viewStart
+var viewEnd
 var reversal=false
 var currentAngle 
+var player
+onready var CCTV = get_parent().get_parent().get(str(self.name))
+enum{
+	Patrol
+	Chase 
+	Search
+	Sus
+}
+var state = Patrol
 
 func _process(delta):
 	AnimationLoop()
-	changeRotation()
-
-	
+	match state:
+		Patrol:
+			AnimationLoop()
+			changeRotation()
+		Chase : 
+			AnimationLoop()
+			chase_loop()
+			
 func AnimationLoop():
 	if -15<currentAngle && currentAngle<15:
 		animation="N"
@@ -60,14 +74,17 @@ func AnimationLoop():
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	 FOW= FOW_location.instance()
-	 FOW.name = "FOW_of_"+str(self.name)
-	 FOW.parent_body = self
-	 FOW.is_camera = true
-	 viewDir=viewDir.rotated(viewStart)
-	 dir= viewDir
-	 currentAngle=viewStart
-	 get_parent().get_parent().get_node("Floor").add_child(FOW)
+	viewStart = CCTV[0]
+	viewEnd = CCTV[1]
+	player = get_parent().get_node("Player")
+	FOW= FOW_location.instance()
+	FOW.name = "FOW_of_"+str(self.name)
+	FOW.parent_body = self
+	FOW.is_camera = true
+	viewDir=viewDir.rotated(viewStart)
+	dir= viewDir
+	currentAngle=viewStart
+	get_parent().get_parent().get_node("Floor").add_child(FOW)
 	# Replace with function body.
 func changeRotation():
 	if reversal:
@@ -80,6 +97,9 @@ func changeRotation():
 		currentAngle+=1
 		if currentAngle==viewEnd:
 			reversal=true
+	dir = viewDir
+func chase_loop():
+	viewDir=player.position-position
 	dir = viewDir
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

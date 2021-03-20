@@ -9,8 +9,9 @@ var movement = Vector2(1,1)
 var breee = true
 var got_track = false
 var timer = 2
-var delta_for_timer
+var delta_for_timer = 0
 var is_camera = false
+var dudes
 enum {
 	Patrol
 	Chase
@@ -24,7 +25,7 @@ enum {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var dudes = get_tree().get_nodes_in_group("dudes")
+	dudes = get_tree().get_nodes_in_group("dudes")
 	position = parent_body.position
 	movement = parent_body.dir
 	for i in 31 :
@@ -39,6 +40,8 @@ func _ready():
 func draw_circle_arc_poly(center, radius ,color):
 	var points_arc = PoolVector2Array()
 	points_arc.push_back(center)
+	if (!is_camera && parent_body.Line.state!=Patrol)||is_camera:
+		timer = 1
 	color[0]+=1-timer/2 
 	color[1]-=1-timer/2
 	var colors = PoolColorArray([color])
@@ -46,7 +49,7 @@ func draw_circle_arc_poly(center, radius ,color):
 	for i in range(31):
 		var angle_point
 		var raycast =get_node(String(i))
-		if raycast.is_colliding():
+		if raycast.is_colliding()&& raycast.get_collider().name!="Player":
 			angle_point = raycast.get_collision_point()-global_position
 		else :
 			angle_point = raycast.cast_to
@@ -56,9 +59,13 @@ func draw_circle_arc_poly(center, radius ,color):
 			seen = true
 	draw_polygon(points_arc, colors)
 	if !is_camera:
-		if seen &&timer >0 :
+		if !seen && !got_track:
+			timer+=delta_for_timer
+			if timer>2:
+				timer = 2 
+		if seen && timer >0 :
 			timer-=delta_for_timer
-		if timer <0 && !got_track:
+		if (timer <0 && !got_track)||(((parent_body.Line.state == Sus)||(parent_body.Line.state==Search))&&seen):
 			parent_body.Line.state= Chase
 			timer = 0
 			got_track= true
@@ -66,7 +73,18 @@ func draw_circle_arc_poly(center, radius ,color):
 			timer = 2
 			parent_body.Line.state= Search
 			got_track=false
-		
+	else:
+		if seen :
+			parent_body.state= Chase
+			for i in dudes:
+				if i.name!="Player":
+					i.Line.state = Chase
+		else :
+			if parent_body.state == Chase:
+				for i in dudes:
+					if i.name!="Player":
+						i.Line.state = Search
+				parent_body.state = Patrol
 func _draw():
    draw_circle_arc_poly(center, radius, color )
 
