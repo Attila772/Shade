@@ -31,6 +31,7 @@ func _process(delta):
 					else:
 						$find.visible = true
 				else:
+					IsOpen = true
 					$Sprite.texture= openpic
 					$CollisionPolygon2D2.disabled = true
 		if !nearbychar:
