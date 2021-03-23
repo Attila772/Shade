@@ -7,9 +7,11 @@ var dialog4 = ["thief","Faszfaszfaszfaszfaszfasz \n itthon yeyeyeyeye"]
 var dialog5 = ["scientist","GIT GUD  "]
 var dialog6 = ["thief","press  SPACE   to dash  \n "]
 var dialog7 = ["Scientist","You found the access card! \n Now you can open the locked door"]
+
 var Dialogs = [dialog,dialog2,dialog3,dialog4,dialog5]
 var Dialogs2 = [dialog6]
 var Dialogs3 = [dialog7]
+
 var dialogcheck = [false,false,false]
 var Guard = [Vector2(2408.226,-706),Vector2(1655,-155)]
 var Camera1 = [-180,-90]

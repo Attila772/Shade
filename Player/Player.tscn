@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Playeranim/PlayerWalkTP.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resources/spark_05.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
 [ext_resource path="res://Player/Dist.gd" type="Script" id=8]
+[ext_resource path="res://Resources/Light.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.0
@@ -281,14 +282,17 @@ colors = PoolColorArray( 0.817246, 0.876953, 0.212387, 1, 0.24099, 0.348633, 0.8
 gradient = SubResource( 23 )
 
 [sub_resource type="ParticlesMaterial" id=25]
+emission_shape = 2
+emission_box_extents = Vector3( 50, 250, 1 )
 flag_disable_z = true
 direction = Vector3( 0, 0, 0 )
 spread = 0.0
 gravity = Vector3( 0, 98, 0 )
+angular_velocity = 20.0
 orbit_velocity = 0.0
 orbit_velocity_random = 1.0
 linear_accel = -100.0
-radial_accel = 6.52
+radial_accel = 4.35
 radial_accel_random = 1.0
 angle = 359.9
 angle_random = 0.08
@@ -305,6 +309,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.980392, 0.984314, 0.972549, 1 )
+light_mask = 3
 position = Vector2( -5.78989, -23.9747 )
 scale = Vector2( 0.522972, 0.560203 )
 texture = ExtResource( 2 )
@@ -317,6 +322,7 @@ stream = ExtResource( 4 )
 volume_db = -11.227
 
 [node name="BackgroundTrack" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 5 )
 volume_db = 0.393
 pitch_scale = 0.43
@@ -368,7 +374,19 @@ visible = false
 material = SubResource( 22 )
 position = Vector2( 0, -75 )
 rotation = -1.41023
-amount = 1
+scale = Vector2( 0.2, 0.1 )
+amount = 10
 lifetime = 0.5
 process_material = SubResource( 25 )
 texture = ExtResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -6.17157, 21.6311 )
+scale = Vector2( 0.615684, 0.57134 )
+texture = ExtResource( 9 )
+energy = 0.8
+range_height = 97.1
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color( 0.435294, 0.266667, 0.266667, 0 )
+shadow_filter_smooth = 29.2

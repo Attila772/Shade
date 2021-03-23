@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/stoneWall_E.png" type="Texture" id=1]
 [ext_resource path="res://Props/CollisionTest.gd" type="Script" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -99.8192, -111.063, 31.7035, -174.703, 62.1091, -161.268, -64.4633, -95.5065 )
 
 [node name="CollisionTest" type="StaticBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
 position = Vector2( 30.9506, -147.075 )
 texture = ExtResource( 1 )
 
@@ -14,3 +18,7 @@ texture = ExtResource( 1 )
 position = Vector2( 18.2383, -14.065 )
 scale = Vector2( 1.06825, 1.18719 )
 polygon = PoolVector2Array( -77.3979, 64.307, -111.195, 48.9893, -106.236, 40.5114, -89.8718, 33.8183, 38.8512, -19.1783, 40.62, 8.945 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 3.53552, 154.15 )
+occluder = SubResource( 1 )
