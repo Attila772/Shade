@@ -20,5 +20,7 @@ scale = Vector2( 1.06825, 1.18719 )
 polygon = PoolVector2Array( -77.3979, 64.307, -111.22, 47.3929, 136.757, 51.1748, 16.9713, 102.231 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+light_mask = -2147483647
 position = Vector2( 1.88986, 158.12 )
 occluder = SubResource( 1 )
+light_mask = -2147483647
