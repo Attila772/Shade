@@ -9,6 +9,7 @@ var dir = Vector2(1,1)
 var move_direction = "S"
 var timer = 1
 var sus_timer = 2
+var turn_around_timer= 4 
 var on_alert = false
 var FOW
 var Line
@@ -17,7 +18,7 @@ var Line_location = preload("res://Line/Line2D.tscn")
 var Line_name
 var player
 var last_known_pos
-var path_index=0
+var path_index=1
 onready var Patrol_path = get_parent().get_parent().get(str(self.name))
 enum {
 	Patrol
@@ -36,6 +37,10 @@ var difficulty = Pista
 
 
 func _ready(): # creates FOW and Line for Guard DONT TOUCH!
+	match Patrol_path[0]:#sets difficulty
+		0:difficulty= Pista
+		1:difficulty= Security
+		2:difficulty= Military
 	player = get_parent().get_node("Player")
 	FOW= FOW_location.instance()
 	Line = Line_location.instance()
@@ -63,7 +68,7 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ
 			match state:
 				Patrol:
 					if path_index == Patrol_path.size():#resets patrol route 
-						path_index=0 
+						path_index=1 
 					set_destination(Patrol_path[path_index])#sets this to Line as destination
 					if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
 						path_index += 1# if guard reach destination updates it to next coordinate on patrol route
@@ -96,13 +101,16 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ
 
 
 				Search:
+					set_destination(last_known_pos)
 					if FOW.player_check():
 						set_destination(last_known_pos)
 						FOW.color=Color(1,0,0,0.2)
+						speed = 125
+						turn_around_timer= 4
 						state = Chase
-					set_destination(last_known_pos)
 					if (position - last_known_pos).length()<50:
-						look_around() # does nothing for now
+						speed=0
+						look_around(delta)
 
 
 				Chase: 
@@ -126,15 +134,26 @@ func set_destination(destination):#Sets destination for Line for pathfinding
 
 
 
-func look_around(): # guard looks around
-	if FOW.player_check():
-		FOW.color= Color(1,0,0,0.2)
-		state = Chase
-	else :
+func look_around(delta): # guard looks around
+	turn_around_timer-=delta
+	if turn_around_timer > 3 :
+		set_destination(position-(position-last_known_pos).rotated(deg2rad(-90*(4-turn_around_timer))))
+		
+	if turn_around_timer < 3 && turn_around_timer > 2 :
+		set_destination(position-(position-last_known_pos).rotated(deg2rad(-90*(turn_around_timer-2))))
+		
+	if turn_around_timer < 2 && turn_around_timer > 1 :
+		set_destination(position-(position-last_known_pos).rotated(deg2rad(90*(abs(turn_around_timer-2)))))
+	
+	if turn_around_timer < 1 :
+		set_destination(position-(position-last_known_pos).rotated(deg2rad(90*(turn_around_timer))))
+	
+	if turn_around_timer < 0 :
+		speed = 100
+		turn_around_timer = 4
 		timer = 1
 		FOW.color= Color(0,1,0,0.2)
 		state = Patrol
-		
 
 
 
