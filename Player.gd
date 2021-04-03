@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var anim_direction="S"
+var debug_mode = false
 var anim_mode= "Idle"
 var animation
 var speed = 150
@@ -37,7 +38,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	
 	if dashtimer >= 0:
 		dashtimer -=delta
 	
@@ -45,10 +45,11 @@ func _physics_process(delta):
 		dashcooldown -=delta
 		
 	if dashtimer <0:
-		$Particles2D2.visible = false
-		$Sprite.visible = true
-		$CollisionShape2D.disabled = false
-		speed = 150
+		if !debug_mode:
+			$Particles2D2.visible = false
+			$Sprite.visible = true
+			$CollisionShape2D.disabled = false
+			speed = 150
 		
 	if Input.is_action_just_released("IngameMenu"):
 		var menu = load("res://Ui Stuff/PauseMenu.tscn").instance()

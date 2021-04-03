@@ -13,7 +13,7 @@ var Dialogs2 = [dialog6]
 var Dialogs3 = [dialog7]
 
 var dialogcheck = [false,false,false]
-var Guard = [Vector2(2408.226,-706),Vector2(1655,-155)]
+var Guard = [0,Vector2(2408.226,-706),Vector2(1655,-155)]
 var Camera1 = [-180,-90]
 # Declare member variables here. Examples:
 # var a = 2
