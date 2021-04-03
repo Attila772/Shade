@@ -7,9 +7,12 @@ var anim_mode="Walk"
 var angle
 var dir = Vector2(1,1)
 var move_direction = "S"
-var timer = 1
-var sus_timer = 2
-var turn_around_timer= 4 
+var timer
+var timer_base
+var sus_timer
+var sus_timer_base
+var turn_around_timer
+var turn_around_timer_base
 var on_alert = false
 var FOW
 var Line
@@ -38,7 +41,14 @@ var difficulty = Pista
 
 func _ready(): # creates FOW and Line for Guard DONT TOUCH!
 	match Patrol_path[0]:#sets difficulty
-		0:difficulty= Pista
+		0:
+			difficulty= Pista
+			timer = 1
+			timer_base = 1
+			sus_timer = 2
+			sus_timer_base= 2 
+			turn_around_timer=4
+			turn_around_timer_base=4 
 		1:difficulty= Security
 		2:difficulty= Military
 	player = get_parent().get_node("Player")
@@ -75,7 +85,7 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 					if FOW.player_check():
 						timer -= delta
 						if timer<0:
-							timer = 1
+							timer = timer_base
 							FOW.color=Color(1,1,0,0.2)
 							state=Sus
 
@@ -83,6 +93,65 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 				Sus:
 					set_destination(last_known_pos)
 					speed = 0
+					sus_timer -= delta
+					if FOW.player_check():
+						timer -= delta
+						if timer < 0:
+							sus_timer=sus_timer_base
+							speed = 125
+							FOW.color=Color(1,0,0,0.2)
+							state = Chase
+					if sus_timer < 0:
+						sus_timer = sus_timer_base
+						speed = 100
+						timer = timer_base
+						FOW.color=Color(0,1,0,0.2)
+						state = Patrol
+					
+
+
+				Search:
+					set_destination(last_known_pos)
+					if FOW.player_check():
+						set_destination(last_known_pos)
+						FOW.color=Color(1,0,0,0.2)
+						speed = 125
+						turn_around_timer= turn_around_timer_base
+						state = Chase
+					if (position - last_known_pos).length()<50:
+						speed=0
+						look_around(delta)
+
+
+				Chase: 
+					on_alert= true
+					if FOW.player_check():
+						set_destination(last_known_pos)#chase player
+					else :
+						speed = 100
+						FOW.color= Color(1,1,0,0.2)
+						state = Search
+
+
+		Security:
+			match state:
+				Patrol:
+					if path_index == Patrol_path.size():#resets patrol route 
+						path_index=1 
+					set_destination(Patrol_path[path_index])#sets this to Line as destination
+					if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
+						path_index += 1# if guard reach destination updates it to next coordinate on patrol route
+					if FOW.player_check():
+						timer -= delta
+						if timer<0:
+							timer = 1
+							FOW.color=Color(1,1,0,0.2)
+							state=Sus
+
+
+				Sus:
+					set_destination(last_known_pos)
+					speed = 50
 					sus_timer -= delta
 					if FOW.player_check():
 						timer -= delta
@@ -97,20 +166,6 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 						timer = 1
 						FOW.color=Color(0,1,0,0.2)
 						state = Patrol
-					
-
-
-				Search:
-					set_destination(last_known_pos)
-					if FOW.player_check():
-						set_destination(last_known_pos)
-						FOW.color=Color(1,0,0,0.2)
-						speed = 125
-						turn_around_timer= 4
-						state = Chase
-					if (position - last_known_pos).length()<50:
-						speed=0
-						look_around(delta)
 
 
 				Chase: 
@@ -120,22 +175,6 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 						speed = 100
 						FOW.color= Color(1,1,0,0.2)
 						state = Search
-
-
-		Security:
-			match state:
-							Patrol:
-								if path_index == Patrol_path.size():#resets patrol route 
-									path_index=1 
-								set_destination(Patrol_path[path_index])#sets this to Line as destination
-								if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
-									path_index += 1# if guard reach destination updates it to next coordinate on patrol route
-								if FOW.player_check():
-									timer -= delta
-									if timer<0:
-										timer = 1
-										FOW.color=Color(1,1,0,0.2)
-										state=Sus
 
 
 
