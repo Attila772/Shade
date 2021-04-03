@@ -15,4 +15,8 @@ func _ready():
 func _process(delta):
 	position = get_parent().get_node("Test").get_node("Player").position
 	
+	if Input.is_action_just_released("DebugMenu"):
+		var DebugMenu = load("res://Ui Stuff/DebugMenu.tscn").instance()
+		add_child(DebugMenu)
+		DebugMenu.position += Vector2(-300,-250)
 	pass

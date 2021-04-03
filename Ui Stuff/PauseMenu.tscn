@@ -71,10 +71,10 @@ __meta__ = {
 
 [node name="resume" type="Button" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = 81.1796
-margin_top = 75.5291
-margin_right = 341.18
-margin_bottom = 155.529
+margin_left = 85.4222
+margin_top = 58.5585
+margin_right = 345.423
+margin_bottom = 138.558
 custom_fonts/font = SubResource( 4 )
 text = "Resume game"
 script = ExtResource( 2 )
@@ -85,9 +85,9 @@ __meta__ = {
 [node name="resume2" type="Button" parent="."]
 self_modulate = Color( 1, 1, 1, 0.54902 )
 margin_left = 86.3695
-margin_top = 306.34
+margin_top = 316.239
 margin_right = 346.369
-margin_bottom = 386.34
+margin_bottom = 396.239
 custom_fonts/font = SubResource( 4 )
 text = "EXIT TO MENU"
 script = ExtResource( 3 )
@@ -98,9 +98,9 @@ __meta__ = {
 [node name="resume3" type="Button" parent="."]
 modulate = Color( 1, 1, 1, 0.54902 )
 margin_left = 84.0081
-margin_top = 176.053
+margin_top = 143.526
 margin_right = 344.009
-margin_bottom = 256.053
+margin_bottom = 223.526
 custom_fonts/font = SubResource( 4 )
 text = "RESTART"
 script = SubResource( 5 )

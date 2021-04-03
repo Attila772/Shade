@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Ui Stuff/Button.gd" type="Script" id=1]
+[ext_resource path="res://Ui Stuff/DebugOff.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = SubResource( 3 )
+
+[node name="DebugMenu" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 320.694
+margin_top = 31.2246
+margin_right = 673.694
+margin_bottom = 561.225
+color = Color( 0.137255, 0.137255, 0.643137, 0.254902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 354.897
+margin_top = 379.438
+margin_right = 630.897
+margin_bottom = 444.438
+custom_fonts/font = SubResource( 2 )
+text = "Set values"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 347.346
+margin_top = 466.274
+margin_right = 623.346
+margin_bottom = 531.274
+custom_fonts/font = SubResource( 2 )
+text = "Debug off"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="collide" type="LineEdit" parent="."]
+margin_left = 375.582
+margin_top = 98.1122
+margin_right = 621.582
+margin_bottom = 150.112
+custom_fonts/font = SubResource( 4 )
+placeholder_text = "Collision (y/n)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speed" type="LineEdit" parent="."]
+margin_left = 373.694
+margin_top = 179.285
+margin_right = 619.694
+margin_bottom = 231.285
+custom_fonts/font = SubResource( 4 )
+placeholder_text = "Speed (int)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gadget" type="LineEdit" parent="."]
+visible = false
+margin_left = 368.031
+margin_top = 264.234
+margin_right = 614.031
+margin_bottom = 316.234
+custom_fonts/font = SubResource( 4 )
+placeholder_text = "Gadget string"
+__meta__ = {
+"_edit_use_anchors_": false
+}
