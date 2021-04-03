@@ -62,7 +62,7 @@ func _physics_process(delta):#movement + animation
 
 
 
-func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ
+func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hosszú lesz baszki)
 	match difficulty:
 		Pista:
 			match state:
@@ -120,6 +120,22 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ
 						speed = 100
 						FOW.color= Color(1,1,0,0.2)
 						state = Search
+
+
+		Security:
+			match state:
+							Patrol:
+								if path_index == Patrol_path.size():#resets patrol route 
+									path_index=1 
+								set_destination(Patrol_path[path_index])#sets this to Line as destination
+								if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
+									path_index += 1# if guard reach destination updates it to next coordinate on patrol route
+								if FOW.player_check():
+									timer -= delta
+									if timer<0:
+										timer = 1
+										FOW.color=Color(1,1,0,0.2)
+										state=Sus
 
 
 
