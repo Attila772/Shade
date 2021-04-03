@@ -76,13 +76,12 @@ __meta__ = {
 }
 
 [node name="gadget" type="LineEdit" parent="."]
-visible = false
 margin_left = 368.031
 margin_top = 264.234
 margin_right = 614.031
 margin_bottom = 316.234
 custom_fonts/font = SubResource( 4 )
-placeholder_text = "Gadget string"
+placeholder_text = "Mouse nav yn"
 __meta__ = {
 "_edit_use_anchors_": false
 }

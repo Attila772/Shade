@@ -30,9 +30,10 @@ func _button_pressed():
 		else:
 			Player.speed = int(speed)
 	
-	if !gadget =="":
-		Player.Gadget = gadget
-		Player.gadgetpickedup()
+	if gadget =="y":
+		Player.MouseNav = true
+	else: 
+		Player.MouseNav = false
 		
 	get_parent().get_parent().remove_child(get_parent())
 

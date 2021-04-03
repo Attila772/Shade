@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+var Line_location = preload("res://Line/Line2D.tscn")
+var Line_name
+
 var anim_direction="S"
 var debug_mode = false
 var anim_mode= "Idle"
@@ -19,10 +22,21 @@ const DASHCOOLDOWN = 2
 var dashtimer = 0.5
 var dashrot =0
 var haskey = false
+var MouseNav = false
+var Line
+
+var angle
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 func _ready():
+	Line = Line_location.instance()
+	Line.guard= self
+	Line.name = "Line_of_"+str(self.name)
+	Line_name = "Line_of_"+str(self.name)
+	set_destination(self.position)
+	get_parent().get_parent().get_node("Navigation2D").add_child(Line)
+	
 #	var uinode =$Camera2D/MarginContainer/Sprite
 #	var label = $DaschcooldownNum
 #	remove_child($Camera2D/MarginContainer/Sprite)
@@ -38,6 +52,10 @@ func _ready():
 
 
 func _physics_process(delta):
+	if MouseNav:
+		if Input.is_action_pressed("MouseNav"):
+			destination = get_global_mouse_position()
+			set_destination(destination)
 	if dashtimer >= 0:
 		dashtimer -=delta
 	
@@ -58,8 +76,12 @@ func _physics_process(delta):
 		menu.position.x -=250
 		get_parent().get_parent().add_child(menu)
 	particles(delta)
-	MovementLoop()
+	if !MouseNav:
+		MovementLoop()
+	else:
+		mousemovement()
 	move_and_slide(movement)
+	AnimationLoop()
 	pass
 	
 func MovementLoop():
@@ -147,13 +169,59 @@ func MovementLoop():
 	
 	moving = false
 	
+	
+	
+	
+func mousemovement():
+	anim_mode = "Walk"
+			
+	movement = $'../../Navigation2D'.get_node(Line_name).points[1]-self.position
+	var angle = rad2deg(Vector2(0,-1).angle_to(movement))
+	$Particles2D2.rotation_degrees = dashrot
+	
+	if Input.is_action_pressed("dash"):
+		if dashcooldown <=0:
+			dashcooldown = DASHCOOLDOWN
+			if Gadget == "RingOfY":
+				$Sprite.visible = false
+				$Particles2D2.visible = true
+				$CollisionShape2D.disabled = true
+				#dashcooldown += 20
+				speed *=2
+			speed *=5
+			dashtimer =0.3
+			
+	if (angle>-22.5 && angle<22.5):
+		move_direction="N"
+	if (angle>22.5 && angle<67.5):
+		move_direction="NE"
+	if (angle>67.5 && angle<112.5):
+		move_direction="E"
+	if (angle>112.5 && angle<157.5):
+		move_direction="SE"
+	if (angle>157.5 || angle<-157.5):
+		move_direction="S"
+	if (angle>-157.5 && angle<-112.5):
+		move_direction="SW"
+	if (angle>-112.5 && angle<-67.5):
+		move_direction="W"
+	if (angle>-67.5 && angle<-22.5):
+		move_direction="NW"
+	movement=movement.normalized()*speed
+	
+func set_destination(destination):#Sets destination for Line for pathfinding
+	Line.destination = destination
+
 func _process(delta):
 	get_parent().get_parent().get_node("Camera2D").get_node("label").text = str(stepify(dashcooldown,0.1))
 	if dashcooldown <=0:
 		get_parent().get_parent().get_node("Camera2D").get_node("uinode").modulate = Color(0,255,0)
 	else:
 		get_parent().get_parent().get_node("Camera2D").get_node("uinode").modulate  = Color(205,0,0)
-		
+	
+	
+	if self.position.distance_to(destination)<50:
+		set_destination(self.position)
 	
 	Global.time += delta
 	if movement ==Vector2(0,0):
@@ -167,9 +235,11 @@ func _process(delta):
 	else:
 		$walksound.stop()
 		anim_mode="Idle"
-	AnimationLoop()
+	
 	
 func AnimationLoop():
+	if speed == 0:
+		anim_mode ="Idle"
 	animation = anim_mode + "_" + move_direction
 	$AnimationPlayer.play(animation)
 
