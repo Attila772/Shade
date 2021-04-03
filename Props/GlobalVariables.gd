@@ -5,3 +5,4 @@ var backgroundmusicsetting =0
 var soundeffectsetting = 0
 var gadgets = []
 var path =""
+var SoundLevel=0

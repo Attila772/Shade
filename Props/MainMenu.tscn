@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sounds/shade.wav" type="AudioStream" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Resources/Main menu.jpg" type="Texture" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=7]
 [ext_resource path="res://Resources/fog.shader" type="Shader" id=8]
+[ext_resource path="res://Props/Settings.gd" type="Script" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 8 )
@@ -38,7 +39,7 @@ centered = false
 
 [node name="icon" type="Sprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( 519.27, 299.715 )
+position = Vector2( 518.01, 295.935 )
 scale = Vector2( 16.1191, 9.36361 )
 texture = ExtResource( 7 )
 
@@ -50,10 +51,6 @@ margin_bottom = 191.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 517.992, 295.996 )
-current = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 762.813
@@ -88,6 +85,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label4" type="Label" parent="."]
+margin_left = 415.533
+margin_top = 216.016
+margin_right = 570.533
+margin_bottom = 256.016
+custom_fonts/font = SubResource( 3 )
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button" type="Button" parent="."]
 modulate = Color( 0.94902, 0.968627, 0.992157, 1 )
 self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
@@ -103,12 +111,24 @@ __meta__ = {
 
 [node name="Button2" type="Button" parent="."]
 self_modulate = Color( 0.886275, 0.886275, 0.960784, 1 )
-margin_left = 674.132
+margin_left = 671.612
 margin_top = 197.405
-margin_right = 992.132
+margin_right = 989.612
 margin_bottom = 269.405
 custom_fonts/font = SubResource( 5 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="."]
+self_modulate = Color( 0.886275, 0.886275, 0.960784, 1 )
+margin_left = 333.953
+margin_top = 197.405
+margin_right = 651.953
+margin_bottom = 269.405
+custom_fonts/font = SubResource( 5 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
