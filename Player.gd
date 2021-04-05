@@ -24,7 +24,7 @@ var dashrot =0
 var haskey = false
 var MouseNav = false
 var Line
-
+var Dashing = false
 var angle
 # Declare member variables here. Examples:
 # var a = 2
@@ -67,6 +67,7 @@ func _physics_process(delta):
 			$Particles2D2.visible = false
 			$Sprite.visible = true
 			$CollisionShape2D.disabled = false
+			Dashing = false
 			speed = 150
 		
 	if Input.is_action_just_released("IngameMenu"):
@@ -97,6 +98,7 @@ func MovementLoop():
 				#dashcooldown += 20
 				speed *=2
 			speed *=5
+			Dashing = true
 			dashtimer =0.3
 			
 			
@@ -190,6 +192,7 @@ func mousemovement():
 				speed *=2
 			speed *=5
 			dashtimer =0.3
+			Dashing = true
 			
 	if (angle>-22.5 && angle<22.5):
 		move_direction="N"
@@ -240,7 +243,10 @@ func _process(delta):
 func AnimationLoop():
 	if speed == 0:
 		anim_mode ="Idle"
-	animation = anim_mode + "_" + move_direction
+	var temp = anim_mode
+	if Dashing:
+		temp="Dash"
+	animation = temp + "_" + move_direction
 	$AnimationPlayer.play(animation)
 
 
