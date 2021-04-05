@@ -14,6 +14,7 @@ var viewEnd
 var reversal=false
 var currentAngle 
 var player
+var last_known_pos
 onready var CCTV = get_parent().get_parent().get(str(self.name))
 enum{
 	Patrol
@@ -25,6 +26,10 @@ var state = Patrol
 
 func _process(delta):
 	AnimationLoop()
+	if FOW.player_check():
+		FOW.color=Color(1,0,0,0.2)
+	else:
+		FOW.color=Color(0,1,0,0.2)
 	match state:
 		Patrol:
 			AnimationLoop()
