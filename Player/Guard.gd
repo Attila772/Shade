@@ -30,6 +30,7 @@ enum {
 	Chase
 }
 var state = Patrol
+
 enum {
 	Pista
 	Security
@@ -49,8 +50,16 @@ func _ready(): # creates FOW and Line for Guard DONT TOUCH!
 			sus_timer_base= 2 
 			turn_around_timer=4
 			turn_around_timer_base=4 
-		1:difficulty= Security
-		2:difficulty= Military
+		1:
+			difficulty= Security
+			timer = 1
+			timer_base = 1
+			sus_timer = 2
+			sus_timer_base= 2 
+			turn_around_timer=4
+			turn_around_timer_base=4 
+		2:
+			difficulty= Military
 	player = get_parent().get_node("Player")
 	FOW= FOW_location.instance()
 	Line = Line_location.instance()
@@ -85,9 +94,7 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 					if FOW.player_check():
 						timer -= delta
 						if timer<0:
-							timer = timer_base
-							FOW.color=Color(1,1,0,0.2)
-							state=Sus
+							change_to_sus()
 
 
 				Sus:
@@ -97,16 +104,9 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 					if FOW.player_check():
 						timer -= delta
 						if timer < 0:
-							sus_timer=sus_timer_base
-							speed = 125
-							FOW.color=Color(1,0,0,0.2)
-							state = Chase
+							change_to_chase()
 					if sus_timer < 0:
-						sus_timer = sus_timer_base
-						speed = 100
-						timer = timer_base
-						FOW.color=Color(0,1,0,0.2)
-						state = Patrol
+						change_to_patrol()
 					
 
 
@@ -114,23 +114,17 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 					set_destination(last_known_pos)
 					if FOW.player_check():
 						set_destination(last_known_pos)
-						FOW.color=Color(1,0,0,0.2)
-						speed = 125
-						turn_around_timer= turn_around_timer_base
-						state = Chase
+						change_to_chase()
 					if (position - last_known_pos).length()<50:
 						speed=0
 						look_around(delta)
 
 
 				Chase: 
-					on_alert= true
 					if FOW.player_check():
 						set_destination(last_known_pos)#chase player
 					else :
-						speed = 100
-						FOW.color= Color(1,1,0,0.2)
-						state = Search
+						change_to_search()
 
 
 		Security:
@@ -144,9 +138,7 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 					if FOW.player_check():
 						timer -= delta
 						if timer<0:
-							timer = 1
-							FOW.color=Color(1,1,0,0.2)
-							state=Sus
+							change_to_sus()
 
 
 				Sus:
@@ -156,25 +148,29 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 					if FOW.player_check():
 						timer -= delta
 						if timer < 0:
-							sus_timer=2
-							speed = 125
-							FOW.color=Color(1,0,0,0.2)
-							state = Chase
+							change_to_chase()
 					if sus_timer < 0:
-						sus_timer = 2
-						speed = 100
-						timer = 1
-						FOW.color=Color(0,1,0,0.2)
-						state = Patrol
+						change_to_patrol()
+
+
+				Search: #Not final/ placeholder from Pista, will be implemented when maps are made
+					set_destination(last_known_pos)
+					if FOW.player_check():
+						set_destination(last_known_pos)
+						change_to_chase()
+					if (position - last_known_pos).length()<50:
+						speed=0
+						look_around(delta)
 
 
 				Chase: 
+					if !on_alert:
+						on_alert=true
 					if FOW.player_check():
 						set_destination(last_known_pos)#chase player
 					else :
-						speed = 100
-						FOW.color= Color(1,1,0,0.2)
-						state = Search
+						alert_all()
+						change_to_search()
 
 
 
@@ -204,11 +200,7 @@ func look_around(delta): # guard looks around
 		set_destination(position-(position-last_known_pos).rotated(deg2rad(90*(turn_around_timer))))
 	
 	if turn_around_timer < 0 :
-		speed = 100
-		turn_around_timer = 4
-		timer = 1
-		FOW.color= Color(0,1,0,0.2)
-		state = Patrol
+		change_to_patrol()
 
 
 
@@ -233,3 +225,53 @@ func movementloop(): # determines movement from Line
 		move_direction="NW"
 	dir = movement # FOW uses this to get direction
 	movement=movement.normalized()*speed
+
+
+
+func change_to_sus():
+	if !on_alert:
+		timer = timer_base
+	else :
+		timer=timer_base/2
+	timer = timer_base
+	FOW.color=Color(1,1,0,0.2)
+	state=Sus
+
+
+
+func change_to_chase():
+	sus_timer=sus_timer_base
+	turn_around_timer= turn_around_timer_base
+	speed = 125
+	FOW.color=Color(1,0,0,0.2)
+	state = Chase
+
+
+
+func change_to_search():
+	speed = 100
+	FOW.color= Color(1,1,0,0.2)
+	state = Search
+
+
+
+func change_to_patrol():
+	sus_timer = sus_timer_base
+	speed = 100
+	if on_alert&& difficulty != Pista:
+		timer = timer_base/2
+		FOW.color=Color(1,1,0,0.2)
+	else :
+		timer=timer_base
+		FOW.color=Color(0,1,0,0.2)
+	state = Patrol
+
+
+
+func alert_all():
+	var dudes = get_tree().get_nodes_in_group("dudes")
+	for i in dudes:
+		if i.name!= "Player":
+			i.on_alert=true
+			i.timer = timer_base/2
+			i.FOW.color=Color(1,1,0,0.2)
