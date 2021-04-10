@@ -82,6 +82,7 @@ func _physics_process(delta):
 	else:
 		mousemovement()
 	move_and_slide(movement)
+	get_parent().get_parent().get_node("Camera2D").position = position
 	AnimationLoop()
 	pass
 	
@@ -216,6 +217,7 @@ func set_destination(destination):#Sets destination for Line for pathfinding
 	Line.destination = destination
 
 func _process(delta):
+	
 	get_parent().get_parent().get_node("Camera2D").get_node("label").text = str(stepify(dashcooldown,0.1))
 	if dashcooldown <=0:
 		get_parent().get_parent().get_node("Camera2D").get_node("uinode").modulate = Color(0,255,0)

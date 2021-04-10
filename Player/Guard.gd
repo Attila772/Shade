@@ -22,6 +22,13 @@ var Line_name
 var player
 var last_known_pos
 var path_index=1
+
+
+var softdialog = load("res://Ui Stuff/SoftDialogBox.tscn").instance()
+var dialog = ["Guard",3,"YOU VIOLATED THE LAW"]
+var Dialogs = [dialog]
+
+
 onready var Patrol_path = get_parent().get_parent().get(str(self.name))
 enum {
 	Patrol
@@ -229,6 +236,7 @@ func movementloop(): # determines movement from Line
 
 
 func change_to_sus():
+	self.SoftDialog(Dialogs)
 	if !on_alert:
 		timer = timer_base
 	else :
@@ -275,3 +283,7 @@ func alert_all():
 			i.on_alert=true
 			i.timer = timer_base/2
 			i.FOW.color=Color(1,1,0,0.2)
+
+func SoftDialog(DialogString):
+	get_parent().get_parent().get_node("Camera2D").add_child(softdialog)
+	softdialog.dialog(Dialogs)

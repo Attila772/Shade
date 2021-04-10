@@ -560,8 +560,10 @@ position = Vector2( 3170.36, -887.597 )
 scale = Vector2( 0.534391, 0.497575 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+visible = false
 position = Vector2( -15.4953, 16.3304 )
 navpoly = SubResource( 2 )
 
