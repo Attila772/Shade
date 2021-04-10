@@ -93,6 +93,9 @@ position = Vector2( -291.061, 352.849 )
 [node name="CCTV" parent="Test" instance=ExtResource( 10 )]
 position = Vector2( -989.385, 396.125 )
 
+[node name="CCTV2" parent="Test" instance=ExtResource( 10 )]
+position = Vector2( 573.491, 1146.98 )
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
 script = ExtResource( 9 )
 
