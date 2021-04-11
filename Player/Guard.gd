@@ -30,6 +30,7 @@ var Dialogs = [dialog]
 
 
 onready var Patrol_path = get_parent().get_parent().get(str(self.name))
+onready var Check_locations = get_parent().get_parent().get("checklocations")
 enum {
 	Patrol
 	Sus
@@ -160,7 +161,8 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 						change_to_patrol()
 
 
-				Search: #Not final/ placeholder from Pista, will be implemented when maps are made
+				Search:
+					last_known_pos=get_closest_check_location()
 					set_destination(last_known_pos)
 					if FOW.player_check():
 						set_destination(last_known_pos)
@@ -236,7 +238,6 @@ func movementloop(): # determines movement from Line
 
 
 func change_to_sus():
-	self.SoftDialog(Dialogs)
 	if !on_alert:
 		timer = timer_base
 	else :
@@ -248,6 +249,7 @@ func change_to_sus():
 
 
 func change_to_chase():
+	SoftDialog(Dialogs)
 	sus_timer=sus_timer_base
 	turn_around_timer= turn_around_timer_base
 	speed = 125
@@ -284,6 +286,16 @@ func alert_all():
 			i.timer = timer_base/2
 			i.FOW.color=Color(1,1,0,0.2)
 
+
+
 func SoftDialog(DialogString):
 	get_parent().get_parent().get_node("Camera2D").add_child(softdialog)
 	softdialog.dialog(Dialogs)
+
+
+func get_closest_check_location():
+	var closest= Check_locations[0]
+	for i in Check_locations:
+		if (i - last_known_pos).length() < (closest - last_known_pos).length():
+			closest = i
+	return closest
