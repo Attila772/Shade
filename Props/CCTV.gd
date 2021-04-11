@@ -115,7 +115,7 @@ func alert_all():
 		if i.name!= "Player":
 			i.on_alert=true
 			i.timer = i.timer_base/2
-			i.FOW.color=Color(1,1,0,0.2)
+			i.FOW.color=Color(1,0,0,0.2)
 			i.last_known_pos=last_known_pos
 			i.state=Search
 # Called every frame. 'delta' is the elapsed time since the previous frame.
