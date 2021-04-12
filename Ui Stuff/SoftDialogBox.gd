@@ -25,7 +25,7 @@ func dialog(DialogString):
 		
 	
 func _physics_process(delta):
-	print("timer: ", timer, "  counter: ", counter)
+	#print("timer: ", timer, "  counter: ", counter)
 	#position = get_parent().get_parent().get_node("Test").get_node("Canera2D").position
 	if !timer<=0:
 		timer-= delta
