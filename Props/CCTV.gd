@@ -28,7 +28,6 @@ func _process(delta):
 	AnimationLoop()
 	if FOW.player_check():
 		FOW.color=Color(1,0,0,0.2)
-		alert_all()
 		state=Chase
 	else:
 		FOW.color=Color(1,1,0,0.2)
@@ -38,6 +37,7 @@ func _process(delta):
 			AnimationLoop()
 			changeRotation()
 		Chase : 
+			alert_all()
 			AnimationLoop()
 			chase_loop()
 			
@@ -107,18 +107,17 @@ func changeRotation():
 			reversal=true
 	dir = viewDir
 func chase_loop():
+	
 	viewDir=player.position-position
 	dir = viewDir
+	
 func alert_all():
 	var dudes = get_tree().get_nodes_in_group("dudes")
 	for i in dudes:
 		if i.name!= "Player":
-			i.on_alert=true
-			i.timer = i.timer_base/2
-			i.FOW.color=Color(1,0,0,0.2)
-			i.last_known_pos=last_known_pos
+			i.last_known_pos=player.position
 			if i.state != Chase:
-				i.state=Search
+				i.change_to_chase()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -234,7 +234,7 @@ rotation = -0.0487073
 "dudes",
 ] instance=ExtResource( 3 )]
 modulate = Color( 0.533333, 0.498039, 0.498039, 1 )
-position = Vector2( 1203.13, -134.897 )
+position = Vector2( 2650.1, -927.792 )
 
 [node name="CollisionTest" parent="Test" instance=ExtResource( 6 )]
 modulate = Color( 0.498039, 0.470588, 0.501961, 1 )
@@ -553,14 +553,28 @@ position = Vector2( 3042.25, -275.853 )
 [node name="Guard" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 18 )]
-position = Vector2( 2385.96, -678.512 )
+position = Vector2( 1811.98, -451.589 )
+
+[node name="Guard2" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 18 )]
+position = Vector2( 1691.84, -440.91 )
+
+[node name="Guard3" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 18 )]
+position = Vector2( 1771.93, -323.445 )
+
+[node name="Guard4" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 18 )]
+position = Vector2( 1918.77, -384.847 )
 
 [node name="Camera1" parent="Test" instance=ExtResource( 20 )]
 position = Vector2( 3170.36, -887.597 )
 scale = Vector2( 0.534391, 0.497575 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
-visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 visible = false
