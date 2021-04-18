@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 var Line_location = preload("res://Line/Line2D.tscn")
 var Line_name
-
 var anim_direction="S"
 var debug_mode = false
 var anim_mode= "Idle"
@@ -70,7 +69,7 @@ func _physics_process(delta):
 			Dashing = false
 			speed = 150
 		
-	if Input.is_action_just_released("IngameMenu"):
+	if Input.is_action_just_released("IngameMenu") and !Global.isinmapselect:
 		var menu = load("res://Ui Stuff/PauseMenu.tscn").instance()
 		menu.position = position
 		menu.position.y-=250

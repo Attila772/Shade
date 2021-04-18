@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Ui Stuff/NextMap.gd" type="Script" id=2]
+
+[node name="NextMap" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.33484
+margin_right = -1.33484
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 117.466
+margin_top = 60.0677
+margin_right = 844.466
+margin_bottom = 510.068
+color = Color( 0.0901961, 0.0784314, 0.0784314, 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 123.0
+margin_top = 68.0
+margin_right = 841.0
+margin_bottom = 509.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1.0
+margin_bottom = 1.0
+rect_min_size = Vector2( 1, 1 )
+custom_constants/separation = 250

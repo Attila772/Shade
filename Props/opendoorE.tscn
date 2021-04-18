@@ -45,6 +45,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
 material = SubResource( 3 )
 position = Vector2( 0, -94.7523 )
 texture = ExtResource( 1 )

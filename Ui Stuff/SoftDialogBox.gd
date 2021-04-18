@@ -18,6 +18,9 @@ func dialog(DialogString):
 	dialog = DialogString
 	$Sprite.texture = load("res://Resources/" + DialogString[counter][0] + ".png")
 	$Label.text = DialogString[counter][2]
+	var LenTemp = $Label.text.length()
+	print(LenTemp)
+	$AnimationPlayer.play("TypeWriter")
 	timer = int(DialogString[counter][1])	
 	dialog_started = true
 	

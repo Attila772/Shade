@@ -15,7 +15,8 @@ func _ready():
 	pass # Replace with function body.
 
 func _button_pressed():
-	var level = load("res://TestLevel/testLevel.tscn")
+	Global.savedlvl = "res://Levels/TutorialLvl/TutorialLvl.tscn"
+	var level = load("res://Ui Stuff/Control.tscn")
 	get_tree().change_scene_to(level)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

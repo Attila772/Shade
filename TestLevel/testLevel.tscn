@@ -97,6 +97,7 @@ position = Vector2( -989.385, 396.125 )
 position = Vector2( 573.491, 1146.98 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 script = ExtResource( 9 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
@@ -105,6 +106,7 @@ scale = Vector2( 1, -6.24 )
 navpoly = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -9.51367, 0 )

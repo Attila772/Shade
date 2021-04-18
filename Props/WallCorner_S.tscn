@@ -10,6 +10,7 @@ polygon = PoolVector2Array( -102.116, -128.861, 22.3344, -198.865, 152.442, -129
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
 position = Vector2( 23.8153, -166.102 )
 texture = ExtResource( 1 )
 
@@ -19,4 +20,5 @@ scale = Vector2( 1.06825, 1.18719 )
 polygon = PoolVector2Array( -77.3979, 64.307, -106.446, 45.0231, 10.4429, -18.0839, 137.351, 45.0231, 111.747, 62.052, 5.98996, 26.9925 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 4.94974, 154.15 )
 occluder = SubResource( 1 )

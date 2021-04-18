@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/stairsAged_W.png" type="Texture" id=1]
+[ext_resource path="res://Props/Furniture/Stairs.gd" type="Script" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -99.8192, -111.063, 4.89829, -167.141, 28.6824, -158.222, -64.4633, -95.5065 )
+
+[node name="Stair" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( -4.96522, -192.435 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 50.7518, -50.2936 )
+scale = Vector2( 1.06825, 1.18719 )
+polygon = PoolVector2Array( -93.1406, 77.9541, -170.412, 41.8521, -122.86, 12.4358, -75.3089, -22.329, -33.7014, -30.3517, 56.9436, -16.9806, 59.9156, 40.515, -32.2154, 87.3138 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 30.7797, 123.718 )
+occluder = SubResource( 1 )

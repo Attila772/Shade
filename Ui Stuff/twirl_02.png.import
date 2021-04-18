@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Guard.png-5829bdd8666f49f93b0118fca6a56d8f.stex"
+path="res://.import/twirl_02.png-e43ed1aded64cdf633076d0608a1df63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Guard.png"
-dest_files=[ "res://.import/Guard.png-5829bdd8666f49f93b0118fca6a56d8f.stex" ]
+source_file="res://Ui Stuff/twirl_02.png"
+dest_files=[ "res://.import/twirl_02.png-e43ed1aded64cdf633076d0608a1df63.stex" ]
 
 [params]
 

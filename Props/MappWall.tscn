@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Props/MappWall.gd" type="Script" id=1]
+[ext_resource path="res://Assets/MapWall.png" type="Texture" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -89.9679, -127.318, 34.5344, -182.204, 59.2912, -172.306, -60.5365, -114.284 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = SubResource( 2 )
+
+[node name="CollisionTest" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( -12.3927, -63.0035 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 17.8414, -14.065 )
+scale = Vector2( 1.06825, 1.18719 )
+polygon = PoolVector2Array( -74.6027, 53.3081, -103.356, 40.0564, 15.5943, -2.47223, 37.9544, 1.87906 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( -1.5, 162 )
+occluder = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 19.0919
+margin_top = -147.785
+margin_right = 59.0919
+margin_bottom = -107.785
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.266667, 1, 0, 1 )
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false
+}

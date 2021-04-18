@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ui Stuff/SoftDialogBox.gd" type="Script" id=1]
 [ext_resource path="res://Resources/scientist.png" type="Texture" id=2]
@@ -9,6 +9,21 @@ font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 [sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "TypeWriter"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
 
 [node name="DialogBox" type="Node2D"]
 pause_mode = 2
@@ -33,6 +48,13 @@ margin_top = 2.0
 margin_right = 653.568
 margin_bottom = 126.0
 custom_fonts/font = SubResource( 2 )
+text = "Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut"
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/TypeWriter = SubResource( 3 )

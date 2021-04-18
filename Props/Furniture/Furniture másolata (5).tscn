@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/longTableDecoratedChairsBooks_E.png" type="Texture" id=1]
+[ext_resource path="res://Props/Furniture/Furniture.gd" type="Script" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -99.8192, -111.063, 4.89829, -167.141, 28.6824, -158.222, -64.4633, -95.5065 )
+
+[node name="Furniture" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( -4.96522, -192.435 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 49.1644, -50.2936 )
+scale = Vector2( 1.06825, 1.18719 )
+polygon = PoolVector2Array( -77.3979, 64.307, -111.195, 48.9893, -106.236, 40.5114, -84.6522, 12.9703, -40.9154, -5.31578, 5.47206, 5.01985, 9.44813, 40.7971, -36.4976, 65.0461 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( 30.7797, 123.718 )
+occluder = SubResource( 1 )

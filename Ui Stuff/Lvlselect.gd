@@ -1,4 +1,4 @@
-extends Button
+extends ColorRect
 
 
 # Declare member variables here. Examples:
@@ -7,18 +7,10 @@ extends Button
 
 
 # Called when the node enters the scene tree for the first time.
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	modulate.a = 0.1
-	connect("pressed",self,"_button_pressed")
+	$Description.text = Global.LvlDescription[$Label.text]
 	pass # Replace with function body.
 
-func _button_pressed():
-	
-	Global.savedlvl = "res://Levels/HqLevel.tscn"
-	var level = load("res://Ui Stuff/Control.tscn")
-	get_tree().change_scene_to(level)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

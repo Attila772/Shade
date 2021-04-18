@@ -33,14 +33,16 @@ font_data = SubResource( 4 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1.42204, 1.29339 )
+position = Vector2( -18.2997, -10.8972 )
+scale = Vector2( 1.45257, 1.37363 )
 texture = ExtResource( 6 )
 centered = false
 
 [node name="icon" type="Sprite" parent="."]
+pause_mode = 2
 material = SubResource( 1 )
-position = Vector2( 518.01, 295.935 )
-scale = Vector2( 16.1191, 9.36361 )
+position = Vector2( 506.943, 298.199 )
+scale = Vector2( 17.136, 10.0085 )
 texture = ExtResource( 7 )
 
 [node name="TextureButton" type="TextureButton" parent="."]

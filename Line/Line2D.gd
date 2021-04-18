@@ -6,6 +6,7 @@ var index = 1
 var timer = 4
 
 func _ready():# path needs to be determined here otherwise it FUKIN DIES
+	modulate.a = 0.3
 	path=get_parent().get_simple_path(guard.position,destination)
 	self.points=path
 

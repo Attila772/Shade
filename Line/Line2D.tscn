@@ -3,4 +3,6 @@
 [ext_resource path="res://Line/Line2D.gd" type="Script" id=1]
 
 [node name="Line2D" type="Line2D"]
+show_behind_parent = true
+width = 5.0
 script = ExtResource( 1 )
