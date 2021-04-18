@@ -68,6 +68,12 @@ func _ready(): # creates FOW and Line for Guard DONT TOUCH!
 			turn_around_timer_base=4 
 		2:
 			difficulty= Military
+			timer = 1
+			timer_base = 1
+			sus_timer = 2
+			sus_timer_base= 2 
+			turn_around_timer=4
+			turn_around_timer_base=4 
 	player = get_parent().get_node("Player")
 	FOW= FOW_location.instance()
 	Line = Line_location.instance()
@@ -161,8 +167,8 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 						change_to_patrol()
 
 
-				Search:
-					last_known_pos=get_closest_check_location()
+				Search: 
+					last_known_pos=get_closest_check_location()[0]
 					set_destination(last_known_pos)
 					if FOW.player_check():
 						set_destination(last_known_pos)
@@ -178,8 +184,53 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 					if FOW.player_check():
 						set_destination(last_known_pos)#chase player
 					else :
-						alert_all()
-						change_to_search()
+						if (position - last_known_pos).length()<50:
+							alert_all()
+							change_to_search()
+		Military:
+			match state:
+				Patrol:
+					if path_index == Patrol_path.size():#resets patrol route 
+						path_index=1 
+					set_destination(Patrol_path[path_index])#sets this to Line as destination
+					if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
+						path_index += 1# if guard reach destination updates it to next coordinate on patrol route
+					if FOW.player_check():
+						timer -= delta
+						if timer<0:
+							change_to_sus()
+
+
+				Sus:
+					set_destination(last_known_pos)
+					speed = 50
+					sus_timer -= delta
+					if FOW.player_check():
+						timer -= delta
+						if timer < 0:
+							change_to_chase()
+					if sus_timer < 0:
+						change_to_patrol()
+
+
+				Search:
+					set_destination(last_known_pos)
+					if FOW.player_check():
+						change_to_chase()
+					if (position - last_known_pos).length()<50:
+						speed=0
+						look_around(delta)
+
+
+				Chase: 
+					set_destination(last_known_pos)
+					if !on_alert:
+						on_alert=true
+					if FOW.player_check():
+						update_other_guards()
+					else :
+						if (position - last_known_pos).length()<50:
+							change_to_search()
 
 
 
@@ -249,16 +300,20 @@ func change_to_sus():
 
 
 func change_to_chase():
-	SoftDialog(Dialogs)
+#	SoftDialog(Dialogs)
+	set_destination(last_known_pos)
 	sus_timer=sus_timer_base
 	turn_around_timer= turn_around_timer_base
 	speed = 125
 	FOW.color=Color(1,0,0,0.2)
 	state = Chase
+	alert_all()
 
 
 
 func change_to_search():
+	if difficulty==Military:
+		last_known_pos=get_closest_check_location()[get_guard_id()]
 	speed = 100
 	FOW.color= Color(1,1,0,0.2)
 	state = Search
@@ -281,10 +336,14 @@ func change_to_patrol():
 func alert_all():
 	var dudes = get_tree().get_nodes_in_group("dudes")
 	for i in dudes:
-		if i.name!= "Player":
+		if i.name!= "Player" && i!=self:
 			i.on_alert=true
 			i.timer = timer_base/2
-			i.FOW.color=Color(1,1,0,0.2)
+			if i.state !=Chase:
+				i.FOW.color=Color(1,1,0,0.2)
+				if i.difficulty==Military:
+					i.last_known_pos=player.position
+					i.change_to_chase()
 
 
 
@@ -294,8 +353,29 @@ func SoftDialog(DialogString):
 
 
 func get_closest_check_location():
-	var closest= Check_locations[0]
-	for i in Check_locations:
-		if (i - last_known_pos).length() < (closest - last_known_pos).length():
-			closest = i
-	return closest
+	var Ordered= Check_locations
+	var switch
+	for i in range (0,Ordered.size()-1):
+		for j in range(i+1,Ordered.size()):
+			if ((Ordered[i]-last_known_pos).length()>(Ordered[j]-last_known_pos).length()):
+				switch=Ordered[i]
+				Ordered[i]=Ordered[j]
+				Ordered[j]=switch
+	return Ordered
+
+
+func update_other_guards():
+	var dudes = get_tree().get_nodes_in_group("dudes")
+	for i in dudes:
+		if i.name!= "Player" && i!=self:
+			i.last_known_pos = last_known_pos
+
+
+func get_guard_id():
+	var dudes = get_tree().get_nodes_in_group("dudes")
+	var index = 0
+	for i in dudes:
+		if i == self :
+			return index
+		if i!=player :
+			index+=1

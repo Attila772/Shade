@@ -19,7 +19,7 @@ func _process(delta):
 		if i.position.y < position.y and i.position.y > position.y-128 and i.position.x> position.x-80 and  i.position.x< position.x+70 :
 			IsBehind = true 
 		if i.position.distance_to(position) <100:
-				print(i.position.distance_to(position))
+#				print(i.position.distance_to(position))
 				nearbychar = true
 				if i.name == "Player":
 					if get_parent().get_node("Player").haskey == true:
