@@ -12,6 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _button_pressed():
+	Global.isinmapselect = false
 	var nextlvl = get_parent().get_node("Label").text
 	Global.savedlvl  = Global.LevelsDB[nextlvl]
 	var level = load("res://Ui Stuff/Control.tscn")

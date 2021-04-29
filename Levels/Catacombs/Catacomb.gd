@@ -1,8 +1,6 @@
 extends Node2D
+var dialogbox = load("res://Ui Stuff/Dialogbox.tscn").instance()
 
-
-
-var Camera1 = [-180,-90]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,10 +8,11 @@ var Camera1 = [-180,-90]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	Global.path= self.filename
-
-	
-
-	
 	pass # Replace with function body.
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
