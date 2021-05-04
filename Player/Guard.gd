@@ -258,7 +258,7 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 func Animationloop(): #Plays animation pretty self-explanatory
 	animation = "Walk_" + move_direction
 	if speed==0:
-		animation = animation + "0"
+		animation = "Idle_"+ move_direction
 	$AnimationPlayer.play(animation)
 
 
