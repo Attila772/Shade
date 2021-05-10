@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/463218__gabriela-melo__walking.mp3-dfa2225c6610d6077d2a98288c33e883.mp3str"
+
+[deps]
+
+source_file="res://Sounds/463218__gabriela-melo__walking.mp3"
+dest_files=[ "res://.import/463218__gabriela-melo__walking.mp3-dfa2225c6610d6077d2a98288c33e883.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
