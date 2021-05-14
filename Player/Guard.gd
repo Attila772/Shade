@@ -7,6 +7,8 @@ var anim_mode="Walk"
 var angle
 var dir = Vector2(1,1)
 var move_direction = "S"
+var wait_timer
+var wait_timer_base
 var timer
 var timer_base
 var sus_timer
@@ -21,7 +23,7 @@ var Line_location = preload("res://Line/Line2D.tscn")
 var Line_name
 var player
 var last_known_pos
-var path_index=1
+var path_index=2
 
 
 var softdialog = load("res://Ui Stuff/SoftDialogBox.tscn").instance()
@@ -74,6 +76,8 @@ func _ready(): # creates FOW and Line for Guard DONT TOUCH!
 			sus_timer_base= 2 
 			turn_around_timer=4
 			turn_around_timer_base=4 
+	wait_timer_base= Patrol_path[1]
+	wait_timer=wait_timer_base
 	player = get_parent().get_node("Player")
 	FOW= FOW_location.instance()
 	Line = Line_location.instance()
@@ -101,10 +105,16 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 			match state:
 				Patrol:
 					if path_index == Patrol_path.size():#resets patrol route 
-						path_index=1 
+						path_index=2 
 					set_destination(Patrol_path[path_index])#sets this to Line as destination
 					if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
-						path_index += 1# if guard reach destination updates it to next coordinate on patrol route
+						if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
+							speed=0
+							wait_timer=wait_timer-delta
+							if wait_timer<0:
+								wait_timer=wait_timer_base
+								speed = 100
+								path_index += 1# if guard reach destination updates it to next coordinate on patrol route
 					if FOW.player_check():
 						timer -= delta
 						if timer<0:
@@ -145,10 +155,15 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 			match state:
 				Patrol:
 					if path_index == Patrol_path.size():#resets patrol route 
-						path_index=1 
+						path_index=2 
 					set_destination(Patrol_path[path_index])#sets this to Line as destination
 					if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
-						path_index += 1# if guard reach destination updates it to next coordinate on patrol route
+						speed=0
+						wait_timer=wait_timer-delta
+						if wait_timer<0:
+							wait_timer=wait_timer_base
+							speed = 100
+							path_index += 1# if guard reach destination updates it to next coordinate on patrol route
 					if FOW.player_check():
 						timer -= delta
 						if timer<0:
@@ -191,10 +206,16 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 			match state:
 				Patrol:
 					if path_index == Patrol_path.size():#resets patrol route 
-						path_index=1 
+						path_index=2 
 					set_destination(Patrol_path[path_index])#sets this to Line as destination
 					if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
-						path_index += 1# if guard reach destination updates it to next coordinate on patrol route
+						if (position - Patrol_path[path_index]).length()<50: # checks how close guard is to destination (-50 because it cant reach exact coordinate) 
+							speed=0
+							wait_timer=wait_timer-delta
+							if wait_timer<0:
+								wait_timer=wait_timer_base
+								speed = 100
+								path_index += 1# if guard reach destination updates it to next coordinate on patrol route
 					if FOW.player_check():
 						timer -= delta
 						if timer<0:
@@ -236,6 +257,8 @@ func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hossz�
 
 func Animationloop(): #Plays animation pretty self-explanatory
 	animation = "Walk_" + move_direction
+	if speed==0:
+		animation = "Idle_"+ move_direction
 	$AnimationPlayer.play(animation)
 
 

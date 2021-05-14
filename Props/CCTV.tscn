@@ -1,283 +1,32 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Resources/SelfMadeCCTVForAnimation.png" type="Texture" id=1]
-[ext_resource path="res://AnimationPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Camera/Camera1.png" type="Texture" id=1]
+[ext_resource path="res://Camera/Camera2.png" type="Texture" id=2]
 [ext_resource path="res://Props/CCTV.gd" type="Script" id=3]
-
-[sub_resource type="Animation" id=1]
-resource_name = "E"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 3 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "N"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 6 ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "NEE"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 4 ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "NNE"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 5 ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "NNW"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 7 ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "NWW"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 8 ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "S"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "SEE"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2 ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "SSE"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "SSW"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 11 ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "SWW"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 10 ]
-}
-
-[sub_resource type="Animation" id=12]
-resource_name = "W"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 9 ]
-}
-
-[sub_resource type="Animation" id=13]
-length = 2.0
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 4, 3, 3, 2 ]
-}
-
-[sub_resource type="Animation" id=14]
-length = 2.0
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 2, 3, 3, 4 ]
-}
-
-[sub_resource type="Animation" id=15]
-length = 2.0
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1, 0, 0, 11 ]
-}
-
-[sub_resource type="Animation" id=16]
-length = 2.0
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 11, 0, 0, 1 ]
-}
+[ext_resource path="res://Camera/Camera3.png" type="Texture" id=4]
+[ext_resource path="res://Camera/Camera4.png" type="Texture" id=5]
+[ext_resource path="res://Camera/camera5.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( -20.1587, -433.413 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.3, 0.3 )
+[node name="SE" type="Sprite" parent="."]
+position = Vector2( 115.998, -31.7655 )
 texture = ExtResource( 1 )
-vframes = 2
-hframes = 6
-frame = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/E = SubResource( 1 )
-anims/N = SubResource( 2 )
-anims/NEE = SubResource( 3 )
-anims/NNE = SubResource( 4 )
-anims/NNW = SubResource( 5 )
-anims/NWW = SubResource( 6 )
-anims/S = SubResource( 7 )
-anims/SEE = SubResource( 8 )
-anims/SSE = SubResource( 9 )
-anims/SSW = SubResource( 10 )
-anims/SWW = SubResource( 11 )
-anims/W = SubResource( 12 )
-anims/fromNEtoSE = SubResource( 13 )
-anims/fromSEtoNE = SubResource( 14 )
-anims/fromSEtoSW = SubResource( 15 )
-anims/fromSWtoSE = SubResource( 16 )
-script = ExtResource( 2 )
+[node name="S" type="Sprite" parent="."]
+position = Vector2( 31.9027, 22.9629 )
+texture = ExtResource( 2 )
+
+[node name="SW" type="Sprite" parent="."]
+position = Vector2( 43.2488, -29.7632 )
+texture = ExtResource( 4 )
+
+[node name="W" type="Sprite" parent="."]
+position = Vector2( 5.20585, -59.7971 )
+texture = ExtResource( 5 )
+
+[node name="E" type="Sprite" parent="."]
+position = Vector2( 89.9682, -45.7813 )
+texture = ExtResource( 6 )
