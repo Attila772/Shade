@@ -18,7 +18,7 @@ script = ExtResource( 2 )
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 position = Vector2( 64.1272, -17.6779 )
 scale = Vector2( 1.06825, 1.18719 )
-polygon = PoolVector2Array( -107.221, 18.3753, -127.057, 3.20433, -4.0765, -19.106, -6.06002, -3.93497 )
+polygon = PoolVector2Array( -131.448, 96.6788, -206.422, 60.699, 25.9958, -31.4993, 80.9764, -2.26567 )
 
 [node name="Etoopen" type="Label" parent="."]
 visible = false

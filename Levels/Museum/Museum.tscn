@@ -1,0 +1,734 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Props/Wall_E.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Props/Wall_S.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Props/opendoorW.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Props/Wall_W.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Props/opendoorE.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Props/LockableDoorE.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Props/LockableDoorW.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/gadgets/key.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Ui Stuff/Camera.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Player/Guard.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Levels/Museum/Museum.gd" type="Script" id=15]
+[ext_resource path="res://Props/Furniture/Display Sword e.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Props/Furniture/display sword s.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Props/Furniture/museum case E.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Props/Furniture/Museum case S.tscn" type="PackedScene" id=19]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 2010.06, -11.6216, 2153.53, -1.23894, 2287.06, 10.368, 1764.46, 22.0348, 1768.21, 7.05175, 1850.68, -5.61628, 3051.16, -425.039, 3501.42, -493.815, 3682.98, -399.09, 3040.77, -382.564, 2909.4, -1275.54, 3065.27, -1300.04, 2955.95, -1220.99, 2447.12, -1064.17, 3652.66, -938.998, 3690.71, -906.89, 3525.36, -537.913, 3496.38, -513.974, 3470.3, -545.863, 3461.11, -562.834, 3578.93, -950.891, 761, -255.37, 553.162, -348.636, 695.099, -413.369, 791.729, -397.475, 2432.98, -1079.02, 2236.44, -1176.76, 2423.02, -1254.14, 2531.24, -1223.22, 2440.76, -820.221, 2655.92, -929.072, 3073.62, -527.479, 3058.77, -510.508, 3000.44, -500.145, 2440.34, -522.595, 2402.35, -533.895, 2394.48, -555.393, 2471.16, -1022.45, 2608.34, -960.228, 2398.33, -852.748, 2356.32, -832.641, 2338.36, -833.763, 3279.39, -627.888, 2375.56, 47.05, 2589, 153, 2061.73, 406.488, 646.693, 297.907, 571, 262, 813, 140, 678.477, 311.151, 1281.12, 15.4308, 1176.66, -37.9594, 1416.39, -154.827, 4125.96, -752.293, 4244.13, -696.343, 3746.89, -431.044, 4018.94, -747.536, 1510.62, 700.145, 931.539, 423.966, 1123.97, 320.622, 1794.33, 324.081, 2005.96, 440.002, 812.413, -164.37, 1054.77, -38.7224, 883.413, 46.6299, 803.789, 424.567, 317.739, 648.508, 63.2353, 517.476, 531.926, 280.611, 632, 333, 657, 343, 714.964, 365.98, 678.477, 336.048, 715.594, 354.641, 1713.52, 225.805, 1539.72, 129.164, 1742.74, 33.2721, 2320.7, -36.0761, 2132.12, -144.955, 2291.34, -218.33, 2377.23, -204.172, 2432, 10, 2410, 3, 1321.71, 76.7231, 1406.37, 120.174, 1177.88, 242.286, 2044.28, -676.618, 2184.58, -595.801, 1708.66, -369.064, 1463.96, -489.167, 3179.44, -1177.01, 3115.88, -1210.91, 3395.58, -1357.12, 1429.17, -453.248, 1663.87, -339.591, 1469.43, -226.326, 532.917, 221.578, -31.536, -72.6995, 64.8189, -125.58, 141.792, -110.962, 224.173, -129.148, 711, 122, 3673.15, -1217.27, 3389.2, -1055.38, 3274.58, -1110.82, 3246.11, -1115.32, 3191.1, -1150.52, 3227.38, -1113.82, 2424.62, -487.798, 2535.74, -418.206, 1812.5, -53.6996, 2166.62, -685.598, 2365.3, -800.089, 2418.13, -819.514, 2401.16, -832.949, 2365.3, -815.804, 1386.45, -528.461, 1195.67, -655.932, 1270.68, -709.481, 1396.73, -689.265, 689.602, 323.864, 723.784, 341.412, 2439.53, -238.152, 2434.81, -265.524, 2495.22, -260.804, 3206.99, -1101.79, 3164.49, -1126.81, 2097.07, -386.103, 2093.29, -420.121, 2137.39, -415.081, 539.313, -270.663, 554.772, -309.907, 700.328, -219.85, 764, 95, 2639.63, -341.034, 2646.24, -368.406, 2760.24, -318.307, 3409.35, -1000.08, 3533.31, -1065.77, 3562.28, -980.621, 2187.78, -483.117, 2157.55, -529.734, 2246.89, -571.497, 2363.63, -514.813, 3986.09, -769.062, 3550.56, -534.133, 3911.91, -803.429, 1138.73, 304.667, 1768.98, 292.113, 2107.88, -1004.4, 2112.63, -1047.22, 2164.96, -1035.32, 3388.12, -514.707, 3243.71, -478.839, 2548.07, -294.784, 2545.24, -320.268, 2595.27, -321.212, 2319.06, 10.368, 2359.69, 34.3508, 1828.55, 277.71, 2416.95, -497.976, 1791.55, -866.457, 1797.49, -900.944, 1843.26, -891.931, 2210.15, -1060.3, 2236.31, -1116.19, 2375.58, -1048.33, 1997.54, -345.785, 2002.58, -377.283, 2054.23, -368.464, 3460.4, -538.085, 1892.73, -301.031, 1898, -331.926, 1954.7, -324.367, 1540.01, 282.867, 1137.32, 280.625, 1387.11, 280.979, 3808.45, -840.294, 3879.8, -845.051, 3883.22, -823.304, 1572.73, -759.428, 1587, -804.618, 1633.61, -795.573, 1688.09, -812.943, 1699.98, -854.565, 1744.71, -849.91, 322.877, -176.716, 338.337, -218.338, 390.199, -209.067, 970.995, -466.883, 980.508, -498.991, 1037.59, -493.045, 740.163, 338.262, 1075.09, 269.312, 870.032, 372.549, 761.581, 343.932, 832, 123, 1757.72, -19.9178, 1742.74, -24.4127, 1668.7, -190.815, 1682.56, -233.652, 1744.29, -226.093, 1814.31, -33.023, 3005.85, -360.855, 2633.54, 118.902, 2577.61, -1239.87, 2871.35, -1298.14, 236.065, -169.581, 296.218, -168.892, 429.905, -221.906, 863.413, 59.6299, 1996.09, -955.647, 2015.12, -996.081, 2062.69, -987.756, 3982.07, -795.104, 3771.56, -870.522, 2184, -444.059, 2379.34, -511.445, 1775.36, -247.446, 1788.39, -281.529, 1858.95, -275.23, 1424.86, 234.73, 1439.02, 227.179, 1493.76, 232.842, 1498.48, 257.383, 1415.42, 263.99, 447.744, -261.15, 497.005, -255.992, 722.479, -213.979, 748.003, -207.137, 799, 82, 856.413, 78.6299, 822, 89, 773.43, -220.91, 798.413, -181.37, 3763.26, -902.133, 2492.38, -1058.52, 3378.62, -999.02, 1434.79, -702.346, 2590.7, -1288.63, 2658.48, -1298.14, 846.128, -408.612, 1456.19, -743.968, 1537.06, -739.211, 1884.31, -906.89, 1902.14, -946.134, 1969.37, -945.641, 1078.02, -510.883, 1089.92, -531.1, 1141.05, -527.532, 1318.48, -499.756, 1315.72, 60.2418, 867.534, -446.666, 936.508, -449.045, 1234.06, 273.75, 1272.9, 250.775, 1308.77, 268.709, 1422.43, -477.943, 1360.41, -190.37, 1105.41, -58.3701, 819.413, -207.37, 1380.22, -499.061, 2771.46, -1337.38, 2854.7, -1327.87, 2684.64, -1326.68, 1727.75, 243.035, 2724.32, -369.94, 1724.01, 257.269, 1795.79, 271.411, 2920.9, -310.83, 2929.4, -355.192, 2953.94, -367.462, 2888.81, -293.84, 2372, 8, 2333.04, -12.5043, 1711.27, 267.757, 1284.89, 34.3083, 1432.87, -174.305, 1634.68, -176.956, 1343.55, 39.8695, 1320.22, 41.5129, 1720.26, -21.416, 1440.83, 88.7096, 1361.42, 47.5061, 906.398, 94.7162, 1121.6, -5.33444, 1248.08, 49.4103, 2061.03, -35.2184, 2105.4, -40.8817, 1416.39, -190.787, 1509.97, -192.485, 1211.21, -551.317, 1117.52, 259.412, 881.413, 96.6299, 1534.81, -205.26, 1490.19, -195.179, 1472.26, -203.674, 1392.41, -194.37, 3132.54, -1121.77, 3218.39, -1083.85, 3099.07, -489.295, 3137.05, -501.492, 3174.8, -488.278, 2422.56, -516.496, 3277.69, -497.717, 3303.17, -515.651, 2471.87, -1038.72, 3416.44, -529.809, 3438.48, -538.792, 3354.26, -1009.61, 1915.68, -27.6674, 1833.19, -9.42619, 1819.97, -16.0333, 1765.21, -7.93132, 1345.17, -490.412, 1622.13, 276.26, 1685.8, 261.764, 2416.01, -1042.96, 1269.79, 51.298, 2478.24, -1050.74, 1446, -484.677, 3078.57, -486.466, 3046.44, -451.467, 3062.3, -495.659, 3037, -467.513, 3028.5, -497.9, 2393.93, -523.231, 1174.13, 265.51, 2439.34, -1048.62, 1210.84, 275.249, 1191.36, 275.998, 801.413, -197.37 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 8, 9 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17, 18, 19, 20 ), PoolIntArray( 21, 22, 23, 24 ), PoolIntArray( 25, 26, 27, 28 ), PoolIntArray( 29, 30, 31, 32, 33, 34, 35, 36 ), PoolIntArray( 37, 38, 39, 40, 41 ), PoolIntArray( 30, 42, 31 ), PoolIntArray( 43, 44, 45 ), PoolIntArray( 46, 47, 48, 49 ), PoolIntArray( 50, 51, 52 ), PoolIntArray( 53, 54, 55, 56 ), PoolIntArray( 57, 58, 59, 60, 61 ), PoolIntArray( 62, 63, 64 ), PoolIntArray( 65, 66, 67, 68, 69 ), PoolIntArray( 65, 69, 70 ), PoolIntArray( 71, 65, 70 ), PoolIntArray( 71, 70, 72, 73 ), PoolIntArray( 74, 75, 76 ), PoolIntArray( 77, 78, 79, 80, 81, 82 ), PoolIntArray( 83, 84, 85 ), PoolIntArray( 86, 87, 88, 89 ), PoolIntArray( 90, 91, 92 ), PoolIntArray( 93, 94, 95 ), PoolIntArray( 96, 97, 98, 99 ), PoolIntArray( 96, 99, 100, 101 ), PoolIntArray( 90, 92, 102, 103, 104 ), PoolIntArray( 90, 104, 105, 106 ), PoolIntArray( 106, 105, 107 ), PoolIntArray( 108, 109, 110 ), PoolIntArray( 29, 36, 111, 112, 113 ), PoolIntArray( 114, 113, 112, 115 ), PoolIntArray( 116, 117, 118, 119 ), PoolIntArray( 73, 72, 120, 121 ), PoolIntArray( 122, 123, 124 ), PoolIntArray( 106, 107, 125, 126 ), PoolIntArray( 127, 128, 129 ), PoolIntArray( 130, 131, 132, 133 ), PoolIntArray( 134, 135, 136 ), PoolIntArray( 137, 138, 139 ), PoolIntArray( 140, 141, 142, 143 ), PoolIntArray( 144, 56, 55, 145, 146 ), PoolIntArray( 60, 59, 147, 148 ), PoolIntArray( 149, 150, 151 ), PoolIntArray( 152, 17, 7, 6, 153 ), PoolIntArray( 154, 155, 156 ), PoolIntArray( 157, 158, 43, 45, 159, 2 ), PoolIntArray( 160, 108, 110 ), PoolIntArray( 161, 162, 163 ), PoolIntArray( 164, 165, 166 ), PoolIntArray( 167, 168, 169 ), PoolIntArray( 170, 18, 17 ), PoolIntArray( 171, 172, 173 ), PoolIntArray( 174, 148, 147, 175, 176 ), PoolIntArray( 114, 115, 40, 39 ), PoolIntArray( 177, 178, 179, 145 ), PoolIntArray( 180, 181, 182 ), PoolIntArray( 183, 184, 185 ), PoolIntArray( 186, 187, 188, 101 ), PoolIntArray( 189, 190, 191 ), PoolIntArray( 121, 120, 49, 48, 192 ), PoolIntArray( 193, 194, 195, 192, 48, 196 ), PoolIntArray( 197, 198, 199, 200, 201, 110, 202 ), PoolIntArray( 203, 9, 8, 204, 81 ), PoolIntArray( 13, 25, 28, 205, 206, 10 ), PoolIntArray( 101, 100, 207, 208 ), PoolIntArray( 101, 208, 186 ), PoolIntArray( 101, 188, 209, 133 ), PoolIntArray( 62, 64, 210 ), PoolIntArray( 211, 212, 213 ), PoolIntArray( 146, 214, 144 ), PoolIntArray( 179, 146, 145 ), PoolIntArray( 15, 215, 177, 145, 16 ), PoolIntArray( 216, 140, 143, 217 ), PoolIntArray( 218, 219, 220, 110 ), PoolIntArray( 221, 222, 223, 224, 225 ), PoolIntArray( 209, 226, 227, 133 ), PoolIntArray( 133, 227, 130 ), PoolIntArray( 133, 132, 228, 229, 230 ), PoolIntArray( 231, 232, 230, 229, 233, 234 ), PoolIntArray( 15, 235, 215 ), PoolIntArray( 139, 20, 19, 236, 237 ), PoolIntArray( 116, 119, 238 ), PoolIntArray( 205, 239, 240, 206 ), PoolIntArray( 21, 24, 241, 233 ), PoolIntArray( 238, 242, 243, 116 ), PoolIntArray( 244, 245, 246 ), PoolIntArray( 247, 248, 249, 250 ), PoolIntArray( 251, 83, 85 ), PoolIntArray( 241, 252, 253, 233 ), PoolIntArray( 254, 255, 256 ), PoolIntArray( 257, 93, 258, 259, 260, 261 ), PoolIntArray( 262, 263, 206, 240, 264 ), PoolIntArray( 74, 76, 3, 2, 265 ), PoolIntArray( 33, 266, 34 ), PoolIntArray( 267, 265, 2, 159, 268 ), PoolIntArray( 269, 270, 271, 203 ), PoolIntArray( 269, 203, 81 ), PoolIntArray( 272, 269, 81 ), PoolIntArray( 154, 156, 134, 136, 272, 81, 124 ), PoolIntArray( 122, 124, 81, 80 ), PoolIntArray( 77, 82, 273, 274 ), PoolIntArray( 274, 273, 158, 157 ), PoolIntArray( 267, 268, 148, 275 ), PoolIntArray( 276, 50, 52, 277, 278, 279, 280 ), PoolIntArray( 281, 282, 283 ), PoolIntArray( 284, 285, 286, 85 ), PoolIntArray( 287, 288, 1, 0 ), PoolIntArray( 278, 277, 289, 290 ), PoolIntArray( 249, 291, 250 ), PoolIntArray( 292, 193, 196, 232, 293 ), PoolIntArray( 290, 294, 278 ), PoolIntArray( 295, 290, 289 ), PoolIntArray( 296, 295, 289 ), PoolIntArray( 93, 95, 296, 289, 297 ), PoolIntArray( 93, 297, 258 ), PoolIntArray( 298, 126, 125, 299 ), PoolIntArray( 300, 301, 302, 6 ), PoolIntArray( 129, 216, 217, 303, 160, 110, 127 ), PoolIntArray( 225, 224, 174, 176 ), PoolIntArray( 13, 12, 298 ), PoolIntArray( 304, 305, 152 ), PoolIntArray( 199, 281, 283, 279, 278 ), PoolIntArray( 151, 164, 166 ), PoolIntArray( 62, 210, 231, 234 ), PoolIntArray( 306, 37, 41, 86, 89 ), PoolIntArray( 307, 308, 170, 17, 152 ), PoolIntArray( 13, 298, 299, 309 ), PoolIntArray( 5, 310, 0 ), PoolIntArray( 311, 5, 4 ), PoolIntArray( 312, 311, 4, 313 ), PoolIntArray( 202, 312, 313, 197 ), PoolIntArray( 233, 253, 189, 191, 250, 314 ), PoolIntArray( 315, 316, 275, 148 ), PoolIntArray( 116, 243, 180, 261 ), PoolIntArray( 149, 151, 166, 317 ), PoolIntArray( 191, 247, 250 ), PoolIntArray( 276, 280, 251, 85, 318 ), PoolIntArray( 261, 180, 182, 183 ), PoolIntArray( 319, 306, 89, 320 ), PoolIntArray( 153, 304, 152 ), PoolIntArray( 302, 153, 6 ), PoolIntArray( 321, 300, 6, 322 ), PoolIntArray( 323, 321, 322, 324, 325 ), PoolIntArray( 32, 323, 325, 33 ), PoolIntArray( 35, 34, 303, 326 ), PoolIntArray( 217, 326, 303 ), PoolIntArray( 169, 127, 110 ), PoolIntArray( 167, 169, 110, 173 ), PoolIntArray( 171, 173, 110, 220 ), PoolIntArray( 201, 218, 110 ), PoolIntArray( 199, 198, 281 ), PoolIntArray( 286, 318, 85 ), PoolIntArray( 293, 284, 85, 327, 292 ), PoolIntArray( 13, 309, 237, 236 ), PoolIntArray( 183, 185, 161, 261 ), PoolIntArray( 261, 161, 163, 244 ), PoolIntArray( 261, 244, 246, 211, 317 ), PoolIntArray( 213, 149, 317, 211 ), PoolIntArray( 257, 261, 317, 328, 319, 320 ), PoolIntArray( 254, 256, 176, 175 ), PoolIntArray( 233, 314, 261, 260 ), PoolIntArray( 174, 315, 148 ), PoolIntArray( 329, 254, 175 ), PoolIntArray( 330, 329, 175 ), PoolIntArray( 327, 330, 175, 292 ), PoolIntArray( 231, 293, 232 ), PoolIntArray( 331, 234, 233 ), PoolIntArray( 260, 331, 233 ), PoolIntArray( 319, 328, 13, 236 ), PoolIntArray( 139, 237, 137 ) ]
+outlines = [ PoolVector2Array( 63.2353, 517.476, 531.926, 280.611, 632, 333, 657, 343, 678.477, 336.048, 689.602, 323.864, 678.477, 311.151, 646.693, 297.907, 571, 262, 813, 140, 832, 123, 822, 89, 799, 82, 764, 95, 711, 122, 532.917, 221.578, -31.536, -72.6995, 64.8189, -125.58, 141.792, -110.962, 224.173, -129.148, 236.065, -169.581, 296.218, -168.892, 322.877, -176.716, 338.337, -218.338, 390.199, -209.067, 429.905, -221.906, 447.744, -261.15, 497.005, -255.992, 539.313, -270.663, 554.772, -309.907, 700.328, -219.85, 722.479, -213.979, 748.003, -207.137, 773.43, -220.91, 761, -255.37, 553.162, -348.636, 695.099, -413.369, 791.729, -397.475, 846.128, -408.612, 867.534, -446.666, 936.508, -449.045, 970.995, -466.883, 980.508, -498.991, 1037.59, -493.045, 1078.02, -510.883, 1089.92, -531.1, 1141.05, -527.532, 1211.21, -551.317, 1318.48, -499.756, 1345.17, -490.412, 1380.22, -499.061, 1386.45, -528.461, 1195.67, -655.932, 1270.68, -709.481, 1396.73, -689.265, 1434.79, -702.346, 1456.19, -743.968, 1537.06, -739.211, 1572.73, -759.428, 1587, -804.618, 1633.61, -795.573, 1688.09, -812.943, 1699.98, -854.565, 1744.71, -849.91, 1791.55, -866.457, 1797.49, -900.944, 1843.26, -891.931, 1884.31, -906.89, 1902.14, -946.134, 1969.37, -945.641, 1996.09, -955.647, 2015.12, -996.081, 2062.69, -987.756, 2107.88, -1004.4, 2112.63, -1047.22, 2164.96, -1035.32, 2210.15, -1060.3, 2236.31, -1116.19, 2375.58, -1048.33, 2416.01, -1042.96, 2439.34, -1048.62, 2447.12, -1064.17, 2432.98, -1079.02, 2236.44, -1176.76, 2423.02, -1254.14, 2531.24, -1223.22, 2577.61, -1239.87, 2590.7, -1288.63, 2658.48, -1298.14, 2684.64, -1326.68, 2771.46, -1337.38, 2854.7, -1327.87, 2871.35, -1298.14, 2909.4, -1275.54, 3065.27, -1300.04, 2955.95, -1220.99, 3132.54, -1121.77, 3164.49, -1126.81, 3191.1, -1150.52, 3179.44, -1177.01, 3115.88, -1210.91, 3395.58, -1357.12, 3673.15, -1217.27, 3389.2, -1055.38, 3274.58, -1110.82, 3246.11, -1115.32, 3227.38, -1113.82, 3206.99, -1101.79, 3218.39, -1083.85, 3354.26, -1009.61, 3378.62, -999.02, 3409.35, -1000.08, 3533.31, -1065.77, 3562.28, -980.621, 3578.93, -950.891, 3652.66, -938.998, 3690.71, -906.89, 3763.26, -902.133, 3771.56, -870.522, 3808.45, -840.294, 3879.8, -845.051, 3883.22, -823.304, 3911.91, -803.429, 3982.07, -795.104, 3986.09, -769.062, 4018.94, -747.536, 4125.96, -752.293, 4244.13, -696.343, 3746.89, -431.044, 3550.56, -534.133, 3525.36, -537.913, 3496.38, -513.974, 3501.42, -493.815, 3682.98, -399.09, 2633.54, 118.902, 2432, 10, 2410, 3, 2372, 8, 2359.69, 34.3508, 2375.56, 47.05, 2589, 153, 2061.73, 406.488, 1828.55, 277.71, 1795.79, 271.411, 1768.98, 292.113, 1794.33, 324.081, 2005.96, 440.002, 1510.62, 700.145, 931.539, 423.966, 1123.97, 320.622, 1138.73, 304.667, 1137.32, 280.625, 1117.52, 259.412, 1075.09, 269.312, 870.032, 372.549, 761.581, 343.932, 740.163, 338.262, 723.784, 341.412, 715.594, 354.641, 714.964, 365.98, 803.789, 424.567, 317.739, 648.508 ), PoolVector2Array( 1121.6, -5.33444, 1248.08, 49.4103, 1269.79, 51.298, 1284.89, 34.3083, 1281.12, 15.4308, 1176.66, -37.9594, 1416.39, -154.827, 1432.87, -174.305, 1416.39, -190.787, 1392.41, -194.37, 1360.41, -190.37, 1105.41, -58.3701, 819.413, -207.37, 801.413, -197.37, 798.413, -181.37, 812.413, -164.37, 1054.77, -38.7224, 883.413, 46.6299, 863.413, 59.6299, 856.413, 78.6299, 881.413, 96.6299, 906.398, 94.7162 ), PoolVector2Array( 1622.13, 276.26, 1540.01, 282.867, 1498.48, 257.383, 1493.76, 232.842, 1439.02, 227.179, 1424.86, 234.73, 1415.42, 263.99, 1387.11, 280.979, 1308.77, 268.709, 1272.9, 250.775, 1234.06, 273.75, 1210.84, 275.249, 1191.36, 275.998, 1174.13, 265.51, 1177.88, 242.286, 1406.37, 120.174, 1321.71, 76.7231, 1315.72, 60.2418, 1320.22, 41.5129, 1343.55, 39.8695, 1361.42, 47.5061, 1440.83, 88.7096, 1720.26, -21.416, 1742.74, -24.4127, 1757.72, -19.9178, 1765.21, -7.93132, 1768.21, 7.05175, 1764.46, 22.0348, 1742.74, 33.2721, 1539.72, 129.164, 1713.52, 225.805, 1727.75, 243.035, 1724.01, 257.269, 1711.27, 267.757, 1685.8, 261.764 ), PoolVector2Array( 2153.53, -1.23894, 2287.06, 10.368, 2319.06, 10.368, 2333.04, -12.5043, 2320.7, -36.0761, 2132.12, -144.955, 2291.34, -218.33, 2377.23, -204.172, 2439.53, -238.152, 2434.81, -265.524, 2495.22, -260.804, 2548.07, -294.784, 2545.24, -320.268, 2595.27, -321.212, 2639.63, -341.034, 2646.24, -368.406, 2760.24, -318.307, 2888.81, -293.84, 2920.9, -310.83, 2929.4, -355.192, 2953.94, -367.462, 3005.85, -360.855, 3040.77, -382.564, 3051.16, -425.039, 3046.44, -451.467, 3037, -467.513, 3028.5, -497.9, 3000.44, -500.145, 2724.32, -369.94, 2440.34, -522.595, 2422.56, -516.496, 2416.95, -497.976, 2424.62, -487.798, 2535.74, -418.206, 1812.5, -53.6996, 1814.31, -33.023, 1819.97, -16.0333, 1833.19, -9.42619, 1850.68, -5.61628, 1915.68, -27.6674, 2010.06, -11.6216, 2061.03, -35.2184, 2105.4, -40.8817 ), PoolVector2Array( 1509.97, -192.485, 1534.81, -205.26, 1634.68, -176.956, 1668.7, -190.815, 1682.56, -233.652, 1744.29, -226.093, 1775.36, -247.446, 1788.39, -281.529, 1858.95, -275.23, 1892.73, -301.031, 1898, -331.926, 1954.7, -324.367, 1997.54, -345.785, 2002.58, -377.283, 2054.23, -368.464, 2097.07, -386.103, 2093.29, -420.121, 2137.39, -415.081, 2184, -444.059, 2187.78, -483.117, 2157.55, -529.734, 2246.89, -571.497, 2363.63, -514.813, 2379.34, -511.445, 2393.93, -523.231, 2402.35, -533.895, 2394.48, -555.393, 2166.62, -685.598, 2365.3, -800.089, 2365.3, -815.804, 2356.32, -832.641, 2338.36, -833.763, 2044.28, -676.618, 2184.58, -595.801, 1708.66, -369.064, 1463.96, -489.167, 1446, -484.677, 1422.43, -477.943, 1429.17, -453.248, 1663.87, -339.591, 1469.43, -226.326, 1472.26, -203.674, 1490.19, -195.179 ), PoolVector2Array( 2608.34, -960.228, 2398.33, -852.748, 2401.16, -832.949, 2418.13, -819.514, 2440.76, -820.221, 2655.92, -929.072, 3279.39, -627.888, 3073.62, -527.479, 3058.77, -510.508, 3062.3, -495.659, 3078.57, -486.466, 3099.07, -489.295, 3137.05, -501.492, 3174.8, -488.278, 3243.71, -478.839, 3277.69, -497.717, 3303.17, -515.651, 3388.12, -514.707, 3416.44, -529.809, 3438.48, -538.792, 3460.4, -538.085, 3470.3, -545.863, 3461.11, -562.834, 2492.38, -1058.52, 2478.24, -1050.74, 2471.87, -1038.72, 2471.16, -1022.45 ) ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Floor" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 254, 128 )
+format = 1
+tile_data = PoolIntArray( -1769476, 260, 0, -1769475, 260, 0, -1769474, 260, 0, -1769473, 260, 0, -1835008, 260, 0, -1835007, 260, 0, -1835006, 260, 0, -1835005, 260, 0, -1835004, 260, 0, -1835003, 260, 0, -1835002, 260, 0, -1835001, 260, 0, -1835000, 260, 0, -1703940, 260, 0, -1703939, 260, 0, -1703938, 260, 0, -1703937, 260, 0, -1769472, 260, 0, -1769471, 260, 0, -1769470, 260, 0, -1769469, 260, 0, -1769468, 260, 0, -1769467, 260, 0, -1769466, 260, 0, -1769465, 260, 0, -1769464, 260, 0, -1638404, 260, 0, -1638403, 260, 0, -1638402, 260, 0, -1638401, 260, 0, -1703936, 260, 0, -1703935, 260, 0, -1703934, 260, 0, -1703933, 260, 0, -1703932, 260, 0, -1703931, 260, 0, -1703930, 260, 0, -1703929, 260, 0, -1703928, 260, 0, -1572868, 260, 0, -1572867, 260, 0, -1572866, 260, 0, -1572865, 260, 0, -1638400, 260, 0, -1638399, 260, 0, -1638398, 260, 0, -1638397, 260, 0, -1638396, 260, 0, -1638395, 260, 0, -1638394, 260, 0, -1638393, 260, 0, -1638392, 260, 0, -1507332, 260, 0, -1507331, 260, 0, -1507330, 260, 0, -1507329, 260, 0, -1572864, 260, 0, -1572863, 260, 0, -1572862, 260, 0, -1572861, 260, 0, -1572860, 260, 0, -1572859, 260, 0, -1572858, 260, 0, -1572857, 260, 0, -1572856, 260, 0, -1441796, 260, 0, -1441795, 260, 0, -1441794, 260, 0, -1441793, 260, 0, -1507328, 260, 0, -1507327, 260, 0, -1507326, 260, 0, -1507325, 260, 0, -1507324, 260, 0, -1507323, 260, 0, -1507322, 260, 0, -1507321, 260, 0, -1507320, 260, 0, -1376260, 260, 0, -1376259, 260, 0, -1376258, 260, 0, -1376257, 260, 0, -1441792, 260, 0, -1441791, 260, 0, -1441790, 260, 0, -1441789, 260, 0, -1441788, 260, 0, -1441787, 260, 0, -1441786, 260, 0, -1441785, 260, 0, -1441784, 260, 0, -1310724, 260, 0, -1310723, 260, 0, -1310722, 260, 0, -1310721, 260, 0, -1376256, 260, 0, -1376255, 260, 0, -1376254, 260, 0, -1376253, 260, 0, -1376252, 260, 0, -1376251, 260, 0, -1376250, 260, 0, -1376249, 260, 0, -1376248, 260, 0, -1245188, 260, 0, -1245187, 260, 0, -1245186, 260, 0, -1245185, 260, 0, -1310720, 260, 0, -1310719, 260, 0, -1310718, 260, 0, -1310717, 260, 0, -1310716, 260, 0, -1310715, 260, 0, -1310714, 260, 0, -1310713, 260, 0, -1310712, 260, 0, -1179652, 260, 0, -1179651, 260, 0, -1179650, 260, 0, -1179649, 260, 0, -1245184, 260, 0, -1245183, 260, 0, -1245182, 260, 0, -1245181, 260, 0, -1245180, 260, 0, -1245179, 260, 0, -1245178, 260, 0, -1245177, 260, 0, -1245176, 260, 0, -1114116, 260, 0, -1114115, 260, 0, -1114114, 260, 0, -1114113, 260, 0, -1179648, 260, 0, -1179647, 260, 0, -1179646, 260, 0, -1179645, 260, 0, -1179644, 260, 0, -1179643, 260, 0, -1179642, 260, 0, -1179641, 260, 0, -1179640, 260, 0, -1048580, 260, 0, -1048579, 260, 0, -1048578, 260, 0, -1048577, 260, 0, -1114112, 260, 0, -1114111, 260, 0, -1114110, 260, 0, -1114109, 260, 0, -1114108, 260, 0, -1114107, 260, 0, -1114106, 260, 0, -1114105, 260, 0, -1114104, 260, 0, -983044, 260, 0, -983043, 260, 0, -983042, 260, 0, -983041, 260, 0, -1048576, 260, 0, -1048575, 260, 0, -1048574, 260, 0, -1048573, 260, 0, -1048572, 260, 0, -1048571, 260, 0, -1048570, 260, 0, -1048569, 260, 0, -1048568, 260, 0, -917508, 260, 0, -917507, 260, 0, -917506, 260, 0, -917505, 260, 0, -983040, 260, 0, -983039, 260, 0, -983038, 260, 0, -983037, 260, 0, -983036, 260, 0, -983035, 260, 0, -983034, 260, 0, -983033, 260, 0, -983032, 260, 0, -851972, 260, 0, -851971, 260, 0, -851970, 260, 0, -851969, 260, 0, -917504, 260, 0, -917503, 260, 0, -917502, 260, 0, -917501, 260, 0, -917500, 260, 0, -917499, 260, 0, -917498, 260, 0, -917497, 260, 0, -917496, 260, 0, -786436, 260, 0, -786435, 260, 0, -786434, 260, 0, -786433, 260, 0, -851968, 260, 0, -851967, 260, 0, -851966, 260, 0, -851965, 260, 0, -851964, 260, 0, -851963, 260, 0, -851962, 260, 0, -851961, 260, 0, -851960, 260, 0, -720900, 260, 0, -720899, 260, 0, -720898, 260, 0, -720897, 260, 0, -786432, 260, 0, -786431, 260, 0, -786430, 260, 0, -786429, 260, 0, -786428, 260, 0, -786427, 260, 0, -786426, 260, 0, -786425, 260, 0, -786424, 260, 0, -655364, 260, 0, -655363, 260, 0, -655362, 260, 0, -655361, 260, 0, -720896, 260, 0, -720895, 260, 0, -720894, 260, 0, -720893, 260, 0, -720892, 260, 0, -720891, 260, 0, -720890, 260, 0, -720889, 260, 0, -720888, 260, 0, -589828, 260, 0, -589827, 260, 0, -589826, 260, 0, -589825, 260, 0, -655360, 260, 0, -655359, 260, 0, -655358, 260, 0, -655357, 260, 0, -655356, 260, 0, -655355, 260, 0, -655354, 260, 0, -655353, 260, 0, -655352, 260, 0, -524292, 260, 0, -524291, 260, 0, -524290, 260, 0, -524289, 260, 0, -589824, 260, 0, -589823, 260, 0, -589822, 260, 0, -589821, 260, 0, -589820, 260, 0, -589819, 260, 0, -589818, 260, 0, -589817, 260, 0, -589816, 260, 0, -458756, 260, 0, -458755, 260, 0, -458754, 260, 0, -458753, 260, 0, -524288, 260, 0, -524287, 260, 0, -524286, 260, 0, -524285, 260, 0, -524284, 260, 0, -524283, 260, 0, -524282, 260, 0, -524281, 260, 0, -524280, 260, 0, -393220, 260, 0, -393219, 260, 0, -393218, 260, 0, -393217, 260, 0, -458752, 260, 0, -458751, 260, 0, -458750, 260, 0, -458749, 260, 0, -458748, 260, 0, -458747, 260, 0, -458746, 260, 0, -458745, 260, 0, -458744, 260, 0, -327684, 260, 0, -327683, 260, 0, -327682, 260, 0, -327681, 260, 0, -393216, 260, 0, -393215, 260, 0, -393214, 260, 0, -393213, 260, 0, -393212, 260, 0, -393211, 260, 0, -393210, 260, 0, -393209, 260, 0, -393208, 260, 0, -262148, 260, 0, -262147, 260, 0, -262146, 260, 0, -262145, 260, 0, -327680, 260, 0, -327679, 260, 0, -327678, 260, 0, -327677, 260, 0, -327676, 260, 0, -327675, 260, 0, -327674, 260, 0, -327673, 260, 0, -327672, 260, 0, -196612, 260, 0, -196611, 260, 0, -196610, 260, 0, -196609, 260, 0, -262144, 260, 0, -262143, 260, 0, -262142, 260, 0, -262141, 260, 0, -262140, 260, 0, -262139, 260, 0, -262138, 260, 0, -262137, 260, 0, -262136, 260, 0, -131076, 260, 0, -131075, 260, 0, -131074, 260, 0, -131073, 260, 0, -196608, 260, 0, -196607, 260, 0, -196606, 260, 0, -196605, 260, 0, -196604, 260, 0, -196603, 260, 0, -196602, 260, 0, -196601, 260, 0, -196600, 260, 0, -65540, 260, 0, -65539, 260, 0, -65538, 260, 0, -65537, 260, 0, -131072, 260, 0, -131071, 260, 0, -131070, 260, 0, -131069, 260, 0, -131068, 260, 0, -131067, 260, 0, -131066, 260, 0, -131065, 260, 0, -131064, 260, 0, -4, 260, 0, -3, 260, 0, -2, 260, 0, -1, 260, 0, -65536, 260, 0, -65535, 260, 0, -65534, 260, 0, -65533, 260, 0, -65532, 260, 0, -65531, 260, 0, -65530, 260, 0, -65529, 260, 0, -65528, 260, 0, 65532, 260, 0, 65533, 260, 0, 65534, 260, 0, 65535, 260, 0, 0, 260, 0, 1, 260, 0, 2, 260, 0, 3, 260, 0, 4, 260, 0, 5, 260, 0, 6, 260, 0, 7, 260, 0, 8, 260, 0 )
+
+[node name="Test" type="YSort" parent="."]
+
+[node name="CollisionTest157" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2743.38, -1467.11 )
+
+[node name="CollisionTest144" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2634.74, -1412.06 )
+
+[node name="CollisionTest143" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2513.65, -1351.52 )
+
+[node name="CollisionTest142" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2395.93, -1294.33 )
+
+[node name="CollisionTest133" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2265.12, -1234.97 )
+
+[node name="CollisionTest128" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2132.42, -1185.68 )
+
+[node name="CollisionTest121" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2003.93, -1121.39 )
+
+[node name="CollisionTest111" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1875.18, -1061.12 )
+
+[node name="CollisionTest110" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1744.37, -994.524 )
+
+[node name="CollisionTest109" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1615.93, -927.928 )
+
+[node name="CollisionTest105" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1483.85, -862.804 )
+
+[node name="CollisionTest104" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1355.85, -794.804 )
+
+[node name="CollisionTest94" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1225.85, -730.804 )
+
+[node name="CollisionTest83" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1099.91, -665.587 )
+
+[node name="CollisionTest79" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 973.075, -600.483 )
+
+[node name="CollisionTest80" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 841.747, -538.749 )
+
+[node name="CollisionTest81" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 711.542, -474.768 )
+
+[node name="CollisionTest137" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2237.81, -1174.4 )
+
+[node name="CollisionTest135" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2355.54, -1117.62 )
+
+[node name="CollisionTest136" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 2465.42, -1057.95 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest134" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2559.83, -1027.82 )
+
+[node name="CollisionTest118" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2620.54, -958.488 )
+
+[node name="CollisionTest119" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2715.65, -946.084 )
+
+[node name="CollisionTest120" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2845.15, -882.176 )
+
+[node name="CollisionTest122" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2974.65, -816.586 )
+
+[node name="CollisionTest123" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3102.47, -752.678 )
+
+[node name="CollisionTest124" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3223.56, -692.133 )
+
+[node name="CollisionTest115" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3282.14, -622.219 )
+
+[node name="CollisionTest129" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3378.61, -610.044 )
+
+[node name="CollisionTest131" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 3493.32, -550.411 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest130" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3581.51, -505.926 )
+
+[node name="CollisionTest116" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2494.27, -897.639 )
+
+[node name="CollisionTest117" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2375.33, -857.859 )
+scale = Vector2( 0.3, 0.33 )
+
+[node name="CollisionTest108" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2276.63, -789.114 )
+
+[node name="CollisionTest107" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2154.64, -730.451 )
+
+[node name="CollisionTest106" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2146.64, -668.451 )
+
+[node name="CollisionTest91" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2212.86, -598.026 )
+
+[node name="CollisionTest92" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2300.79, -592.211 )
+
+[node name="CollisionTest112" parent="Test" instance=ExtResource( 7 )]
+position = Vector2( 2404.86, -529.67 )
+scale = Vector2( 0.3, 0.6 )
+
+[node name="CollisionTest114" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3166.09, -562.183 )
+
+[node name="CollisionTest113" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 3047.73, -525.21 )
+scale = Vector2( 0.3, 0.33 )
+
+[node name="CollisionTest93" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2494.77, -481.46 )
+
+[node name="CollisionTest90" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2560.76, -417.007 )
+
+[node name="CollisionTest89" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2431.92, -351.24 )
+
+[node name="CollisionTest88" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2081.66, -530.148 )
+
+[node name="CollisionTest87" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1958.8, -467.461 )
+
+[node name="CollisionTest86" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1827.77, -401.945 )
+
+[node name="CollisionTest85" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2303.41, -285.724 )
+
+[node name="CollisionTest84" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2172.37, -222.728 )
+
+[node name="CollisionTest82" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 586.948, -417.522 )
+
+[node name="CollisionTest50" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 452.875, -361.743 )
+
+[node name="CollisionTest51" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 557.073, -352.83 )
+
+[node name="CollisionTest53" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 682.667, -291.691 )
+
+[node name="CollisionTest54" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 790.061, -223.895 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest55" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 881.363, -175.695 )
+
+[node name="CollisionTest52" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1008.93, -110.058 )
+
+[node name="CollisionTest78" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1164.35, -634.701 )
+
+[node name="CollisionTest76" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1285.28, -571.633 )
+
+[node name="CollisionTest77" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 1401.22, -509.284 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest75" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1504.03, -465.697 )
+
+[node name="CollisionTest74" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1633.11, -402.61 )
+
+[node name="CollisionTest73" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1693.99, -330.147 )
+
+[node name="CollisionTest72" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1565.3, -267.921 )
+
+[node name="CollisionTest71" parent="Test" instance=ExtResource( 6 )]
+position = Vector2( 1430.26, -196.126 )
+scale = Vector2( 0.4, 0.33 )
+
+[node name="CollisionTest70" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1324.6, -153.574 )
+
+[node name="CollisionTest69" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1209.26, -96.5297 )
+
+[node name="CollisionTest37" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1080.45, -38.322 )
+
+[node name="CollisionTest38" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1188.24, -26.0399 )
+
+[node name="CollisionTest39" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 1300.02, 35.6056 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest36" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 960.949, 22.7949 )
+
+[node name="CollisionTest35" parent="Test" instance=ExtResource( 6 )]
+position = Vector2( 839.688, 91.5316 )
+scale = Vector2( 0.4, 0.33 )
+
+[node name="CollisionTest40" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1389.47, 75.3379 )
+
+[node name="CollisionTest34" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 742.653, 131.425 )
+
+[node name="CollisionTest33" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 615.865, 190.254 )
+
+[node name="CollisionTest49" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 329.103, -301.102 )
+
+[node name="CollisionTest48" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 202.438, -239.147 )
+
+[node name="CollisionTest47" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 72.7131, -174.403 )
+
+[node name="CollisionTest46" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( -53.9854, -111.272 )
+
+[node name="CollisionTest45" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( -97.4706, -70.984 )
+
+[node name="CollisionTest44" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 31.222, -8.4213 )
+
+[node name="CollisionTest43" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 160.477, 56.206 )
+
+[node name="CollisionTest42" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 289.731, 119.774 )
+
+[node name="CollisionTest41" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 419.081, 183.292 )
+
+[node name="CollisionTest4" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 485.469, 259.234 )
+
+[node name="CollisionTest3" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 358.962, 321.597 )
+
+[node name="CollisionTest2" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 233.082, 387.764 )
+
+[node name="CollisionTest" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 104.165, 451.668 )
+
+[node name="CollisionTest61" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 2039.57, -152.196 )
+
+[node name="CollisionTest63" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2120.79, -139.632 )
+
+[node name="CollisionTest62" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2246.13, -76.6152 )
+
+[node name="CollisionTest64" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 2363.47, -4.43954 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest65" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2455.97, 41.5579 )
+
+[node name="CollisionTest66" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2582.01, 102.493 )
+
+[node name="CollisionTest132" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3664.02, -465.582 )
+
+[node name="CollisionTest156" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2837.56, -1463.75 )
+
+[node name="CollisionTest155" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2965.38, -1399.84 )
+
+[node name="CollisionTest154" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3093.2, -1335.93 )
+
+[node name="CollisionTest165" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3331.96, -1375.04 )
+
+[node name="CollisionTest153" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3429.15, -1386.32 )
+
+[node name="CollisionTest152" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3557.16, -1320.82 )
+
+[node name="CollisionTest145" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3681.99, -1256.73 )
+
+[node name="CollisionTest164" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3727.22, -1203.6 )
+
+[node name="CollisionTest163" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3597.06, -1136.93 )
+
+[node name="CollisionTest151" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3605.22, -1076.94 )
+
+[node name="CollisionTest150" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3735.17, -1011.7 )
+
+[node name="CollisionTest149" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3862.9, -945.041 )
+
+[node name="CollisionTest148" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3989.51, -881.998 )
+
+[node name="CollisionTest147" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 4120.88, -814.192 )
+
+[node name="CollisionTest146" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 4244.32, -749.037 )
+
+[node name="CollisionTest141" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 4271.22, -683.561 )
+
+[node name="CollisionTest140" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 4144.99, -614.891 )
+
+[node name="CollisionTest139" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 4017.18, -554.346 )
+
+[node name="CollisionTest138" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3892.72, -487.075 )
+
+[node name="CollisionTest127" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3765.68, -420.706 )
+
+[node name="CollisionTest126" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3639.29, -357.81 )
+
+[node name="CollisionTest125" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3515.47, -294.314 )
+
+[node name="CollisionTest100" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3385.52, -226.346 )
+
+[node name="CollisionTest101" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 2661.81, -407.08 )
+
+[node name="CollisionTest103" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2950.69, -456.386 )
+
+[node name="CollisionTest102" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2820.39, -392.825 )
+
+[node name="CollisionTest99" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3257.82, -161.108 )
+
+[node name="CollisionTest98" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3128.56, -95.422 )
+
+[node name="CollisionTest97" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2997.19, -29.7352 )
+
+[node name="CollisionTest96" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2870.06, 35.9515 )
+
+[node name="CollisionTest95" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2740.8, 99.5193 )
+
+[node name="CollisionTest68" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 2611.09, 166.892 )
+
+[node name="CollisionTest67" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 2478.23, 234.164 )
+
+[node name="CollisionTest60" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 2347.34, 298.525 )
+
+[node name="CollisionTest59" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1911.75, -86.6059 )
+
+[node name="CollisionTest58" parent="Test" instance=ExtResource( 6 )]
+position = Vector2( 1785.83, -17.0224 )
+scale = Vector2( 0.4, 0.33 )
+
+[node name="CollisionTest57" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1687.71, 19.9211 )
+
+[node name="CollisionTest56" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1560.8, 82.2221 )
+
+[node name="CollisionTest30" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1515.58, 144.586 )
+
+[node name="CollisionTest16" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1410.18, 140.282 )
+
+[node name="CollisionTest15" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1280.7, 204.53 )
+
+[node name="CollisionTest10" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 597.814, 266.659 )
+
+[node name="CollisionTest9" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 706.346, 329.664 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest14" parent="Test" instance=ExtResource( 6 )]
+position = Vector2( 1154.29, 270.825 )
+scale = Vector2( 0.4, 0.33 )
+
+[node name="CollisionTest11" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 796.45, 368.613 )
+
+[node name="CollisionTest13" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 1056.44, 311.043 )
+
+[node name="CollisionTest12" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 931.917, 377.421 )
+
+[node name="CollisionTest17" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 939.05, 433.314 )
+
+[node name="CollisionTest18" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1070.01, 498.806 )
+
+[node name="CollisionTest19" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1198.7, 563.285 )
+
+[node name="CollisionTest20" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1328.64, 628.382 )
+
+[node name="CollisionTest29" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1646.77, 210.911 )
+
+[node name="CollisionTest31" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 1761.59, 276.819 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest27" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1854.92, 321.798 )
+
+[node name="CollisionTest28" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2218.21, 356.104 )
+
+[node name="CollisionTest32" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1981.56, 384.801 )
+
+[node name="CollisionTest26" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 2090.17, 419.351 )
+
+[node name="CollisionTest25" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1967.74, 479.787 )
+
+[node name="CollisionTest24" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1842.42, 541.619 )
+
+[node name="CollisionTest23" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1717.26, 604.703 )
+
+[node name="CollisionTest22" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 1589.04, 669.716 )
+
+[node name="CollisionTest21" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 1452.81, 692.458 )
+
+[node name="CollisionTest6" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 802.629, 440.978 )
+
+[node name="CollisionTest5" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 674.34, 501.559 )
+
+[node name="CollisionTest7" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 546.051, 565.703 )
+
+[node name="CollisionTest8" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 421.325, 626.285 )
+
+[node name="CollisionTest166" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 3214.49, -1317.89 )
+
+[node name="CollisionTest158" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 3091.25, -1253.41 )
+
+[node name="CollisionTest159" parent="Test" instance=ExtResource( 2 )]
+position = Vector2( 3467.53, -1072.37 )
+
+[node name="CollisionTest161" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3085.99, -1197.34 )
+
+[node name="CollisionTest162" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 3206.35, -1131.2 )
+scale = Vector2( 0.3, 0.35 )
+
+[node name="CollisionTest160" parent="Test" instance=ExtResource( 3 )]
+position = Vector2( 3304.68, -1090.84 )
+
+[node name="CollisionTest167" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 244.404, 537.179 )
+
+[node name="Player" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 11 )]
+modulate = Color( 0.533333, 0.498039, 0.498039, 1 )
+position = Vector2( 585.064, 319.594 )
+
+[node name="Guard" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 14 )]
+position = Vector2( 520, -45 )
+
+[node name="Guard2" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 14 )]
+position = Vector2( 1450, -100 )
+
+[node name="Guard3" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 14 )]
+position = Vector2( 3799.19, -788.411 )
+
+[node name="Guard4" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 14 )]
+position = Vector2( 1088.37, -440.823 )
+
+[node name="Artifact" parent="Test" instance=ExtResource( 12 )]
+position = Vector2( 2674.48, -734.605 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+visible = false
+navpoly = SubResource( 1 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3387.45, -1271.66 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1348.93, -255.13 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 531.3, -402.387 )
+
+[node name="Node2D" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2130.26, -247.082 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1958.63, -160.206 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1521.19, 63.2741 )
+
+[node name="Node2D6" parent="." instance=ExtResource( 16 )]
+position = Vector2( 420.592, -357.003 )
+
+[node name="Node2D12" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1331.42, 132.206 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1616.55, 107.772 )
+
+[node name="Node2D7" parent="." instance=ExtResource( 16 )]
+position = Vector2( 320.713, -312.083 )
+
+[node name="Node2D8" parent="." instance=ExtResource( 18 )]
+position = Vector2( 127.873, -259.795 )
+
+[node name="Node2D15" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2090, -567.04 )
+
+[node name="Node2D14" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2001, -522.542 )
+
+[node name="Node2D13" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1901.41, -473.807 )
+
+[node name="Node2D11" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1799.71, -425.072 )
+
+[node name="Node2D10" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1693.76, -378.455 )
+
+[node name="Node2D9" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1585.69, -327.601 )
+
+[node name="Node2D16" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2229.85, -196.228 )
+
+[node name="Node2D17" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1164.03, -730.197 )
+
+[node name="Node2D18" parent="." instance=ExtResource( 18 )]
+position = Vector2( 979.681, -643.321 )
+
+[node name="Node2D19" parent="." instance=ExtResource( 18 )]
+position = Vector2( 865.259, -594.586 )
+
+[node name="Node2D20" parent="." instance=ExtResource( 18 )]
+position = Vector2( 750.837, -543.731 )
+
+[node name="Node2D21" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3379.56, -712.036 )
+
+[node name="Node2D22" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3190.77, -631.128 )
+
+[node name="Node2D23" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2951.04, -511.263 )
+
+[node name="Node2D24" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2828.18, -445.337 )
+
+[node name="Node2D25" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2630.4, -466.314 )
+
+[node name="Node2D26" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2528.52, -415.371 )
+
+[node name="Node2D27" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2414.65, -355.439 )
+
+[node name="Node2D28" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1431.76, -840.891 )
+
+[node name="Node2D29" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1563.61, -891.833 )
+
+[node name="Node2D35" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2108.99, -1194.49 )
+
+[node name="Node2D34" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2001.11, -1140.55 )
+
+[node name="Node2D33" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1989.13, -1092.61 )
+
+[node name="Node2D32" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1878.25, -1044.66 )
+
+[node name="Node2D31" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1785.36, -999.711 )
+
+[node name="Node2D30" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1680.48, -948.769 )
+
+[node name="Node2D39" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2867.43, -1531.86 )
+
+[node name="Node2D38" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2677.92, -1480.95 )
+
+[node name="Node2D37" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2573.27, -1435.7 )
+
+[node name="Node2D36" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2477.11, -1387.61 )
+
+[node name="Node2D40" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2969.25, -1486.61 )
+
+[node name="Node2D41" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3670.7, -1147.2 )
+
+[node name="Node2D42" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3769.7, -1104.77 )
+
+[node name="Node2D43" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3885.66, -1045.38 )
+
+[node name="Node2D44" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3987.49, -1000.12 )
+
+[node name="Node2D45" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4094.97, -946.38 )

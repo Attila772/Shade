@@ -3,12 +3,12 @@
 [ext_resource path="res://Props/opendoorW.gd" type="Script" id=1]
 [ext_resource path="res://Resources/DoorEClosed.png" type="Texture" id=2]
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=1]
 font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 30
-font_data = SubResource( 2 )
+font_data = SubResource( 1 )
 
 [node name="CollisionTest" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 position = Vector2( 70.1436, 9.20165 )
 scale = Vector2( 1.06825, 1.18719 )
-polygon = PoolVector2Array( -104.655, -6.24999, -105.584, -24.7189, -7.39825, 17.2245, -26.242, 26.1486 )
+polygon = PoolVector2Array( -206.494, -4.15689, -126.637, -30.6303, 94.0198, 60.1356, 9.95993, 90.3909 )
 
 [node name="Etoopen" type="Label" parent="."]
 visible = false
@@ -24,7 +24,7 @@ margin_left = -66.8325
 margin_top = -251.108
 margin_right = 65.1675
 margin_bottom = -211.108
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "E to open"
 __meta__ = {
 "_edit_use_anchors_": false
