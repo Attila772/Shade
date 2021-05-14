@@ -1,0 +1,600 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ui Stuff/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/BarniMap.gd" type="Script" id=4]
+[ext_resource path="res://Props/Artifact.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Props/Escape.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Props/WallCorner_W.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Props/Wall_S.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Props/Wall_W.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Props/WallCorner_E.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Props/WallCorner_S.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Props/WallCorner_N.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Props/opendoorE.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Props/LockableDoorW.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Props/opendoorW.tscn" type="PackedScene" id=15]
+
+[node name="BarniMap" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 128 )
+format = 1
+tile_data = PoolIntArray( -524286, 78, 0, -524285, 78, 0, -524284, 78, 0, -524283, 78, 0, -524282, 78, 0, -524281, 78, 0, -524280, 78, 0, -524279, 78, 0, -524278, 78, 0, -524277, 78, 0, -524276, 78, 0, -524275, 78, 0, -524274, 78, 0, -524273, 78, 0, -524272, 78, 0, -524271, 78, 0, -524270, 78, 0, -524269, 78, 0, -524268, 78, 0, -524267, 78, 0, -458750, 78, 0, -458749, 78, 0, -458748, 78, 0, -458747, 78, 0, -458746, 78, 0, -458745, 78, 0, -458744, 78, 0, -458743, 78, 0, -458742, 78, 0, -458741, 78, 0, -458740, 78, 0, -458739, 78, 0, -458738, 78, 0, -458737, 78, 0, -458736, 78, 0, -458735, 78, 0, -458734, 78, 0, -458733, 78, 0, -458732, 78, 0, -458731, 78, 0, -393214, 78, 0, -393213, 78, 0, -393212, 78, 0, -393211, 78, 0, -393210, 78, 0, -393209, 78, 0, -393208, 78, 0, -393207, 78, 0, -393206, 78, 0, -393205, 78, 0, -393204, 78, 0, -393203, 78, 0, -393202, 78, 0, -393201, 78, 0, -393200, 78, 0, -393199, 78, 0, -393198, 78, 0, -393197, 78, 0, -393196, 78, 0, -393195, 78, 0, -327678, 78, 0, -327677, 78, 0, -327676, 78, 0, -327675, 78, 0, -327674, 78, 0, -327673, 78, 0, -327672, 78, 0, -327671, 78, 0, -327670, 78, 0, -327669, 78, 0, -327668, 78, 0, -327667, 78, 0, -327666, 78, 0, -327665, 78, 0, -327664, 78, 0, -327663, 78, 0, -327662, 78, 0, -327661, 78, 0, -327660, 78, 0, -327659, 78, 0, -262142, 78, 0, -262141, 78, 0, -262140, 78, 0, -262139, 78, 0, -262138, 78, 0, -262137, 78, 0, -262136, 78, 0, -262135, 78, 0, -262134, 78, 0, -262133, 78, 0, -262132, 78, 0, -262131, 78, 0, -262130, 78, 0, -262129, 78, 0, -262128, 78, 0, -262127, 78, 0, -262126, 78, 0, -262125, 78, 0, -262124, 78, 0, -262123, 78, 0, -196606, 78, 0, -196605, 78, 0, -196604, 78, 0, -196603, 78, 0, -196602, 78, 0, -196601, 78, 0, -196600, 78, 0, -196599, 78, 0, -196598, 78, 0, -196597, 78, 0, -196596, 78, 0, -196595, 78, 0, -196594, 78, 0, -196593, 78, 0, -196592, 78, 0, -196591, 78, 0, -196590, 78, 0, -196589, 78, 0, -196588, 78, 0, -196587, 78, 0, -131070, 78, 0, -131069, 78, 0, -131068, 78, 0, -131067, 78, 0, -131066, 78, 0, -131065, 78, 0, -131064, 78, 0, -131063, 78, 0, -131062, 78, 0, -131061, 78, 0, -131060, 78, 0, -131059, 78, 0, -131058, 78, 0, -131057, 78, 0, -131056, 78, 0, -131055, 78, 0, -131054, 78, 0, -131053, 78, 0, -131052, 78, 0, -131051, 78, 0, -65534, 78, 0, -65533, 78, 0, -65532, 78, 0, -65531, 78, 0, -65530, 78, 0, -65529, 78, 0, -65528, 78, 0, -65527, 78, 0, -65526, 78, 0, -65525, 78, 0, -65524, 78, 0, -65523, 78, 0, -65522, 78, 0, -65521, 78, 0, -65520, 78, 0, -65519, 78, 0, -65518, 78, 0, -65517, 78, 0, -65516, 78, 0, -65515, 78, 0, 2, 78, 0, 3, 78, 0, 4, 78, 0, 5, 78, 0, 6, 78, 0, 7, 69, 0, 8, 78, 0, 9, 78, 0, 10, 78, 0, 11, 78, 0, 12, 78, 0, 13, 78, 0, 14, 78, 0, 15, 78, 0, 16, 78, 0, 17, 78, 0, 18, 78, 0, 19, 78, 0, 20, 78, 0, 21, 78, 0, 65538, 78, 0, 65539, 78, 0, 65540, 78, 0, 65541, 78, 0, 65542, 78, 0, 65543, 78, 0, 65544, 78, 0, 65545, 78, 0, 65546, 78, 0, 65547, 78, 0, 65548, 78, 0, 65549, 78, 0, 65550, 78, 0, 65551, 78, 0, 65552, 78, 0, 65553, 78, 0, 65554, 78, 0, 65555, 78, 0, 65556, 78, 0, 65557, 78, 0, 131074, 78, 0, 131075, 78, 0, 131076, 78, 0, 131077, 78, 0, 131078, 78, 0, 131079, 78, 0, 131080, 78, 0, 131081, 78, 0, 131082, 78, 0, 131083, 78, 0, 131084, 78, 0, 131085, 78, 0, 131086, 78, 0, 131087, 78, 0, 131088, 78, 0, 131089, 78, 0, 131090, 78, 0, 131091, 78, 0, 131092, 78, 0, 131093, 78, 0, 262142, 75, 0, 262143, 75, 0, 196608, 75, 0, 196609, 75, 0, 196610, 78, 0, 196611, 78, 0, 196612, 78, 0, 196613, 78, 0, 196614, 78, 0, 196615, 78, 0, 196616, 78, 0, 196617, 78, 0, 196618, 78, 0, 196619, 78, 0, 196620, 78, 0, 196621, 78, 0, 196622, 78, 0, 196623, 78, 0, 196624, 78, 0, 196625, 78, 0, 196626, 78, 0, 196627, 78, 0, 196628, 78, 0, 196629, 78, 0, 327678, 75, 0, 327679, 75, 0, 262144, 75, 0, 262145, 75, 0, 262146, 78, 0, 262147, 78, 0, 262148, 78, 0, 262149, 78, 0, 262150, 78, 0, 262151, 78, 0, 262152, 78, 0, 262153, 78, 0, 262154, 78, 0, 262155, 78, 0, 262156, 78, 0, 262157, 78, 0, 262158, 78, 0, 262159, 78, 0, 262160, 78, 0, 262161, 78, 0, 262162, 78, 0, 262163, 78, 0, 262164, 78, 0, 262165, 78, 0, 393214, 75, 0, 393215, 75, 0, 327680, 75, 0, 327681, 75, 0, 327682, 78, 0, 327683, 78, 0, 327684, 78, 0, 327685, 78, 0, 327686, 78, 0, 327687, 78, 0, 327688, 78, 0, 327689, 69, 0, 327690, 78, 0, 327691, 78, 0, 327692, 78, 0, 327693, 78, 0, 327694, 78, 0, 327695, 78, 0, 327696, 78, 0, 327697, 78, 0, 327698, 78, 0, 327699, 78, 0, 327700, 78, 0, 327701, 78, 0, 393218, 78, 0, 393219, 78, 0, 393220, 78, 0, 393221, 78, 0, 393222, 78, 0, 393223, 78, 0, 393224, 78, 0, 393225, 78, 0, 393226, 78, 0, 393227, 78, 0, 393228, 78, 0, 393229, 78, 0, 393230, 78, 0, 393231, 78, 0, 393232, 78, 0, 393233, 78, 0, 393234, 78, 0, 393235, 78, 0, 393236, 78, 0, 393237, 78, 0, 458754, 78, 0, 458755, 78, 0, 458756, 78, 0, 458757, 78, 0, 458758, 78, 0, 458759, 78, 0, 458760, 78, 0, 458761, 78, 0, 458762, 78, 0, 458763, 78, 0, 458764, 78, 0, 458765, 78, 0, 458766, 78, 0, 458767, 78, 0, 458768, 78, 0, 458769, 78, 0, 458770, 78, 0, 458771, 78, 0, 458772, 78, 0, 458773, 78, 0, 524290, 78, 0, 524291, 78, 0, 524292, 78, 0, 524293, 78, 0, 524294, 78, 0, 524295, 78, 0, 524296, 78, 0, 524297, 78, 0, 524298, 78, 0, 524299, 78, 0, 524300, 75, 0, 524301, 78, 0, 524302, 78, 0, 524303, 78, 0, 524304, 78, 0, 524305, 78, 0, 524306, 78, 0, 524307, 78, 0, 524308, 78, 0, 524309, 78, 0, 589826, 78, 0, 589827, 75, 0, 589828, 78, 0, 589829, 78, 0, 589830, 78, 0, 589831, 78, 0, 589832, 78, 0, 589833, 78, 0, 589834, 78, 0, 589835, 78, 0, 589836, 78, 0, 589837, 78, 0, 589838, 69, 0, 589839, 78, 0, 589840, 78, 0, 589841, 78, 0, 589842, 78, 0, 589843, 78, 0, 589844, 78, 0, 589845, 78, 0, 655362, 78, 0, 655363, 78, 0, 655364, 78, 0, 655365, 78, 0, 655366, 78, 0, 655367, 78, 0, 655368, 78, 0, 655369, 78, 0, 655370, 78, 0, 655371, 78, 0, 655372, 78, 0, 655373, 78, 0, 655374, 78, 0, 655375, 78, 0, 655376, 78, 0, 655377, 78, 0, 655378, 78, 0, 655379, 78, 0, 655380, 78, 0, 655381, 78, 0, 720898, 75, 0, 720899, 75, 0, 720900, 75, 0, 720901, 78, 0, 720902, 78, 0, 720903, 78, 0, 720904, 78, 0, 720905, 78, 0, 720906, 78, 0, 720907, 78, 0, 720908, 78, 0, 720909, 78, 0, 720910, 78, 0, 720911, 78, 0, 720912, 78, 0, 720913, 78, 0, 720914, 78, 0, 720915, 78, 0, 720916, 78, 0, 720917, 78, 0, 786434, 75, 0, 786435, 78, 0, 786436, 78, 0, 786437, 78, 0, 786438, 78, 0, 786439, 78, 0, 786440, 78, 0, 786441, 78, 0, 786442, 78, 0, 786443, 78, 0, 786444, 70, 0, 786445, 78, 0, 786446, 78, 0, 786447, 78, 0, 786448, 78, 0, 786449, 78, 0, 786450, 78, 0, 786451, 78, 0, 786452, 78, 0, 786453, 78, 0, 851970, 78, 0, 851971, 78, 0, 851972, 78, 0, 851973, 78, 0, 851974, 78, 0, 851975, 78, 0, 851976, 78, 0, 851977, 78, 0, 851978, 78, 0, 851979, 78, 0, 851980, 78, 0, 851981, 78, 0, 851982, 78, 0, 851983, 78, 0, 851984, 78, 0, 851985, 78, 0, 851986, 78, 0, 851987, 78, 0, 851988, 78, 0, 851989, 78, 0, 917506, 78, 0, 917507, 78, 0, 917508, 78, 0, 917509, 78, 0, 917510, 78, 0, 917511, 78, 0, 917512, 78, 0, 917513, 78, 0, 917514, 78, 0, 917515, 78, 0, 917516, 78, 0, 917517, 78, 0, 917518, 78, 0, 917519, 78, 0, 917520, 78, 0, 917521, 78, 0, 917522, 78, 0, 917523, 78, 0, 917524, 78, 0, 917525, 78, 0 )
+
+[node name="Test" type="YSort" parent="."]
+
+[node name="CollisionTest45" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 3595.82, 1165.13 )
+
+[node name="CollisionTest46" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -1507.44, 1508.09 )
+
+[node name="CollisionTest47" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -1384.64, 1569.5 )
+
+[node name="CollisionTest48" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -1256.49, 1633.57 )
+
+[node name="CollisionTest49" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -1133.69, 1694.97 )
+
+[node name="CollisionTest50" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -1005.54, 1756.37 )
+
+[node name="CollisionTest51" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -882.737, 1817.78 )
+
+[node name="CollisionTest87" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -968.885, 646.823 )
+
+[node name="CollisionTest90" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -591.335, 835.598 )
+
+[node name="CollisionTest88" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -840.74, 712.001 )
+
+[node name="CollisionTest89" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -717.935, 773.404 )
+
+[node name="CollisionTest91" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -651.244, 485.006 )
+
+[node name="CollisionTest92" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -273.694, 673.781 )
+
+[node name="CollisionTest93" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -523.099, 550.184 )
+
+[node name="CollisionTest94" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -400.294, 611.586 )
+
+[node name="CollisionTest52" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -754.593, 1881.85 )
+
+[node name="CollisionTest53" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -631.787, 1943.25 )
+
+[node name="CollisionTest54" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -503.071, 2006.04 )
+
+[node name="CollisionTest161" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 962.799, 634.807 )
+
+[node name="CollisionTest162" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1085.6, 696.21 )
+
+[node name="CollisionTest163" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1213.75, 757.612 )
+
+[node name="CollisionTest164" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1336.55, 819.015 )
+
+[node name="CollisionTest165" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1464.7, 883.087 )
+
+[node name="CollisionTest166" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1587.5, 944.49 )
+
+[node name="CollisionTest167" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1716.22, 1007.28 )
+
+[node name="CollisionTest168" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1841.87, 1071.67 )
+
+[node name="CollisionTest169" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1964.67, 1133.07 )
+
+[node name="CollisionTest170" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2093.39, 1195.86 )
+
+[node name="CollisionTest171" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1841.87, 1071.67 )
+
+[node name="CollisionTest172" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1964.67, 1133.07 )
+
+[node name="CollisionTest173" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2093.39, 1195.86 )
+
+[node name="CollisionTest174" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2222.64, 1261.55 )
+
+[node name="CollisionTest175" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2222.64, 1261.55 )
+
+[node name="CollisionTest176" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2351.9, 1325.12 )
+
+[node name="CollisionTest177" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2351.9, 1325.12 )
+
+[node name="CollisionTest178" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2440.89, 1363.26 )
+
+[node name="CollisionTest179" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2440.89, 1363.26 )
+
+[node name="CollisionTest55" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -380.266, 2067.44 )
+
+[node name="CollisionTest56" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -252.121, 2131.52 )
+
+[node name="CollisionTest57" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -129.316, 2192.92 )
+
+[node name="CollisionTest58" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -1.17114, 2254.32 )
+
+[node name="CollisionTest59" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 121.634, 2315.73 )
+
+[node name="CollisionTest108" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1014.08, 1812.03 )
+
+[node name="CollisionTest155" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1142.23, 1873.43 )
+
+[node name="CollisionTest156" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1265.03, 1934.84 )
+
+[node name="CollisionTest60" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1802.93, 1808.87 )
+
+[node name="CollisionTest61" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1925.73, 1870.28 )
+
+[node name="CollisionTest62" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2052.96, 1933.89 )
+
+[node name="CollisionTest143" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -567.279, 1488.17 )
+
+[node name="CollisionTest144" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -444.474, 1549.58 )
+
+[node name="CollisionTest145" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -315.758, 1612.37 )
+
+[node name="CollisionTest146" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -192.953, 1673.77 )
+
+[node name="CollisionTest147" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -64.8079, 1737.84 )
+
+[node name="CollisionTest148" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 57.9973, 1799.24 )
+
+[node name="CollisionTest149" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 186.142, 1860.65 )
+
+[node name="CollisionTest150" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 308.947, 1922.05 )
+
+[node name="CollisionTest151" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 437.092, 1986.12 )
+
+[node name="CollisionTest152" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 524.03, 2022.98 )
+
+[node name="CollisionTest181" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 612.754, 2068.29 )
+
+[node name="CollisionTest63" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2178.6, 1992.46 )
+
+[node name="CollisionTest139" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 249.464, 2379.42 )
+
+[node name="CollisionTest140" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 372.269, 2440.82 )
+
+[node name="CollisionTest141" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 499.497, 2504.43 )
+
+[node name="CollisionTest142" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 622.302, 2565.84 )
+
+[node name="CollisionTest64" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 749.752, 2629.79 )
+
+[node name="CollisionTest65" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1338.62, 43.4406 )
+
+[node name="CollisionTest66" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1461.43, 104.843 )
+
+[node name="CollisionTest67" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1589.57, 168.915 )
+
+[node name="CollisionTest68" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1712.38, 230.318 )
+
+[node name="CollisionTest69" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1840.52, 291.721 )
+
+[node name="CollisionTest70" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1963.33, 353.123 )
+
+[node name="CollisionTest71" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2091.47, 417.196 )
+
+[node name="CollisionTest72" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2214.28, 478.599 )
+
+[node name="CollisionTest73" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2342.99, 541.388 )
+
+[node name="CollisionTest74" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2465.8, 602.791 )
+
+[node name="CollisionTest75" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2593.94, 666.863 )
+
+[node name="CollisionTest76" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2716.75, 728.266 )
+
+[node name="CollisionTest77" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2844.89, 789.668 )
+
+[node name="CollisionTest78" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2967.7, 851.071 )
+
+[node name="CollisionTest95" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1386.11, 512.859 )
+
+[node name="CollisionTest96" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1514.26, 574.262 )
+
+[node name="CollisionTest97" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1637.06, 635.665 )
+
+[node name="CollisionTest98" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1765.21, 699.737 )
+
+[node name="CollisionTest99" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1888.01, 761.14 )
+
+[node name="CollisionTest100" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2016.73, 823.929 )
+
+[node name="CollisionTest101" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2139.53, 885.332 )
+
+[node name="CollisionTest102" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2267.68, 949.404 )
+
+[node name="CollisionTest103" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2390.48, 1010.81 )
+
+[node name="CollisionTest104" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2518.63, 1072.21 )
+
+[node name="CollisionTest105" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 2641.43, 1133.61 )
+
+[node name="CollisionTest79" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 3095.84, 915.143 )
+
+[node name="CollisionTest80" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 3218.65, 976.546 )
+
+[node name="CollisionTest81" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 3345.88, 1040.16 )
+
+[node name="CollisionTest82" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 3468.68, 1101.56 )
+
+[node name="Player" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 2 )]
+position = Vector2( -527.599, 641.336 )
+
+[node name="Artifact" parent="Test" instance=ExtResource( 5 )]
+position = Vector2( 814.995, 1128.15 )
+
+[node name="Exit" parent="Test" instance=ExtResource( 6 )]
+position = Vector2( -747.604, 556.319 )
+
+[node name="CollisionTest" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1303.7, 2510.72 )
+
+[node name="CollisionTest3" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1056.76, 2634.19 )
+
+[node name="CollisionTest4" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1177.99, 2571.33 )
+
+[node name="CollisionTest2" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1676.36, 2326.64 )
+
+[node name="CollisionTest5" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1429.42, 2450.11 )
+
+[node name="CollisionTest6" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1550.65, 2387.25 )
+
+[node name="CollisionTest7" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2049.02, 2138.06 )
+
+[node name="CollisionTest8" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1802.08, 2261.53 )
+
+[node name="CollisionTest9" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1923.3, 2198.68 )
+
+[node name="CollisionTest10" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2421.68, 1953.98 )
+
+[node name="CollisionTest11" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2174.73, 2077.45 )
+
+[node name="CollisionTest12" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2295.96, 2014.59 )
+
+[node name="CollisionTest13" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2792.09, 1765.41 )
+
+[node name="CollisionTest14" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2545.15, 1888.88 )
+
+[node name="CollisionTest15" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2666.37, 1826.02 )
+
+[node name="CollisionTest16" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 3164.75, 1581.32 )
+
+[node name="CollisionTest17" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2917.8, 1704.79 )
+
+[node name="CollisionTest18" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 3039.03, 1641.94 )
+
+[node name="CollisionTest106" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1314.51, 1997.89 )
+
+[node name="CollisionTest107" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1067.57, 2121.36 )
+
+[node name="CollisionTest154" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1194.05, 2059.06 )
+
+[node name="CollisionTest109" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1687.17, 1809.31 )
+
+[node name="CollisionTest110" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1440.22, 1932.78 )
+
+[node name="CollisionTest111" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1561.45, 1869.92 )
+
+[node name="CollisionTest160" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 472.136, 1934.14 )
+
+[node name="CollisionTest113" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1809.52, 1748.7 )
+
+[node name="CollisionTest114" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1900.58, 1708.06 )
+
+[node name="CollisionTest158" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 575.12, 1881.89 )
+
+[node name="CollisionTest159" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 696.346, 1819.03 )
+
+[node name="CollisionTest115" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2426.87, 1440.02 )
+
+[node name="CollisionTest116" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2221.2, 1534.73 )
+
+[node name="CollisionTest183" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2221.2, 1534.73 )
+
+[node name="CollisionTest184" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2322.8, 1485.52 )
+
+[node name="CollisionTest117" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1998.86, 1657.24 )
+
+[node name="CollisionTest118" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2552.59, 1379.4 )
+
+[node name="CollisionTest121" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -277.681, 1198.81 )
+
+[node name="CollisionTest122" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -524.623, 1322.28 )
+
+[node name="CollisionTest137" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -638.915, 1376.25 )
+
+[node name="CollisionTest123" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -403.396, 1259.42 )
+
+[node name="CollisionTest124" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 94.9766, 1010.24 )
+
+[node name="CollisionTest125" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -151.965, 1133.71 )
+
+[node name="CollisionTest126" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -30.7393, 1070.85 )
+
+[node name="CollisionTest127" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 464.27, 826.152 )
+
+[node name="CollisionTest128" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 217.328, 949.622 )
+
+[node name="CollisionTest129" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 338.554, 886.765 )
+
+[node name="CollisionTest130" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 834.683, 640.942 )
+
+[node name="CollisionTest131" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 587.741, 761.049 )
+
+[node name="CollisionTest132" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 708.967, 701.555 )
+
+[node name="CollisionTest133" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 979.447, 564.454 )
+
+[node name="CollisionTest134" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 900.077, 608.901 )
+
+[node name="CollisionTest19" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 3537.4, 1392.75 )
+
+[node name="CollisionTest22" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 3660.87, 1332.14 )
+
+[node name="CollisionTest20" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 3290.46, 1516.22 )
+
+[node name="CollisionTest21" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 3411.69, 1453.36 )
+
+[node name="CollisionTest23" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -1201.25, 1238.37 )
+
+[node name="CollisionTest24" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -1448.19, 1361.84 )
+
+[node name="CollisionTest25" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -1326.96, 1298.98 )
+
+[node name="CollisionTest26" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -828.591, 1054.28 )
+
+[node name="CollisionTest27" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -1075.53, 1177.75 )
+
+[node name="CollisionTest28" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -954.307, 1114.89 )
+
+[node name="CollisionTest29" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -455.934, 865.708 )
+
+[node name="CollisionTest30" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -702.875, 989.178 )
+
+[node name="CollisionTest31" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -581.65, 926.321 )
+
+[node name="CollisionTest32" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -83.2765, 681.625 )
+
+[node name="CollisionTest34" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -208.992, 742.237 )
+
+[node name="CollisionTest35" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 287.136, 493.051 )
+
+[node name="CollisionTest36" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 40.1945, 616.521 )
+
+[node name="CollisionTest37" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 161.421, 553.664 )
+
+[node name="CollisionTest38" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 659.793, 308.967 )
+
+[node name="CollisionTest39" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 412.852, 432.437 )
+
+[node name="CollisionTest40" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 534.078, 369.58 )
+
+[node name="CollisionTest41" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1032.45, 120.394 )
+
+[node name="CollisionTest42" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1155.92, 59.7808 )
+
+[node name="CollisionTest43" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 785.509, 243.864 )
+
+[node name="CollisionTest44" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 906.735, 181.006 )
+
+[node name="CollisionTest83" parent="Test" instance=ExtResource( 7 )]
+position = Vector2( 3726.21, 1302.35 )
+
+[node name="CollisionTest120" parent="Test" instance=ExtResource( 7 )]
+position = Vector2( 2770.95, 1268.71 )
+
+[node name="CollisionTest84" parent="Test" instance=ExtResource( 11 )]
+position = Vector2( 1237.28, 38.7966 )
+
+[node name="CollisionTest135" parent="Test" instance=ExtResource( 11 )]
+position = Vector2( 1211.83, 477.203 )
+
+[node name="CollisionTest157" parent="Test" instance=ExtResource( 11 )]
+position = Vector2( 828.904, 1775.82 )
+
+[node name="CollisionTest86" parent="Test" instance=ExtResource( 10 )]
+position = Vector2( -1563.32, 1485.11 )
+
+[node name="CollisionTest138" parent="Test" instance=ExtResource( 10 )]
+position = Vector2( -650.56, 1450.19 )
+
+[node name="CollisionTest85" parent="Test" instance=ExtResource( 12 )]
+position = Vector2( 908.331, 2701.05 )
+
+[node name="CollisionTest136" parent="Test" instance=ExtResource( 12 )]
+position = Vector2( 879.758, 2202.61 )
+
+[node name="CollisionTest33" parent="Test" instance=ExtResource( 13 )]
+position = Vector2( -345.993, 820.374 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest180" parent="Test" instance=ExtResource( 13 )]
+position = Vector2( 2663.15, 1328.08 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest119" parent="Test" instance=ExtResource( 14 )]
+position = Vector2( 1074.04, 484.75 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest182" parent="Test" instance=ExtResource( 14 )]
+position = Vector2( 2092.35, 1570.94 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest153" parent="Test" instance=ExtResource( 15 )]
+position = Vector2( 717.397, 2130.07 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 104.179, 1201.49 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+position = Vector2( 104.179, 1201.49 )
