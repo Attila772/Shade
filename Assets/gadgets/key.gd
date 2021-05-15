@@ -13,7 +13,7 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	var player = get_parent().get_node("Test").get_node("Player")
+	var player = get_parent().get_node("Player")
 	var vektor = player.position - position
 	var x = abs(vektor.x)
 	var y = abs(vektor.y)
@@ -25,7 +25,7 @@ func _process(delta):
 		$Label.visible = true
 		if Input.is_action_just_released("interact") and visible ==true:
 			visible=false	
-			get_parent().get_node("Test").get_node("Player").haskey = true
+			get_parent().get_node("Player").haskey = true
 	else:
 		$Label.visible = false
 		

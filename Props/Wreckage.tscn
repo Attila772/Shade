@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/bridgeBroken_S.png" type="Texture" id=1]
+[ext_resource path="res://Assets/planksBroken_S.png" type="Texture" id=2]
+[ext_resource path="res://Assets/stoneWallBrokenRight_S.png" type="Texture" id=3]
+[ext_resource path="res://Assets/stoneWallBrokenLeft_E.png" type="Texture" id=4]
+[ext_resource path="res://Assets/stoneWallBroken_S.png" type="Texture" id=5]
+[ext_resource path="res://Assets/stoneWallBrokenLeft_N.png" type="Texture" id=6]
+[ext_resource path="res://Assets/stoneWallRoundBroken_E.png" type="Texture" id=7]
+[ext_resource path="res://Assets/stoneWallBrokenLeft_S.png" type="Texture" id=8]
+[ext_resource path="res://Assets/stoneWallRoundBroken_W.png" type="Texture" id=9]
+
+[node name="Wreckage" type="StaticBody2D"]
+visible = false
+
+[node name="stoneWallRoundBroken_E4" type="Sprite" parent="."]
+position = Vector2( -16.8638, -231.883 )
+rotation = -0.523598
+texture = ExtResource( 7 )
+
+[node name="stoneWallBrokenLeft_E" type="Sprite" parent="."]
+position = Vector2( 104.364, -141.724 )
+texture = ExtResource( 4 )
+
+[node name="stoneWallBrokenLeft_N" type="Sprite" parent="."]
+position = Vector2( 8.68341, -277.448 )
+texture = ExtResource( 6 )
+
+[node name="stoneWallRoundBroken_W" type="Sprite" parent="."]
+position = Vector2( -1.64781, -207.116 )
+texture = ExtResource( 9 )
+
+[node name="stoneWallBrokenLeft_S" type="Sprite" parent="."]
+position = Vector2( -90.5628, -180.337 )
+texture = ExtResource( 8 )
+
+[node name="stoneWallBroken_S" type="Sprite" parent="."]
+position = Vector2( -24.475, -186.127 )
+texture = ExtResource( 5 )
+
+[node name="stoneWallBrokenRight_S" type="Sprite" parent="."]
+position = Vector2( -152.36, -176.8 )
+texture = ExtResource( 3 )
+
+[node name="planksBroken_S" type="Sprite" parent="."]
+position = Vector2( -36.8158, -249.343 )
+texture = ExtResource( 2 )
+
+[node name="bridgeBroken_S" type="Sprite" parent="."]
+position = Vector2( -107.562, -223.981 )
+texture = ExtResource( 1 )
+
+[node name="stoneWallRoundBroken_E" type="Sprite" parent="."]
+position = Vector2( -9.30432, -167.627 )
+texture = ExtResource( 7 )
+
+[node name="stoneWallRoundBroken_E3" type="Sprite" parent="."]
+position = Vector2( 4.55481, -95.8117 )
+rotation = 0.946897
+texture = ExtResource( 7 )
+
+[node name="stoneWallRoundBroken_E2" type="Sprite" parent="."]
+position = Vector2( -161.755, -118.49 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( 1.25989, 0 )
+polygon = PoolVector2Array( -106, 217, -278, 175, -269.507, -48.1803, -195.562, -156.87, -83.3087, -218.342, 174, -280, 204.452, -66.8892, 173.27, 61.4002, 17.3629, 105.945 )
+disabled = true

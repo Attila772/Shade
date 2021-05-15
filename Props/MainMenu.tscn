@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Sounds/shade.wav" type="AudioStream" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://Props/StartGame.gd" type="Script" id=3]
 [ext_resource path="res://Props/Button2.gd" type="Script" id=4]
 [ext_resource path="res://Props/Button3.gd" type="Script" id=5]
 [ext_resource path="res://Resources/Main menu.jpg" type="Texture" id=6]
@@ -41,35 +40,24 @@ centered = false
 [node name="icon" type="Sprite" parent="."]
 pause_mode = 2
 material = SubResource( 1 )
-position = Vector2( 506.943, 298.199 )
+position = Vector2( 505.683, 298.199 )
 scale = Vector2( 17.136, 10.0085 )
 texture = ExtResource( 7 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 287.0
-margin_top = 99.0
-margin_right = 660.0
-margin_bottom = 191.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="."]
-margin_left = 762.813
-margin_top = 127.136
-margin_right = 917.813
-margin_bottom = 167.136
-custom_fonts/font = SubResource( 3 )
-text = "Test level"
+margin_left = 276.921
+margin_top = 96.4801
+margin_right = 649.921
+margin_bottom = 188.48
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 760.694
-margin_top = 305.125
-margin_right = 915.694
-margin_bottom = 345.125
+margin_left = 738.016
+margin_top = 365.601
+margin_right = 893.016
+margin_bottom = 405.601
 custom_fonts/font = SubResource( 3 )
 text = "Exit Game"
 __meta__ = {
@@ -77,46 +65,33 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="."]
-margin_left = 767.051
-margin_top = 203.417
-margin_right = 922.051
-margin_bottom = 243.417
+margin_left = 739.333
+margin_top = 83.7246
+margin_right = 894.333
+margin_bottom = 123.725
 custom_fonts/font = SubResource( 3 )
-text = "Hq Test"
+text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 415.533
-margin_top = 216.016
-margin_right = 570.533
-margin_bottom = 256.016
+margin_left = 724.214
+margin_top = 194.597
+margin_right = 879.214
+margin_bottom = 234.597
 custom_fonts/font = SubResource( 3 )
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-modulate = Color( 0.94902, 0.968627, 0.992157, 1 )
-self_modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
-margin_left = 674.251
-margin_top = 106.022
-margin_right = 990.251
-margin_bottom = 179.022
-custom_fonts/font = SubResource( 5 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Button2" type="Button" parent="."]
 self_modulate = Color( 0.886275, 0.886275, 0.960784, 1 )
-margin_left = 671.612
-margin_top = 197.405
-margin_right = 989.612
-margin_bottom = 269.405
+margin_left = 656.493
+margin_top = 70.153
+margin_right = 974.493
+margin_bottom = 142.153
 custom_fonts/font = SubResource( 5 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -125,10 +100,10 @@ __meta__ = {
 
 [node name="Settings" type="Button" parent="."]
 self_modulate = Color( 0.886275, 0.886275, 0.960784, 1 )
-margin_left = 333.953
-margin_top = 197.405
-margin_right = 651.953
-margin_bottom = 269.405
+margin_left = 650.193
+margin_top = 183.546
+margin_right = 968.193
+margin_bottom = 255.546
 custom_fonts/font = SubResource( 5 )
 script = ExtResource( 9 )
 __meta__ = {
@@ -137,10 +112,10 @@ __meta__ = {
 
 [node name="Button3" type="Button" parent="."]
 self_modulate = Color( 0.941176, 0.87451, 0.87451, 1 )
-margin_left = 672.237
-margin_top = 292.348
-margin_right = 986.237
-margin_bottom = 364.348
+margin_left = 654.598
+margin_top = 351.564
+margin_right = 968.598
+margin_bottom = 423.564
 custom_fonts/font = SubResource( 5 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -148,7 +123,7 @@ __meta__ = {
 }
 
 [node name="Ambient" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 500, 300 )
+position = Vector2( 489.921, 297.48 )
 stream = ExtResource( 1 )
 volume_db = -19.299
 autoplay = true

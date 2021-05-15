@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CCHS - Scene 013 - STEM C - Reverse.wav-5b6b6183160ed2180664d99fbdb79618.sample"
+
+[deps]
+
+source_file="res://Catacombs Sounds/CCHS - Scene 013 - STEM C - Reverse.wav"
+dest_files=[ "res://.import/CCHS - Scene 013 - STEM C - Reverse.wav-5b6b6183160ed2180664d99fbdb79618.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

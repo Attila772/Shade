@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bluezone_BC0271_debris_falling_rock_dust_002.wav-72bd217b349ee2efa39f2526501f0291.sample"
+
+[deps]
+
+source_file="res://Catacombs Sounds/Bluezone_BC0271_debris_falling_rock_dust_002.wav"
+dest_files=[ "res://.import/Bluezone_BC0271_debris_falling_rock_dust_002.wav-72bd217b349ee2efa39f2526501f0291.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -18,7 +18,7 @@ func _process(delta):
 	
 	dist = pow(pow(x,2)+pow(y,2),0.5)
 #	print(dist)
-	if dist < 100:
+	if dist < 150:
 		
 		$Label.visible = true
 		if Input.is_action_pressed("interact"):
