@@ -252,7 +252,7 @@ rotation = -0.0487073
 "dudes",
 ] instance=ExtResource( 3 )]
 modulate = Color( 0.533333, 0.498039, 0.498039, 1 )
-position = Vector2( 1076.79, -39.2611 )
+position = Vector2( 3371.1, -690.289 )
 
 [node name="CollisionTest" parent="Test" instance=ExtResource( 6 )]
 modulate = Color( 0.498039, 0.470588, 0.501961, 1 )
@@ -617,8 +617,10 @@ position = Vector2( 2335.56, -476.925 )
 position = Vector2( 1808.92, -386.21 )
 
 [node name="Camera1" parent="Test" instance=ExtResource( 20 )]
-position = Vector2( 3170.36, -887.597 )
-scale = Vector2( 0.534391, 0.497575 )
+position = Vector2( 2911.11, -1002.39 )
+
+[node name="Camera2" parent="Test" instance=ExtResource( 20 )]
+position = Vector2( 2382.78, -1103.67 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
@@ -626,9 +628,6 @@ visible = false
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 position = Vector2( -15.4953, 16.3304 )
 navpoly = SubResource( 2 )
-
-[node name="StaticBody2D" parent="." instance=ExtResource( 13 )]
-position = Vector2( 3261.62, -250.172 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1348.93, -255.13 )
@@ -640,3 +639,6 @@ color = Color( 0.831373, 0.698039, 0.698039, 1 )
 material = SubResource( 3 )
 position = Vector2( 3319.09, -364.899 )
 texture = ExtResource( 22 )
+
+[node name="Key" parent="." instance=ExtResource( 13 )]
+position = Vector2( 3261.62, -250.172 )

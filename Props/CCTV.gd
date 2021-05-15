@@ -25,7 +25,6 @@ enum{
 var state = Patrol
 
 func _process(delta):
-	AnimationLoop()
 	if FOW.player_check():
 		FOW.color=Color(1,0,0,0.2)
 		state=Chase
@@ -42,46 +41,54 @@ func _process(delta):
 			chase_loop()
 			
 func AnimationLoop():
-	if -15<currentAngle && currentAngle<15:
-		animation="N"
-#		dir = Vector2(0,-1).rotated(deg2rad(0))
-	if 15<currentAngle && currentAngle<45:
-		animation="NNE"
-#		dir = Vector2(0,-1).rotated(deg2rad(30))
-	if 45<currentAngle && currentAngle<75:
-		animation="NEE"		
-#		dir = Vector2(0,-1).rotated(deg2rad(60))
-	if 75<currentAngle && currentAngle<105:
+#	if -15<currentAngle && currentAngle<15:
+#		animation="N"
+##		dir = Vector2(0,-1).rotated(deg2rad(0))
+#	if 15<currentAngle && currentAngle<45:
+#		animation="NNE"
+##		dir = Vector2(0,-1).rotated(deg2rad(30))
+#	if 45<currentAngle && currentAngle<75:
+#		animation="NEE"		
+##		dir = Vector2(0,-1).rotated(deg2rad(60))
+	if 68<currentAngle && currentAngle<112:
 		animation="E"
 #		dir = Vector2(0,-1).rotated(deg2rad(90))
-	if 105<currentAngle && currentAngle<135:
-		animation="SEE"	
-#		dir = Vector2(0,-1).rotated(deg2rad(120))
-	if 135<currentAngle && currentAngle<165:
-		animation="SSE"
+	if 113<currentAngle && currentAngle<157:
+		animation="SE"	
+#		dir = Vector2(0,-1).rotated(deg2rad(135))
+#	if 135<currentAngle && currentAngle<165:
+#		animation="SSE"
 #		dir = Vector2(0,-1).rotated(deg2rad(150))
-	if 165<currentAngle || currentAngle<-165:
+	if 158<currentAngle || currentAngle<-158:
 		animation="S"
 #		dir = Vector2(0,-1).rotated(deg2rad(180))
-	if -15>currentAngle && currentAngle>-45:
-		animation="NNW"			
-#		dir = Vector2(0,-1).rotated(deg2rad(-30))
-	if -45>currentAngle && currentAngle>-75:
-		animation="NWW"		
-#		dir = Vector2(0,-1).rotated(deg2rad(-60))
-	if -75>currentAngle && currentAngle>-105:
+#	if -15>currentAngle && currentAngle>-45:
+#		animation="NNW"			
+##		dir = Vector2(0,-1).rotated(deg2rad(-30))
+#	if -45>currentAngle && currentAngle>-75:
+#		animation="NWW"		
+##		dir = Vector2(0,-1).rotated(deg2rad(-60))
+	if -68>currentAngle && currentAngle>-112:
 		animation="W"
 #		dir = Vector2(0,-1).rotated(deg2rad(-90))
-	if -105>currentAngle && currentAngle>-135:
-		animation="SWW"	
-#		dir = Vector2(0,-1).rotated(deg2rad(-120))
-	if -135>currentAngle && currentAngle>-165:
-		animation="SSW"	
+	if -113>currentAngle && currentAngle>-157:
+		animation="SW"	
+#		dir = Vector2(0,-1).rotated(deg2rad(-135))
+#	if -135>currentAngle && currentAngle>-165:
+#		animation="SSW"	
 #		dir = Vector2(0,-1).rotated(deg2rad(-150))
 	$AnimationPlayer.play(animation)
+	$AnimationPlayer2.play(animation+"2")
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if (CCTV[2]==0):
+		$CamOnNEWall.visible=true
+		$CamNWWall.visible=false
+	else:
+		$CamOnNEWall.visible=false
+		$CamNWWall.visible=true
+	print(self.name)
 	viewStart = CCTV[0]
 	viewEnd = CCTV[1]
 	player = get_parent().get_node("Player")
@@ -110,6 +117,7 @@ func chase_loop():
 	
 	viewDir=player.position-position
 	dir = viewDir
+	currentAngle=rad2deg(Vector2(0,-1).angle_to(viewDir))
 	
 func alert_all():
 	var dudes = get_tree().get_nodes_in_group("dudes")

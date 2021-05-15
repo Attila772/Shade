@@ -28,7 +28,8 @@ var Guard = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
 var Guard2 = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
 var Guard3 = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
 var Guard4 = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
-var Camera1 = [-180,-90]
+var Camera1 = [-180,-90,0]
+var Camera2 = [90,180,1]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
