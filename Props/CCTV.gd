@@ -77,8 +77,10 @@ func AnimationLoop():
 #	if -135>currentAngle && currentAngle>-165:
 #		animation="SSW"	
 #		dir = Vector2(0,-1).rotated(deg2rad(-150))
-	$AnimationPlayer.play(animation)
-	$AnimationPlayer2.play(animation+"2")
+	if (animation=="W" || animation=="SW" || animation=="S"):
+		$AnimationPlayer.play(animation)
+	if (animation=="E" || animation=="SE" || animation=="S"):	
+		$AnimationPlayer2.play(animation+"2")
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -105,12 +107,12 @@ func changeRotation():
 	if reversal:
 		viewDir=Vector2(0,-1).rotated(deg2rad(currentAngle))
 		currentAngle-=1
-		if currentAngle==viewStart:
+		if floor(currentAngle)==viewStart:
 			reversal=false
 	else:	
 		viewDir=Vector2(0,-1).rotated(deg2rad(currentAngle))
 		currentAngle+=1
-		if currentAngle==viewEnd:
+		if floor(currentAngle)==viewEnd:
 			reversal=true
 	dir = viewDir
 func chase_loop():
