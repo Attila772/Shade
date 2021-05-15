@@ -35,6 +35,9 @@ func _ready():
 	Line_name = "Line_of_"+str(self.name)
 	set_destination(self.position)
 	get_parent().get_parent().get_node("Navigation2D").add_child(Line)
+	if Global.Gadget != "none":
+		Gadget = Global.Gadget
+		gadgetpickedup()
 	
 #	var uinode =$Camera2D/MarginContainer/Sprite
 #	var label = $DaschcooldownNum
@@ -47,8 +50,6 @@ func _ready():
 #	print(temp.get_path())
 #	print("YEET")
 	Global.time = 0
-	$BackgroundTrack.play()
-
 
 func _physics_process(delta):
 	if MouseNav:
@@ -230,8 +231,6 @@ func _process(delta):
 	Global.time += delta
 	if movement ==Vector2(0,0):
 		$AnimationPlayer.stop()
-	if !$BackgroundTrack.playing:
-		$BackgroundTrack.play()
 	if moving == true:
 		if !$walksound.playing:
 			$walksound.play()

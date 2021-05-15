@@ -1,10 +1,9 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Playeranim/Player.png" type="Texture" id=2]
 [ext_resource path="res://Resources/trace_02.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/walking.wav" type="AudioStream" id=4]
-[ext_resource path="res://Sounds/518909__samihil__ambient-track.wav" type="AudioStream" id=5]
 [ext_resource path="res://Resources/spark_05.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/electricity.wav" type="AudioStream" id=7]
 [ext_resource path="res://Player/Dist.gd" type="Script" id=8]
@@ -513,19 +512,13 @@ light_mask = 2
 position = Vector2( -5.78989, -23.9747 )
 scale = Vector2( 0.522972, 0.560203 )
 texture = ExtResource( 2 )
-vframes = 8
 hframes = 13
+vframes = 8
 frame = 9
 
 [node name="walksound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -11.227
-
-[node name="BackgroundTrack" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
-stream = ExtResource( 5 )
-volume_db = 0.393
-pitch_scale = 0.43
 
 [node name="Emp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

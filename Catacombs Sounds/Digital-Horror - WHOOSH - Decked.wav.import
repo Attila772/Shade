@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Digital-Horror - WHOOSH - Decked.wav-41bfc082218e256324a2f01c0d256ebb.sample"
+
+[deps]
+
+source_file="res://Catacombs Sounds/Digital-Horror - WHOOSH - Decked.wav"
+dest_files=[ "res://.import/Digital-Horror - WHOOSH - Decked.wav-41bfc082218e256324a2f01c0d256ebb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

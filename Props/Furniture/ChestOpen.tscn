@@ -11,14 +11,14 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 2
-position = Vector2( -4.96522, -192.435 )
+position = Vector2( 3.03478, -215.435 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 49.1644, -50.2936 )
+position = Vector2( 56.6644, -71.2936 )
 scale = Vector2( 1.06825, 1.18719 )
-polygon = PoolVector2Array( -77.6936, 39.5712, -40.1294, 23.7344, -23.3174, 33.8983, -55.6279, 49.4987 )
+polygon = PoolVector2Array( -82.2652, 43.7428, -86.0521, -5.63214, -46.3864, -23.5962, -39.2938, 0.2771, -19.6082, 8.85379, -15.6277, 34.9874, -27.7692, 43.2059, -61.3304, 55.9473 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2( 30.7797, 123.718 )
+position = Vector2( 44.2797, 100.682 )
 occluder = SubResource( 1 )

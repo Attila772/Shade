@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Props/Button2.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = SubResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = 5.0
+margin_right = 1029.0
+margin_bottom = 688.0
+rect_pivot_offset = Vector2( 278.464, 187.953 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+self_modulate = Color( 0.886275, 0.886275, 0.960784, 1 )
+margin_left = 342.773
+margin_top = 440.57
+margin_right = 660.773
+margin_bottom = 512.57
+custom_fonts/font = SubResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 423.895
+margin_top = 455.994
+margin_right = 579.895
+margin_bottom = 496.994
+custom_fonts/font = SubResource( 4 )
+text = "Bact to hq"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 436.494
+margin_top = 71.7182
+margin_right = 592.494
+margin_bottom = 112.718
+custom_fonts/font = SubResource( 4 )
+text = "GAME OVER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
