@@ -1,17 +1,24 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Main menu.jpg" type="Texture" id=1]
 [ext_resource path="res://Ui Stuff/VolumeSlider.gd" type="Script" id=2]
 [ext_resource path="res://Ui Stuff/ApplyButton.gd" type="Script" id=3]
 [ext_resource path="res://Ui Stuff/Label.gd" type="Script" id=4]
 [ext_resource path="res://Ui Stuff/BackButton.gd" type="Script" id=5]
+[ext_resource path="res://Resources/fog.shader" type="Shader" id=6]
+[ext_resource path="res://addons/project_map/icon.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFontData" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+shader_param/color = Vector3( 0.625, 0.667, 0.7382 )
+shader_param/OCTAVES = 4
+
+[sub_resource type="DynamicFontData" id=2]
 font_path = "res://Resources/Queen of Camelot 2.0 demo.otf"
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 30
-font_data = SubResource( 1 )
+font_data = SubResource( 2 )
 
 [node name="SettingsMenu" type="Node2D"]
 
@@ -20,6 +27,12 @@ position = Vector2( -4.23779, 0 )
 scale = Vector2( 1.40623, 1.31202 )
 texture = ExtResource( 1 )
 centered = false
+
+[node name="icon" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 505.879, 288.117 )
+scale = Vector2( 9.12058, 5.6558 )
+texture = ExtResource( 7 )
 
 [node name="VolumeSlider" type="HSlider" parent="."]
 margin_left = 648.654
@@ -33,10 +46,12 @@ __meta__ = {
 }
 
 [node name="ApplyButton" type="Button" parent="."]
-margin_left = 178.675
-margin_top = 255.729
-margin_right = 759.675
-margin_bottom = 499.729
+modulate = Color( 0.913725, 0.858824, 0.858824, 0.8 )
+margin_left = 736.375
+margin_top = 216.131
+margin_right = 971.375
+margin_bottom = 275.131
+text = "Apply"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,17 +62,19 @@ margin_left = 507.055
 margin_top = 122.865
 margin_right = 631.055
 margin_bottom = 160.865
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Volume"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackButton" type="Button" parent="."]
-margin_left = 679.0
-margin_top = 531.0
-margin_right = 919.0
-margin_bottom = 579.0
+margin_left = 731.917
+margin_top = 533.52
+margin_right = 971.917
+margin_bottom = 581.52
+text = "Back"
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false

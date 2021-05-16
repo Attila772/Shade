@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Guard.png-5829bdd8666f49f93b0118fca6a56d8f.stex"
+path="res://.import/RingOfY másolata.png-d488c54f3af43d9b12348e57b80e14d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Guard.png"
-dest_files=[ "res://.import/Guard.png-5829bdd8666f49f93b0118fca6a56d8f.stex" ]
+source_file="res://Assets/gadgets/RingOfY másolata.png"
+dest_files=[ "res://.import/RingOfY másolata.png-d488c54f3af43d9b12348e57b80e14d2.stex" ]
 
 [params]
 

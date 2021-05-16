@@ -18,10 +18,10 @@
 [ext_resource path="res://Ui Stuff/Camera.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Props/MappWall.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Props/Furniture/Furniture.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/gadgets/RingOfSpeed.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Props/Furniture/Stairs.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Resources/fog.shader" type="Shader" id=21]
 [ext_resource path="res://addons/project_map/icon.png" type="Texture" id=22]
-[ext_resource path="res://Props/Furniture/ChestOpen.tscn" type="PackedScene" id=23]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 21 )
@@ -51,7 +51,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.552941, 0.376471, 0.121569, 1 )
 material = SubResource( 1 )
-position = Vector2( 934.355, -119.814 )
+position = Vector2( 1129.04, -316.902 )
 scale = Vector2( 31.6169, 21.6767 )
 texture = ExtResource( 22 )
 
@@ -124,7 +124,7 @@ position = Vector2( 1730.52, -258.844 )
 
 [node name="CollisionTest39" parent="Test" instance=ExtResource( 1 )]
 modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
-position = Vector2( 1855.07, -321.872 )
+position = Vector2( 1855.07, -321.123 )
 
 [node name="CollisionTest40" parent="Test" instance=ExtResource( 1 )]
 modulate = Color( 0.498039, 0.466667, 0.513726, 1 )
@@ -133,7 +133,7 @@ position = Vector2( 1975.11, -383.388 )
 [node name="Player" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 3 )]
-position = Vector2( 847.31, 76.8748 )
+position = Vector2( 842.27, 42.8569 )
 
 [node name="CollisionTest" parent="Test" instance=ExtResource( 6 )]
 modulate = Color( 0.498039, 0.470588, 0.501961, 1 )
@@ -185,11 +185,11 @@ position = Vector2( 1558.09, -633.304 )
 
 [node name="DiagonalWall26" parent="Test" instance=ExtResource( 8 )]
 modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
-position = Vector2( 1683.95, -568.876 )
+position = Vector2( 1664.47, -601.839 )
 
 [node name="DiagonalWall27" parent="Test" instance=ExtResource( 8 )]
 modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
-position = Vector2( 1806.81, -505.948 )
+position = Vector2( 1798.57, -514.189 )
 
 [node name="DiagonalWall28" parent="Test" instance=ExtResource( 8 )]
 modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
@@ -245,9 +245,6 @@ position = Vector2( 1474.41, -608.039 )
 [node name="StaticBody2D2" parent="Test" instance=ExtResource( 9 )]
 position = Vector2( 1638.68, -537.216 )
 
-[node name="StaticBody2D3" parent="Test" instance=ExtResource( 9 )]
-position = Vector2( 1802.88, -467.98 )
-
 [node name="CollisionTest2" parent="Test" instance=ExtResource( 11 )]
 position = Vector2( 1537.06, 1156.56 )
 
@@ -263,25 +260,12 @@ scale = Vector2( 1.05, 1.05 )
 position = Vector2( 432.311, -37.7333 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Furniture5" parent="Test" instance=ExtResource( 23 )]
-position = Vector2( 1252.69, -545.502 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Furniture6" parent="Test" instance=ExtResource( 23 )]
-position = Vector2( 1165.79, -503.549 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Furniture7" parent="Test" instance=ExtResource( 23 )]
-position = Vector2( 1080.38, -457.102 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Furniture8" parent="Test" instance=ExtResource( 23 )]
-position = Vector2( 990.486, -413.651 )
-scale = Vector2( 1.5, 1.5 )
-
 [node name="Stair" parent="Test" instance=ExtResource( 20 )]
 modulate = Color( 0.505882, 0.443137, 0.509804, 1 )
 position = Vector2( 1393.12, 341.033 )
+
+[node name="StaticBody2D3" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1793.14, -467.98 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1447.12, -653.312 )
@@ -303,3 +287,6 @@ navpoly = SubResource( 3 )
 position = Vector2( 941.804, 154.725 )
 scale = Vector2( 0.8, 0.8 )
 zoom = Vector2( 0.8, 0.8 )
+
+[node name="RingOfY2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1747.72, -508.822 )

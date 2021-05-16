@@ -85,28 +85,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="gadgetscollected" type="Label" parent="."]
-margin_left = 21.7278
-margin_top = 407.375
-margin_right = 809.728
-margin_bottom = 505.375
-custom_fonts/font = SubResource( 4 )
-text = "Gadgets collected"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="points" type="Label" parent="."]
-margin_left = 35.6852
-margin_top = 288.385
-margin_right = 351.685
-margin_bottom = 386.385
-custom_fonts/font = SubResource( 4 )
-text = "POINTS"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="points2" type="Label" parent="."]
 margin_left = 717.424
 margin_top = 480.984

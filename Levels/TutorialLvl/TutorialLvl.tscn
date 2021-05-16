@@ -420,7 +420,7 @@ modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
 position = Vector2( 890.496, 295.684 )
 
 [node name="CollisionTest13" parent="Test" instance=ExtResource( 11 )]
-position = Vector2( 347.789, 350.576 )
+position = Vector2( 700.125, 224.442 )
 
 [node name="Artifact" parent="Test" instance=ExtResource( 12 )]
 position = Vector2( 2607.88, -1131.8 )
