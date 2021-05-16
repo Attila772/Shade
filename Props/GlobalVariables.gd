@@ -30,6 +30,6 @@ var LvlDescription= {
 	"Tutorial": "Easy tutorial map to get to know \n the basics of the game",
 	"Catacombs" : "Easy level with no enemies , \n jewel is hard to find",
 	"Barni" : "Medium hard map, ",
-	"Museum": "Fairly hard map, not recommended for first try",
+	"Museum": "Fairly hard map, not recommended for \n first try",
 	"Debug" : "Non existent level. "
 }
