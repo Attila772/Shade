@@ -367,7 +367,7 @@ position = Vector2( 3468.68, 1101.56 )
 [node name="Player" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 2 )]
-position = Vector2( 447.114, 2174.41 )
+position = Vector2( -542.306, 652.229 )
 
 [node name="Artifact" parent="Test" instance=ExtResource( 5 )]
 position = Vector2( -253.515, 1329.89 )
@@ -764,6 +764,7 @@ position = Vector2( 104.179, 1201.49 )
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+visible = false
 position = Vector2( 107.943, 1200.08 )
 scale = Vector2( 1.00139, 1.00688 )
 navpoly = SubResource( 1 )
