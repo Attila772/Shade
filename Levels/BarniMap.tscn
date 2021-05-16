@@ -774,3 +774,8 @@ navpoly = SubResource( 1 )
 stream = ExtResource( 20 )
 volume_db = -20.0
 autoplay = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -1684.11, 1439.98, -559.003, 887.544, -1052.07, 612.321, -717.284, 463.996, -1035.12, -324.245, -3896.36, 1037.05, 798.511, 3863, 5756.55, 1039.7, 1338.55, -1353.15, -1033.08, -327.174, -716.221, 460.928, -211.917, 719.437, 1270.67, -23.7905, 3833.22, 1282.94, 889.979, 2746.5 )
