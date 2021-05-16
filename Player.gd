@@ -25,6 +25,8 @@ var MouseNav = false
 var Line
 var Dashing = false
 var angle
+var speedtimer = 5
+var gadgetmultiplier = 1
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -110,7 +112,7 @@ func MovementLoop():
 		movement.x -=1
 		movement.y -=0.5
 		move_direction="NW"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = -45
 		return
 	if Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right"):
@@ -118,7 +120,7 @@ func MovementLoop():
 		movement.x +=1
 		movement.y +=-0.5
 		move_direction="NE"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = 45
 		return
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left"):
@@ -126,7 +128,7 @@ func MovementLoop():
 		movement.x +=-1
 		movement.y +=0.5
 		move_direction="SW"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = 225
 		return
 	if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right"):
@@ -134,7 +136,7 @@ func MovementLoop():
 		movement.x +=1
 		movement.y +=0.5
 		move_direction="SE"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = -225
 		return
 	if Input.is_action_pressed("ui_up"):
@@ -142,7 +144,7 @@ func MovementLoop():
 		movement.x +=0
 		movement.y +=-1
 		move_direction="N"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = 0
 		return
 	if Input.is_action_pressed("ui_down"):
@@ -150,7 +152,7 @@ func MovementLoop():
 		movement.x +=0
 		movement.y +=1
 		move_direction="S"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = 180
 		return
 	if Input.is_action_pressed("ui_right"):
@@ -158,7 +160,7 @@ func MovementLoop():
 		movement.x +=1
 		movement.y +=0
 		move_direction="E"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = 90
 		return
 	if Input.is_action_pressed("ui_left"):
@@ -166,7 +168,7 @@ func MovementLoop():
 		movement.x +=-1
 		movement.y +=0
 		move_direction="W"
-		movement = movement.normalized() * speed
+		movement = movement.normalized() * speed *gadgetmultiplier
 		dashrot = -90
 		return
 	
@@ -247,6 +249,7 @@ func AnimationLoop():
 	if Dashing:
 		temp="Dash"
 	animation = temp + "_" + move_direction
+	$AnimationPlayer.playback_speed = gadgetmultiplier
 	$AnimationPlayer.play(animation)
 
 
@@ -266,6 +269,14 @@ func particles(delta): # Press F to pay respect
 		if Gadget =="Emp":
 			$Particles2D.visible = true
 			timer = 1
+		if Gadget =="RingOfSpeed" and speedtimer ==5 and gadgetmultiplier ==1:
+			gadgetmultiplier = 3
+	
+	if Gadget == "RingOfSpeed" and speedtimer <0:
+		gadgetmultiplier =1
+		speedtimer =5
+	if speedtimer >0 and gadgetmultiplier >1:
+		speedtimer -=delta
 #	print(timer)
 	if $Particles2D.visible == true:
 		if !$Emp.playing:
