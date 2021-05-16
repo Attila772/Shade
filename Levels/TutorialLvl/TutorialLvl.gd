@@ -13,6 +13,7 @@ var Dialogs = [dialog3,dialog4,dialog5]
 var Dialogs3 = [dialog7]
 
 var dialogcheck = [false,false,false]
+
 var guardlvl = 2
 var checklocations=[Vector2(875,-175),Vector2(1450,130),Vector2(1170,-300),Vector2(2110,-175),Vector2(1365,-430),Vector2(2140,-205),Vector2(1650,-530),Vector2(2390,-300),Vector2(1910,-670),Vector2(2650,-450),Vector2(2170,-800),Vector2(3210,-230),Vector2(2530,-1020)]
 var Guard = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
@@ -20,7 +21,6 @@ var Guard2 = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
 var Guard3 = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
 var Guard4 = [guardlvl,5,Vector2(2408.226,-706),Vector2(1655,-155)]
 var Camera1 = [-180,-90,0]
-var Camera2 = [90,180,1]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
