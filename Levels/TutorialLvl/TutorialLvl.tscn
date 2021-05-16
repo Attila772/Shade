@@ -252,7 +252,7 @@ rotation = -0.0487073
 "dudes",
 ] instance=ExtResource( 3 )]
 modulate = Color( 0.533333, 0.498039, 0.498039, 1 )
-position = Vector2( 3371.1, -690.289 )
+position = Vector2( 929.373, 70.7034 )
 
 [node name="CollisionTest" parent="Test" instance=ExtResource( 6 )]
 modulate = Color( 0.498039, 0.470588, 0.501961, 1 )
@@ -352,7 +352,7 @@ position = Vector2( 2241.02, -881.313 )
 
 [node name="DiagonalWall30" parent="Test" instance=ExtResource( 8 )]
 modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
-position = Vector2( 2337.56, -832.244 )
+position = Vector2( 2366.54, -814.605 )
 
 [node name="DiagonalWall32" parent="Test" instance=ExtResource( 8 )]
 modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
@@ -609,23 +609,8 @@ position = Vector2( 3042.25, -275.853 )
 ] instance=ExtResource( 18 )]
 position = Vector2( 2385.96, -678.512 )
 
-[node name="Guard2" parent="Test" groups=[
-"dudes",
-] instance=ExtResource( 18 )]
-position = Vector2( 1975.23, -605.437 )
-
-[node name="Guard3" parent="Test" groups=[
-"dudes",
-] instance=ExtResource( 18 )]
-position = Vector2( 2335.56, -476.925 )
-
-[node name="Guard4" parent="Test" groups=[
-"dudes",
-] instance=ExtResource( 18 )]
-position = Vector2( 1808.92, -386.21 )
-
 [node name="Camera1" parent="Test" instance=ExtResource( 20 )]
-position = Vector2( 2911.11, -1002.39 )
+position = Vector2( 3149.23, -881.438 )
 
 [node name="Key" parent="Test" instance=ExtResource( 13 )]
 position = Vector2( 3261.62, -250.172 )

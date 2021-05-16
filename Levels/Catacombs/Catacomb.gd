@@ -26,6 +26,20 @@ func _process(delta):
 			get_node("Particles2D").visible = true
 			$Rock1.play()
 			$Rock2.play()
+	if player.position.distance_to(Vector2(7364,1327)) <50 :
+		if get_node("Test/Wreckage3").visible == false:
+			get_node("Test/Wreckage3").visible = true
+			get_node("Test/Wreckage3/CollisionPolygon2D").disabled = false
+			get_node("Particles2D2").visible = true
+			$Rock1.play()
+			$Rock2.play()
+	if player.position.distance_to(Vector2(6410,915)) <50 :
+		if get_node("Test/Wreckage2").visible == false:
+			get_node("Test/Wreckage2").visible = true
+			get_node("Test/Wreckage2/CollisionPolygon2D").disabled = false
+			get_node("Particles2D3").visible = true
+			$Rock1.play()
+			$Rock2.play()
 			
 	if !$AmbientBase.playing and !$AmbientSpooky.playing and !$AmbientSpooky2.playing:
 		$AmbientBase.play()
