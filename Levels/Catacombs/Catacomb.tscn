@@ -916,7 +916,7 @@ position = Vector2( 2709.9, -630.924 )
 [node name="Player" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 3 )]
-position = Vector2( 1006.45, 377.908 )
+position = Vector2( 1086.1, 325.11 )
 
 [node name="CollisionTest" parent="Test" instance=ExtResource( 8 )]
 position = Vector2( 2602.89, -121.822 )
@@ -1689,6 +1689,13 @@ position = Vector2( 3594.46, 370.879 )
 [node name="Wreckage" parent="Test" instance=ExtResource( 4 )]
 position = Vector2( 4389.59, -797.188 )
 
+[node name="Wreckage2" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 6157.06, 592.045 )
+
+[node name="Wreckage3" parent="Test" instance=ExtResource( 4 )]
+position = Vector2( 7708.72, 1203.45 )
+rotation = 0.664152
+
 [node name="Artifact" parent="Test" instance=ExtResource( 5 )]
 position = Vector2( 10461.7, -735.763 )
 
@@ -2405,6 +2412,22 @@ color = Color( 0.160784, 0.141176, 0.141176, 1 )
 [node name="Particles2D" type="Particles2D" parent="."]
 visible = false
 position = Vector2( 4361.6, -914.956 )
+amount = 10
+lifetime = 0.5
+process_material = SubResource( 3 )
+texture = ExtResource( 7 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 6054.93, 561.671 )
+amount = 10
+lifetime = 0.5
+process_material = SubResource( 3 )
+texture = ExtResource( 7 )
+
+[node name="Particles2D3" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 7674.93, 1085.67 )
 amount = 10
 lifetime = 0.5
 process_material = SubResource( 3 )
