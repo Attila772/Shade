@@ -39,10 +39,10 @@ outlines = [ PoolVector2Array( -488.745, 272.579, 12.7424, 33.7237, 257.357, 137
 script = ExtResource( 14 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -1204.0
-margin_top = -1739.0
-margin_right = 2976.0
-margin_bottom = 1294.0
+margin_left = -1200.0
+margin_top = -1747.0
+margin_right = 2980.0
+margin_bottom = 1286.0
 color = Color( 0.184314, 0.14902, 0.0745098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,7 +51,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.552941, 0.376471, 0.121569, 1 )
 material = SubResource( 1 )
-position = Vector2( 1129.04, -316.902 )
+position = Vector2( 1097.26, -306.307 )
 scale = Vector2( 31.6169, 21.6767 )
 texture = ExtResource( 22 )
 
@@ -290,3 +290,8 @@ zoom = Vector2( 0.8, 0.8 )
 
 [node name="RingOfY2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1747.72, -508.822 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( -128.433, -246.53, 38.814, -17.5477, 1005.24, 494.063, 1247.56, 401.409, 1390.43, 413.471, 1552.35, 307.115, 1527.51, 270.074, 1605.81, 178.125, 1478.27, 112.244, 1036.28, -131.393, 1154.71, -227.147, 1414.24, -97.672, 2039.06, -394.197, 1998.53, -448.417, 1398.5, -715.1, 872.793, -463.134, 992.504, -341.913, 991.91, -256.885, 871.8, -178.397, 638.121, -307.426, 42.1813, -27.6498, -730.232, -542.943, 1094.33, -1494.42, 2819.11, -578.579, 3182.6, 398.353, 2359.41, 1339.14, 994.074, 1334.14, -837.926, 490.138, -741.926, -525.862 )

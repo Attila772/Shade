@@ -1504,7 +1504,7 @@ position = Vector2( 8126.61, -1075.7 )
 position = Vector2( 8202.72, -1044.78 )
 
 [node name="CollisionTest355" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 8818.88, -1229.89 )
+position = Vector2( 8825.23, -1229.89 )
 
 [node name="CollisionTest356" parent="Test" instance=ExtResource( 8 )]
 position = Vector2( 8935, -1174 )
@@ -2437,3 +2437,8 @@ stream = ExtResource( 24 )
 
 [node name="Rock2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 3879.66, -1362.69, 4324.13, -1661.12, 5340.07, -1153.15, 6565.54, -1781.77, 8247.46, -953.174, 8770.58, -1222.54, 8908.19, -1148.92, 8412.92, -901.282, 7600.53, -480.097, 8794.25, 205.661, 7276.7, 1043.81, 6902.07, 885.068, 7657.68, 465.994 )

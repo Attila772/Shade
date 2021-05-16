@@ -3,22 +3,13 @@ var dialogbox = load("res://Ui Stuff/Dialogbox.tscn").instance()
 var softdialog = load("res://Ui Stuff/SoftDialogBox.tscn").instance()
 
 
-var dialog = ["Guard",3,"Verem a faszom mert nincsenek \n itthon"]
+var dialog3 = ["scientist"," Press space to dash \n aaaa"]
+var dialog4 = ["scientist"," You can use your gadget \n with  F  or by dashing"]
+var dialog5 = ["scientist"," Try to reach the room to \n to the right, and get the key"]
+var dialog7 = ["Scientist"," You found the access card! \n Now you can open the locked door"]
 
+var Dialogs = [dialog3,dialog4,dialog5]
 
-
-var dialog2 = ["Guard",2,"verjed a faszod mert nincsenek \n otthon"]
-
-
-
-var dialog3 = ["scientist","Amugy eza  tutorial gec \n aaaa"]
-var dialog4 = ["thief","Faszfaszfaszfaszfaszfasz \n itthon yeyeyeyeye"]
-var dialog5 = ["scientist","GIT GUD  "]
-var dialog6 = ["thief","press  SPACE   to dash  \n "]
-var dialog7 = ["Scientist","You found the access card! \n Now you can open the locked door"]
-
-var Dialogs = [dialog,dialog2]
-var Dialogs2 = [dialog6]
 var Dialogs3 = [dialog7]
 
 var dialogcheck = [false,false,false]
@@ -39,8 +30,8 @@ var Camera2 = [90,180,1]
 func _ready():
 	Global.path= self.filename
 #
-#	get_node("Camera2D").add_child(softdialog)
-#	softdialog.dialog(Dialogs)
+	get_node("Camera2D").add_child(dialogbox)
+	dialogbox.dialog(Dialogs)
 #
 	
 	
@@ -59,11 +50,11 @@ func _process(delta):
 #			dialogbox.dialog(Dialogs2)
 #			dialogcheck[1] = true
 
-#	if !dialogcheck[2]:
-#		if $StaticBody2D.visible == false:
-#			get_node("Camera2D").add_child(dialogbox)
-#			dialogbox.dialog(Dialogs3)
-#			dialogcheck[2] = true
+	if !dialogcheck[2]:
+		if $Test/Key.visible == false:
+			get_node("Camera2D").add_child(dialogbox)
+			dialogbox.dialog(Dialogs3)
+			dialogcheck[2] = true
 #
 #w
 #

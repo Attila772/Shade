@@ -417,10 +417,18 @@ position = Vector2( 532.93, 127.533 )
 
 [node name="DiagonalWall27" parent="Test" instance=ExtResource( 8 )]
 modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
-position = Vector2( 890.496, 295.684 )
+position = Vector2( 891.337, 296.525 )
+
+[node name="DiagonalWall31" parent="Test" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 760.157, 231.776 )
+
+[node name="DiagonalWall40" parent="Test" instance=ExtResource( 8 )]
+modulate = Color( 0.501961, 0.466667, 0.509804, 1 )
+position = Vector2( 643.273, 177.958 )
 
 [node name="CollisionTest13" parent="Test" instance=ExtResource( 11 )]
-position = Vector2( 700.125, 224.442 )
+position = Vector2( 399.471, -109.735 )
 
 [node name="Artifact" parent="Test" instance=ExtResource( 12 )]
 position = Vector2( 2607.88, -1131.8 )
@@ -622,6 +630,9 @@ position = Vector2( 2911.11, -1002.39 )
 [node name="Camera2" parent="Test" instance=ExtResource( 20 )]
 position = Vector2( 2382.78, -1103.67 )
 
+[node name="Key" parent="Test" instance=ExtResource( 13 )]
+position = Vector2( 3261.62, -250.172 )
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
 
@@ -639,6 +650,3 @@ color = Color( 0.831373, 0.698039, 0.698039, 1 )
 material = SubResource( 3 )
 position = Vector2( 3319.09, -364.899 )
 texture = ExtResource( 22 )
-
-[node name="Key" parent="." instance=ExtResource( 13 )]
-position = Vector2( 3261.62, -250.172 )
