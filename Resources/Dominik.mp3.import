@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dominik.mp3-fbe7c2456be404a91d6a2083e9a6e346.mp3str"
+
+[deps]
+
+source_file="res://Resources/Dominik.mp3"
+dest_files=[ "res://.import/Dominik.mp3-fbe7c2456be404a91d6a2083e9a6e346.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
