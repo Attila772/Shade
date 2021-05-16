@@ -30,6 +30,7 @@ func _process(delta):
 				else:
 					$Sprite.texture = openpic
 					$CollisionPolygon2D2.disabled = true
+					IsOpen = true
 		if !nearbychar:
 			$Etoopen.visible = false
 		if !nearbychar and IsOpen:

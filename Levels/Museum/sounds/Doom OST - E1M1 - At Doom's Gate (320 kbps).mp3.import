@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Doom OST - E1M1 - At Doom's Gate (320 kbps).mp3-27c6dc296158f27342e7cbb11b2046f8.mp3str"
+
+[deps]
+
+source_file="res://Levels/Museum/sounds/Doom OST - E1M1 - At Doom's Gate (320 kbps).mp3"
+dest_files=[ "res://.import/Doom OST - E1M1 - At Doom's Gate (320 kbps).mp3-27c6dc296158f27342e7cbb11b2046f8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
