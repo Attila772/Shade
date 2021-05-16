@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,11 @@
 [ext_resource path="res://Props/opendoorE.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Props/LockableDoorW.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Props/opendoorW.tscn" type="PackedScene" id=15]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 869.026, 943.178, 572.377, 879.61, 356.246, 777.902, 750.366, 587.198, 1163.56, 799.091, 790.626, -550.665, 2359.45, 197.65, 2037.37, 358.688, 752.485, 502.441, 2122.48, 802.857, 1692.99, 592.259, 1966.5, 454.17, 2060.68, 407.424, 661.371, 949.535, 532.117, 926.227, 296.916, 754.594, -722.287, 224.862, 1238.59, 760.43, 1958.43, 409.705, -684.593, -634.469, -346.858, -460.845, -418.21, -418.033, -496.698, -384.736, 2395.47, 176.461, 855.011, -588.472, 950.362, -647.802, -610.862, -334.789, -912.92, -501.278, -472.914, -332.41, -384.913, -375.222, 640.182, 985.556, 2520.49, 161.628, 3594.61, 68.7957, 2495.06, 125.607, 1152.57, -1150.03, 916.46, -685.942, -900.277, 207.911, -1642.38, 254.06, 801.073, 1437.81, 695.073, 1427.81, 758.842, 1061.84, 879.073, 1439.81, 1635.99, 621.837, 2070.15, 828.313 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 1, 0, 13, 14 ), PoolIntArray( 15, 16, 5, 8 ), PoolIntArray( 17, 8, 7, 18 ), PoolIntArray( 19, 20, 21, 22 ), PoolIntArray( 23, 24, 25 ), PoolIntArray( 26, 27, 19, 22 ), PoolIntArray( 18, 7, 12, 11 ), PoolIntArray( 28, 22, 21, 29 ), PoolIntArray( 14, 13, 30 ), PoolIntArray( 9, 12, 31, 32 ), PoolIntArray( 32, 31, 33 ), PoolIntArray( 34, 32, 33 ), PoolIntArray( 34, 33, 23, 25, 35 ), PoolIntArray( 29, 34, 35, 36 ), PoolIntArray( 28, 29, 36, 37 ), PoolIntArray( 38, 39, 37, 36, 14, 30, 40, 41 ), PoolIntArray( 41, 40, 42, 43 ), PoolIntArray( 9, 32, 41 ), PoolIntArray( 41, 43, 9 ) ]
+outlines = [ PoolVector2Array( 1152.57, -1150.03, 3594.61, 68.7957, 879.073, 1439.81, 801.073, 1437.81, 695.073, 1427.81, -1642.38, 254.06, -472.914, -332.41, -496.698, -384.736, -610.862, -334.789, -912.92, -501.278, -684.593, -634.469, -346.858, -460.845, -418.21, -418.033, -384.913, -375.222 ), PoolVector2Array( 1635.99, 621.837, 758.842, 1061.84, 640.182, 985.556, 661.371, 949.535, 869.026, 943.178, 1163.56, 799.091, 750.366, 587.198, 356.246, 777.902, 572.377, 879.61, 532.117, 926.227, -900.277, 207.911, 916.46, -685.942, 950.362, -647.802, 855.011, -588.472, 2395.47, 176.461, 2495.06, 125.607, 2520.49, 161.628, 2060.68, 407.424, 2037.37, 358.688, 2359.45, 197.65, 790.626, -550.665, -722.287, 224.862, 296.916, 754.594, 752.485, 502.441, 1238.59, 760.43, 1958.43, 409.705, 1966.5, 454.17, 1692.99, 592.259, 2122.48, 802.857, 2070.15, 828.313 ) ]
 
 [node name="BarniMap" type="Node2D"]
 script = ExtResource( 4 )
@@ -598,3 +603,6 @@ position = Vector2( 104.179, 1201.49 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 position = Vector2( 104.179, 1201.49 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
