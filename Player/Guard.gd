@@ -100,6 +100,8 @@ func _physics_process(delta):#movement + animation
 
 
 func _process(delta):#State machine LETÉPEM A ***** HA HOZZÁNYÚLSZ (ez hosszú lesz baszki)
+	if get_parent().get_node("Player").position.distance_to(position)<80:
+		get_tree().change_scene("res://Ui Stuff/Dead.tscn")
 	match difficulty:
 		Pista:
 			match state:
