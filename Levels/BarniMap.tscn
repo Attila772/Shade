@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Resources/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -17,11 +17,13 @@
 [ext_resource path="res://Props/opendoorW.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Player/Guard.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Props/CCTV.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/gadgets/key.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Props/LockableDoorE.tscn" type="PackedScene" id=19]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 1144.66, -1115.27, 3540.75, 79.7394, 2818.22, 38.0974, 1132.65, -786.276, 1984.9, 709.219, 1692.99, 592.259, 1966.5, 454.17, 2060.68, 407.424, 2593.36, 168.205, 869.026, 943.178, 572.377, 879.61, 356.246, 777.902, 750.366, 587.198, 1163.56, 799.091, 791.649, -530.417, 2359.45, 197.65, 2037.37, 358.688, 752.485, 502.441, 661.371, 949.535, 532.117, 926.227, 296.916, 754.594, -722.287, 224.862, 1238.59, 760.43, 1958.43, 409.705, -684.593, -634.469, -346.858, -460.845, -418.21, -418.033, -496.698, -384.736, -610.862, -334.789, -912.92, -501.278, 2580.63, 77.6954, 2522.65, 107.394, 2399.73, 141.197, 892.058, -588.399, 969.417, -640.729, 1034.37, -672.883, 1126.82, -697.294, 2562.24, 8.3988, -384.913, -375.222, 933.741, -702.568, -472.914, -332.41, 640.182, 985.556, 758.842, 1061.84, 1635.99, 621.837, 1905.86, 760.514, 879.073, 1439.81, 801.073, 1437.81, 695.073, 1427.81, -1642.38, 254.06, -900.277, 207.911, 1006.65, -715.72, 2649.93, 138.507 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8, 1 ), PoolIntArray( 9, 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 10, 9, 18, 19 ), PoolIntArray( 20, 21, 14, 17 ), PoolIntArray( 22, 17, 16, 23 ), PoolIntArray( 24, 25, 26, 27 ), PoolIntArray( 28, 29, 24, 27 ), PoolIntArray( 30, 31, 32, 33, 34, 35, 36, 37 ), PoolIntArray( 38, 0, 3, 39, 40 ), PoolIntArray( 23, 16, 7, 6 ), PoolIntArray( 40, 27, 26, 38 ), PoolIntArray( 19, 18, 41 ), PoolIntArray( 42, 43, 44, 45, 46, 47 ), PoolIntArray( 4, 1, 45, 44 ), PoolIntArray( 19, 41, 42, 47, 48, 49 ), PoolIntArray( 49, 48, 40, 39 ), PoolIntArray( 39, 3, 50 ), PoolIntArray( 34, 39, 50, 35 ), PoolIntArray( 8, 31, 30, 51 ), PoolIntArray( 1, 8, 51 ), PoolIntArray( 1, 51, 2 ) ]
-outlines = [ PoolVector2Array( 1144.66, -1115.27, 3540.75, 79.7394, 879.073, 1439.81, 801.073, 1437.81, 695.073, 1427.81, -1642.38, 254.06, -472.914, -332.41, -496.698, -384.736, -610.862, -334.789, -912.92, -501.278, -684.593, -634.469, -346.858, -460.845, -418.21, -418.033, -384.913, -375.222 ), PoolVector2Array( 1635.99, 621.837, 758.842, 1061.84, 640.182, 985.556, 661.371, 949.535, 869.026, 943.178, 1163.56, 799.091, 750.366, 587.198, 356.246, 777.902, 572.377, 879.61, 532.117, 926.227, -900.277, 207.911, 933.741, -702.568, 969.417, -640.729, 892.058, -588.399, 2399.73, 141.197, 2522.65, 107.394, 2593.36, 168.205, 2060.68, 407.424, 2037.37, 358.688, 2359.45, 197.65, 791.649, -530.417, -722.287, 224.862, 296.916, 754.594, 752.485, 502.441, 1238.59, 760.43, 1958.43, 409.705, 1966.5, 454.17, 1692.99, 592.259, 1984.9, 709.219, 1905.86, 760.514 ), PoolVector2Array( 1006.65, -715.72, 1034.37, -672.883, 1126.82, -697.294, 2562.24, 8.3988, 2580.63, 77.6954, 2649.93, 138.507, 2818.22, 38.0974, 1132.65, -786.276 ) ]
+vertices = PoolVector2Array( 1013.94, -252.036, 1091.55, -291.295, 1195.44, -338.969, 1659.41, -118.989, 1401.7, 6.86841, 1310.79, 16.2347, 3540.75, 79.7394, 2131.59, 797.844, 2547.8, 178.343, 2623.66, 142.482, 1144.66, -1115.27, 2818.22, 38.0974, 1132.65, -786.276, 1730.72, -94.3257, 2359.45, 197.65, 2037.37, 358.688, 1571.12, 268.632, 1488.58, 227.359, 1422.68, 45.8243, 2060.68, 407.424, 1920.46, 687.229, 1966.5, 454.17, 1221.89, 106.717, 1364.76, 71.7938, 869.026, 943.178, 595.835, 880.116, 356.246, 777.902, 750.366, 587.198, 1163.56, 799.091, 1523.5, 313.079, 1845.74, 462.295, 1238.59, 760.43, 752.485, 502.441, 1826.2, 653.481, 1692.99, 592.259, 675.44, 950.533, 1841.28, 720.976, 2071.27, 839.091, 879.073, 1439.81, 1777.19, 696.603, 70.3102, 156.437, -415.593, 384.267, -722.287, 224.862, -238.003, -16.7399, -135.559, 36.8345, -64.2155, 64.6747, -81.7521, 3.42261, -42.607, 19.3491, -177.451, -46.9484, 385.566, -327.828, 296.916, 754.594, -341.942, 422.547, 385.852, 53.3158, 449.376, 28.1979, -684.593, -634.469, -346.858, -460.845, -418.21, -418.033, -496.698, -384.736, -610.862, -334.789, -912.92, -501.278, 2399.73, 141.197, 892.058, -588.399, 969.417, -640.729, 2522.65, 107.394, 615.05, 970.662, 561.894, 956.484, 884.421, -68.2451, 791.587, -123.151, 948.476, -48.7793, 791.649, -530.417, 1124.73, -372.494, 1064.59, -328.752, 994.896, -302.833, 767.08, -226.445, 608.129, -288.478, -384.913, -375.222, 933.741, -702.568, 560.903, -240.856, 676.384, -151.741, 414.679, -21.3514, 480.245, -276.312, 523.696, -307.776, 455.713, -362.824, 375.364, 0.875122, 140.246, 127.928, 1177.45, 70.2064, 906.001, 1.94812, 821.859, -27.2882, -472.914, -332.41, 689.838, -92.8782, 1433.02, 267.044, 1894.95, 441.658, 1958.43, 409.705, 758.842, 1061.84, 1635.99, 621.837, 801.073, 1437.81, 695.073, 1427.81, -1642.38, 254.06, -937.396, 203.519, 1034.37, -672.883, 1126.82, -697.294, 2562.24, 8.3988, 2565.76, 76.4681, 1006.65, -715.72 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 8, 9 ), PoolIntArray( 10, 6, 11, 12 ), PoolIntArray( 13, 14, 15, 16, 17, 18 ), PoolIntArray( 19, 8, 7, 20, 21 ), PoolIntArray( 17, 22, 23 ), PoolIntArray( 18, 17, 23, 4 ), PoolIntArray( 24, 25, 26, 27, 28 ), PoolIntArray( 29, 30, 31, 32 ), PoolIntArray( 33, 34, 21, 20 ), PoolIntArray( 25, 24, 35 ), PoolIntArray( 36, 37, 38, 39 ), PoolIntArray( 40, 41, 42, 43, 44 ), PoolIntArray( 45, 40, 44 ), PoolIntArray( 45, 44, 46, 47 ), PoolIntArray( 46, 48, 49, 47 ), PoolIntArray( 32, 50, 51, 52, 53 ), PoolIntArray( 54, 55, 56, 57 ), PoolIntArray( 58, 59, 54, 57 ), PoolIntArray( 60, 61, 62, 63 ), PoolIntArray( 25, 35, 64, 65 ), PoolIntArray( 66, 67, 0, 68 ), PoolIntArray( 69, 70, 71, 72, 73, 74 ), PoolIntArray( 75, 10, 12, 76 ), PoolIntArray( 77, 78, 79, 80 ), PoolIntArray( 81, 82, 69, 74 ), PoolIntArray( 83, 84, 47, 49, 80, 79 ), PoolIntArray( 71, 1, 0, 72 ), PoolIntArray( 81, 74, 77, 80 ), PoolIntArray( 4, 23, 5 ), PoolIntArray( 0, 5, 85, 68 ), PoolIntArray( 66, 68, 86, 87 ), PoolIntArray( 88, 57, 56, 75 ), PoolIntArray( 83, 79, 53, 52 ), PoolIntArray( 32, 53, 89, 87 ), PoolIntArray( 29, 32, 87, 86, 90 ), PoolIntArray( 29, 90, 17, 16 ), PoolIntArray( 91, 16, 15, 92 ), PoolIntArray( 92, 15, 19, 21 ), PoolIntArray( 33, 20, 36, 39 ), PoolIntArray( 93, 94, 39, 38, 95, 96 ), PoolIntArray( 93, 96, 97, 98, 65 ), PoolIntArray( 99, 100, 101, 102, 63 ), PoolIntArray( 63, 62, 76, 99 ), PoolIntArray( 9, 11, 6 ), PoolIntArray( 102, 9, 8, 63 ), PoolIntArray( 103, 99, 76 ), PoolIntArray( 12, 103, 76 ), PoolIntArray( 88, 75, 76, 98, 97 ), PoolIntArray( 93, 65, 64 ) ]
+outlines = [ PoolVector2Array( 1144.66, -1115.27, 3540.75, 79.7394, 2131.59, 797.844, 1920.46, 687.229, 1841.28, 720.976, 2071.27, 839.091, 879.073, 1439.81, 801.073, 1437.81, 695.073, 1427.81, -1642.38, 254.06, -472.914, -332.41, -496.698, -384.736, -610.862, -334.789, -912.92, -501.278, -684.593, -634.469, -346.858, -460.845, -418.21, -418.033, -384.913, -375.222 ), PoolVector2Array( 1635.99, 621.837, 758.842, 1061.84, 615.05, 970.662, 675.44, 950.533, 869.026, 943.178, 1163.56, 799.091, 750.366, 587.198, 356.246, 777.902, 595.835, 880.116, 561.894, 956.484, -937.396, 203.519, 933.741, -702.568, 969.417, -640.729, 892.058, -588.399, 2399.73, 141.197, 2522.65, 107.394, 2547.8, 178.343, 2060.68, 407.424, 2037.37, 358.688, 2359.45, 197.65, 1730.72, -94.3257, 1422.68, 45.8243, 1401.7, 6.86841, 1659.41, -118.989, 1195.44, -338.969, 1091.55, -291.295, 1064.59, -328.752, 1124.73, -372.494, 791.649, -530.417, 455.713, -362.824, 523.696, -307.776, 480.245, -276.312, 385.566, -327.828, -177.451, -46.9484, -81.7521, 3.42261, -135.559, 36.8345, -238.003, -16.7399, -722.287, 224.862, -415.593, 384.267, 70.3102, 156.437, -64.2155, 64.6747, -42.607, 19.3491, 140.246, 127.928, 375.364, 0.875122, 385.852, 53.3158, -341.942, 422.547, 296.916, 754.594, 752.485, 502.441, 1238.59, 760.43, 1845.74, 462.295, 1523.5, 313.079, 1571.12, 268.632, 1894.95, 441.658, 1958.43, 409.705, 1966.5, 454.17, 1692.99, 592.259, 1826.2, 653.481, 1777.19, 696.603 ), PoolVector2Array( 1006.65, -715.72, 1034.37, -672.883, 1126.82, -697.294, 2562.24, 8.3988, 2565.76, 76.4681, 2623.66, 142.482, 2818.22, 38.0974, 1132.65, -786.276 ), PoolVector2Array( 1433.02, 267.044, 1488.58, 227.359, 1221.89, 106.717, 1364.76, 71.7938, 1310.79, 16.2347, 1177.45, 70.2064, 948.476, -48.7793, 906.001, 1.94812 ), PoolVector2Array( 1013.94, -252.036, 994.896, -302.833, 767.08, -226.445, 608.129, -288.478, 560.903, -240.856, 676.384, -151.741, 414.679, -21.3514, 449.376, 28.1979, 689.838, -92.8782, 821.859, -27.2882, 884.421, -68.2451, 791.587, -123.151 ) ]
 
 [node name="BarniMap" type="Node2D"]
 script = ExtResource( 4 )
@@ -158,6 +160,51 @@ position = Vector2( -129.316, 2192.92 )
 [node name="CollisionTest58" parent="Test" instance=ExtResource( 8 )]
 position = Vector2( -1.17114, 2254.32 )
 
+[node name="CollisionTest112" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1091.92, 1206.19 )
+
+[node name="CollisionTest185" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1159.58, 1232.46 )
+
+[node name="CollisionTest186" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1282.39, 1293.86 )
+
+[node name="CollisionTest187" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1411.11, 1356.65 )
+
+[node name="CollisionTest188" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1503.67, 1407.98 )
+
+[node name="CollisionTest219" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1715.34, 1503.73 )
+
+[node name="CollisionTest217" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 868.673, 1095.51 )
+
+[node name="CollisionTest189" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 744.834, 963.047 )
+
+[node name="CollisionTest215" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 812.869, 990.765 )
+
+[node name="CollisionTest209" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 533.167, 847.135 )
+
+[node name="CollisionTest210" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( -94.2737, 1157.07 )
+
+[node name="CollisionTest211" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 119.913, 1267.95 )
+
+[node name="CollisionTest213" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 198.028, 1298.19 )
+
+[node name="CollisionTest190" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1799.98, 1541.01 )
+
+[node name="CollisionTest191" parent="Test" instance=ExtResource( 8 )]
+position = Vector2( 1923.08, 1602.41 )
+
 [node name="CollisionTest59" parent="Test" instance=ExtResource( 8 )]
 position = Vector2( 121.634, 2315.73 )
 
@@ -171,13 +218,13 @@ position = Vector2( 1142.23, 1873.43 )
 position = Vector2( 1265.03, 1934.84 )
 
 [node name="CollisionTest60" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 1802.93, 1808.87 )
+position = Vector2( 1782.16, 1793.77 )
 
 [node name="CollisionTest61" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 1925.73, 1870.28 )
+position = Vector2( 1823.79, 1813.65 )
 
 [node name="CollisionTest62" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 2052.96, 1933.89 )
+position = Vector2( 2051.07, 1930.11 )
 
 [node name="CollisionTest143" parent="Test" instance=ExtResource( 8 )]
 position = Vector2( -567.279, 1488.17 )
@@ -204,13 +251,13 @@ position = Vector2( 186.142, 1860.65 )
 position = Vector2( 308.947, 1922.05 )
 
 [node name="CollisionTest151" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 437.092, 1986.12 )
+position = Vector2( 390.843, 1966.78 )
 
 [node name="CollisionTest152" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 524.03, 2022.98 )
+position = Vector2( 515.621, 2030.55 )
 
 [node name="CollisionTest181" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 612.754, 2068.29 )
+position = Vector2( 595.095, 2067.45 )
 
 [node name="CollisionTest63" parent="Test" instance=ExtResource( 8 )]
 position = Vector2( 2178.6, 1992.46 )
@@ -320,15 +367,25 @@ position = Vector2( 3468.68, 1101.56 )
 [node name="Player" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 2 )]
-position = Vector2( -532.941, 644.255 )
+position = Vector2( 447.114, 2174.41 )
 
 [node name="Artifact" parent="Test" instance=ExtResource( 5 )]
-position = Vector2( 813.213, 1138.84 )
+position = Vector2( -253.515, 1329.89 )
 
 [node name="Guard1" parent="Test" groups=[
 "dudes",
 ] instance=ExtResource( 16 )]
-position = Vector2( 805.365, 421.026 )
+position = Vector2( 1283, 157 )
+
+[node name="Guard2" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 16 )]
+position = Vector2( -1057.18, 1344.8 )
+
+[node name="Guard3" parent="Test" groups=[
+"dudes",
+] instance=ExtResource( 16 )]
+position = Vector2( 1464.34, 1637.21 )
 
 [node name="Exit" parent="Test" instance=ExtResource( 6 )]
 position = Vector2( -747.604, 556.319 )
@@ -406,7 +463,7 @@ position = Vector2( 1440.22, 1932.78 )
 position = Vector2( 1561.45, 1869.92 )
 
 [node name="CollisionTest160" parent="Test" instance=ExtResource( 9 )]
-position = Vector2( 472.136, 1934.14 )
+position = Vector2( 456.159, 1941.71 )
 
 [node name="CollisionTest113" parent="Test" instance=ExtResource( 9 )]
 position = Vector2( 1809.52, 1748.7 )
@@ -436,7 +493,10 @@ position = Vector2( 2322.8, 1485.52 )
 position = Vector2( 1998.86, 1657.24 )
 
 [node name="CollisionTest118" parent="Test" instance=ExtResource( 9 )]
-position = Vector2( 2552.59, 1379.4 )
+position = Vector2( 2514.41, 1402.03 )
+
+[node name="CollisionTest224" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 2576.63, 1369.5 )
 
 [node name="CollisionTest121" parent="Test" instance=ExtResource( 9 )]
 position = Vector2( -277.681, 1198.81 )
@@ -546,6 +606,57 @@ position = Vector2( 412.852, 432.437 )
 [node name="CollisionTest40" parent="Test" instance=ExtResource( 9 )]
 position = Vector2( 534.078, 369.58 )
 
+[node name="CollisionTest192" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 887.44, 1021.62 )
+
+[node name="CollisionTest193" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1042.48, 948.255 )
+
+[node name="CollisionTest194" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1260.1, 837.536 )
+
+[node name="CollisionTest195" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1600.28, 1175.19 )
+
+[node name="CollisionTest196" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 965.553, 983.824 )
+
+[node name="CollisionTest201" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -222.556, 1569.07 )
+
+[node name="CollisionTest202" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 150.101, 1384.98 )
+
+[node name="CollisionTest203" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( -96.8401, 1508.45 )
+
+[node name="CollisionTest204" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 24.3857, 1445.6 )
+
+[node name="CollisionTest205" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 268.259, 1331.21 )
+
+[node name="CollisionTest206" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 640.916, 1147.13 )
+
+[node name="CollisionTest207" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 343.578, 1293.28 )
+
+[node name="CollisionTest208" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 759.625, 1081.75 )
+
+[node name="CollisionTest197" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1382.03, 1278.35 )
+
+[node name="CollisionTest198" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1689.17, 1134.59 )
+
+[node name="CollisionTest199" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 416.655, 1247.98 )
+
+[node name="CollisionTest200" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 1767.56, 1099.45 )
+
 [node name="CollisionTest41" parent="Test" instance=ExtResource( 9 )]
 position = Vector2( 1032.45, 120.394 )
 
@@ -583,14 +694,14 @@ position = Vector2( -650.56, 1450.19 )
 position = Vector2( 908.331, 2701.05 )
 
 [node name="CollisionTest136" parent="Test" instance=ExtResource( 12 )]
-position = Vector2( 879.758, 2202.61 )
+position = Vector2( 887.326, 2208.5 )
 
 [node name="CollisionTest33" parent="Test" instance=ExtResource( 13 )]
 position = Vector2( -345.993, 820.374 )
 scale = Vector2( 0.4, 0.4 )
 
 [node name="CollisionTest180" parent="Test" instance=ExtResource( 13 )]
-position = Vector2( 2663.15, 1328.08 )
+position = Vector2( 2671.64, 1319.59 )
 scale = Vector2( 0.4, 0.4 )
 
 [node name="CollisionTest119" parent="Test" instance=ExtResource( 14 )]
@@ -601,12 +712,51 @@ scale = Vector2( 0.4, 0.4 )
 position = Vector2( 2092.35, 1570.94 )
 scale = Vector2( 0.4, 0.4 )
 
+[node name="CollisionTest220" parent="Test" instance=ExtResource( 14 )]
+position = Vector2( 1477.51, 1205.56 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest221" parent="Test" instance=ExtResource( 14 )]
+position = Vector2( 1137.33, 862.864 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest222" parent="Test" instance=ExtResource( 14 )]
+position = Vector2( 514.929, 1167.77 )
+scale = Vector2( 0.4, 0.4 )
+
 [node name="CollisionTest153" parent="Test" instance=ExtResource( 15 )]
 position = Vector2( 717.397, 2130.07 )
 scale = Vector2( 0.4, 0.4 )
 
+[node name="CollisionTest212" parent="Test" instance=ExtResource( 15 )]
+position = Vector2( 24.4405, 1217.89 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest214" parent="Test" instance=ExtResource( 15 )]
+position = Vector2( 649.361, 905.427 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest216" parent="Test" instance=ExtResource( 15 )]
+position = Vector2( 994.58, 1149.85 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="CollisionTest218" parent="Test" instance=ExtResource( 15 )]
+position = Vector2( 1619.5, 1459.79 )
+scale = Vector2( 0.4, 0.4 )
+
 [node name="Camera1" parent="Test" instance=ExtResource( 17 )]
 position = Vector2( 1659.2, 260.549 )
+
+[node name="Key" parent="Test" instance=ExtResource( 18 )]
+position = Vector2( 843.748, 1872.03 )
+scale = Vector2( 2, 2 )
+
+[node name="Camera2" parent="Test" instance=ExtResource( 17 )]
+position = Vector2( 787.316, 716.449 )
+
+[node name="CollisionTest223" parent="Test" instance=ExtResource( 19 )]
+position = Vector2( 1947.02, 1879.39 )
+scale = Vector2( 0.5, 0.7 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 104.179, 1201.49 )
@@ -614,6 +764,6 @@ position = Vector2( 104.179, 1201.49 )
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-visible = false
 position = Vector2( 107.943, 1200.08 )
+scale = Vector2( 1.00139, 1.00688 )
 navpoly = SubResource( 1 )
