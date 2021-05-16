@@ -747,7 +747,8 @@ color = Color( 0.419608, 0.396078, 0.396078, 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -637.2, 176.803, 1019.93, 1006.86, 947.315, 1338.39, -956.475, 228.408 )
+position = Vector2( 0, -4.8252 )
+polygon = PoolVector2Array( -14.2641, 479.254, 410.916, 713.697, 875.784, 488.959, 1536.14, 755.643, 4393.47, -704.767, 3632.41, -1091.84, 3841.71, -1229.79, 3435.76, -1439.59, 3181.76, -1329.59, 2783.76, -1519.59, -166.655, -66.8124, 477.83, 257.017, -17.4386, 479.254, -2031.13, -48.4925, 2641.16, -2462.25, 5691.6, -794.491, 972.462, 2041.96, -2036.82, -47.6824 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
