@@ -752,4 +752,5 @@ polygon = PoolVector2Array( -14.2641, 479.254, 410.916, 713.697, 875.784, 488.95
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
+volume_db = -30.0
 autoplay = true

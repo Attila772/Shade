@@ -2439,27 +2439,28 @@ scale = Vector2( 1.98889, 1.95397 )
 
 [node name="AmbientBase" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
-volume_db = 21.126
-pitch_scale = 0.83
+volume_db = -12.0
 autoplay = true
 
 [node name="AmbientWhoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
-volume_db = 15.408
+volume_db = -19.0
 
 [node name="AmbientSpooky" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
-volume_db = 6.603
+volume_db = -19.0
 
 [node name="AmbientSpooky2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-volume_db = 10.455
+volume_db = -19.0
 
 [node name="Rock1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
+volume_db = -19.0
 
 [node name="Rock2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
+volume_db = -19.0
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
