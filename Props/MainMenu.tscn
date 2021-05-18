@@ -40,8 +40,8 @@ centered = false
 [node name="icon" type="Sprite" parent="."]
 pause_mode = 2
 material = SubResource( 1 )
-position = Vector2( 505.683, 298.199 )
-scale = Vector2( 17.136, 10.0085 )
+position = Vector2( 503.16, 283.063 )
+scale = Vector2( 17.2148, 10.4815 )
 texture = ExtResource( 7 )
 
 [node name="TextureButton" type="TextureButton" parent="."]

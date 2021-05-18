@@ -268,6 +268,7 @@ func particles(delta): # Press F to pay respect
 				
 		if Gadget =="Emp":
 			$Particles2D.visible = true
+			Global.cameraturnedoff = true
 			timer = 1
 		if Gadget =="RingOfSpeed" and speedtimer ==5 and gadgetmultiplier ==1:
 			gadgetmultiplier = 3

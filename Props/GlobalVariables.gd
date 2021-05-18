@@ -8,6 +8,7 @@ var path =""
 var SoundLevel=0
 var isinmapselect = false
 var Gadget = "n"
+var cameraturnedoff = false
 
 var LevelsDB = {
 	"Tutorial": "res://Levels/TutorialLvl/TutorialLvl.tscn",

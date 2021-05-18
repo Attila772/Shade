@@ -2439,21 +2439,18 @@ scale = Vector2( 1.98889, 1.95397 )
 
 [node name="AmbientBase" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
-volume_db = 21.126
 pitch_scale = 0.83
 autoplay = true
 
 [node name="AmbientWhoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
-volume_db = 15.408
 
 [node name="AmbientSpooky" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 23 )
-volume_db = 6.603
 
 [node name="AmbientSpooky2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-volume_db = 10.455
+volume_db = -5.0
 
 [node name="Rock1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
@@ -2467,5 +2464,5 @@ stream = ExtResource( 21 )
 polygon = PoolVector2Array( 3879.66, -1362.69, 4324.13, -1661.12, 5340.07, -1153.15, 6565.54, -1781.77, 8247.46, -953.174, 8770.58, -1222.54, 8908.19, -1148.92, 8412.92, -901.282, 7600.53, -480.097, 8794.25, 205.661, 7276.7, 1043.81, 6902.07, 885.068, 7657.68, 465.994 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2"]
-position = Vector2( -4877.94, 2929.79 )
+position = Vector2( -4889.94, 2921.79 )
 polygon = PoolVector2Array( 3879.66, -1362.69, 2648.74, -3252.89, 11201.4, -8384.46, 20497, -3887.74, 12818.6, 1258.92, 9455.04, -865.33, 11131.3, -1671.73, 12147.3, -1176.46, 14433.1, -2319.39, 15417.3, -1805.07, 18780, -3540.37, 15834, -5037.39, 14414.6, -4333.42, 14218.2, -4433.47, 14759.8, -4698.62, 11174.6, -6516.76, 9418.63, -5596.76, 10642.6, -5000.76, 10058.6, -4736.76, 8841.93, -5330.95, 6492.52, -4136.72, 7415.45, -3700.08, 8017.64, -3992.68, 9780.79, -3145.08, 8929.42, -2727.89, 7842.08, -3282.89, 8053.51, -3401.81, 7649.53, -3603.8, 5362.51, -2407.85, 5776.94, -2221.32, 7400.94, -3049.32, 8504.24, -2499.37, 7331.94, -1921.72, 8770.58, -1222.54, 8908.19, -1148.92, 9457.76, -866.947, 12813, 1271.81, 10373.8, 1926.97 )
