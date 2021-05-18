@@ -25,21 +25,25 @@ enum{
 var state = Patrol
 
 func _process(delta):
-	if FOW.player_check():
-		FOW.color=Color(1,0,0,0.2)
-		state=Chase
+	if(Global.cameraturnedoff==false):
+		if FOW.player_check():
+			FOW.color=Color(1,0,0,0.2)
+			state=Chase
+		else:
+			FOW.color=Color(1,1,0,0.2)
+			state=Patrol
+		match state:
+			Patrol:
+				AnimationLoop()
+				changeRotation()
+			Chase : 
+				alert_all()
+				AnimationLoop()
+				chase_loop()
+		
 	else:
-		FOW.color=Color(1,1,0,0.2)
-		state=Patrol
-	match state:
-		Patrol:
-			AnimationLoop()
-			changeRotation()
-		Chase : 
-			alert_all()
-			AnimationLoop()
-			chase_loop()
-			
+		$AnimationPlayer.play("S")
+		$AnimationPlayer2.play("S2")	
 func AnimationLoop():
 #	if -15<currentAngle && currentAngle<15:
 #		animation="N"
