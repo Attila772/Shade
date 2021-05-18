@@ -24,8 +24,8 @@ font_data = SubResource( 2 )
 [node name="SettingsMenu" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -4.23779, 0 )
-scale = Vector2( 1.40623, 1.31202 )
+position = Vector2( -18.2997, -10.8972 )
+scale = Vector2( 1.45257, 1.37363 )
 texture = ExtResource( 1 )
 centered = false
 
@@ -66,6 +66,17 @@ margin_bottom = 160.865
 custom_fonts/font = SubResource( 3 )
 text = "Volume"
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 358.384
+margin_top = 121.605
+margin_right = 482.384
+margin_bottom = 161.605
+custom_fonts/font = SubResource( 3 )
+text = "Volume:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

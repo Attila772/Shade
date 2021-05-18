@@ -3,9 +3,9 @@ var dialogbox = load("res://Ui Stuff/Dialogbox.tscn").instance()
 var softdialog = load("res://Ui Stuff/SoftDialogBox.tscn").instance()
 
 
-var dialog3 = ["scientist"," Press space to dash \n aaaa"]
-var dialog4 = ["scientist"," You can use your gadget \n with  F  or by dashing"]
-var dialog5 = ["scientist"," Try to reach the room to \n to the right, and get the key"]
+var dialog3 = ["scientist"," WASD to move \n Press space to dash \n"]
+var dialog4 = ["scientist"," You can use your gadget \n with  F  or by dashing if you use \n (ring of flash)"]
+var dialog5 = ["scientist"," Try to reach the room to \n to the right top, and get the key"]
 var dialog7 = ["Scientist"," You found the access card! \n Now you can open the locked door"]
 
 var Dialogs = [dialog3,dialog4,dialog5]

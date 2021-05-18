@@ -2449,7 +2449,7 @@ scale = Vector2( 1.98889, 1.95397 )
 
 [node name="AmbientBase" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
-volume_db = -19.0
+volume_db = -9.338
 autoplay = true
 
 [node name="AmbientWhoosh" type="AudioStreamPlayer" parent="."]
