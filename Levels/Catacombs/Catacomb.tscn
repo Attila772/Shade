@@ -52,6 +52,16 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -1307.32, -1050.59 ]
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -3908.0
+margin_top = -6401.0
+margin_right = 16998.0
+margin_bottom = 5682.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Floor" type="TileMap" parent="."]
 modulate = Color( 0.262745, 0.243137, 0.243137, 1 )
 material = SubResource( 1 )
@@ -961,7 +971,7 @@ position = Vector2( 3579.61, -40.1275 )
 position = Vector2( 3700.02, 19.002 )
 
 [node name="CollisionTest12" parent="Test" instance=ExtResource( 8 )]
-position = Vector2( 3824.47, 78.399 )
+position = Vector2( 3823.53, 82.4938 )
 
 [node name="CollisionTest13" parent="Test" instance=ExtResource( 8 )]
 position = Vector2( 3948.19, 145.291 )
