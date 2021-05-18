@@ -11,7 +11,7 @@ var oneshotaudio3 = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	Global.cameraturnedoff=false
 	Global.path= self.filename
 	pass # Replace with function body.
 
@@ -19,14 +19,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var player = get_node("Test/Player")
-	if player.position.distance_to(Vector2(3709,-1175)) <50 :
+	if player.position.distance_to(Vector2(3709,-1175)) <150 :
 		if get_node("Test/Wreckage").visible == false:
 			get_node("Test/Wreckage").visible = true
 			get_node("Test/Wreckage/CollisionPolygon2D").disabled = false
 			get_node("Particles2D").visible = true
 			$Rock1.play()
 			$Rock2.play()
-	if player.position.distance_to(Vector2(7364,1327)) <50 :
+	if player.position.distance_to(Vector2(7364,1327)) <150 :
 		if get_node("Test/Wreckage3").visible == false:
 			get_node("Test/Wreckage3").visible = true
 			get_node("Test/Wreckage3/CollisionPolygon2D").disabled = false

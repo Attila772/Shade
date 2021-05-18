@@ -26,6 +26,7 @@ var Camera1 = [-180,-90,0]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.path= self.filename
+	Global.cameraturnedoff=false
 #
 	get_node("Camera2D").add_child(dialogbox)
 	dialogbox.dialog(Dialogs)

@@ -1703,7 +1703,7 @@ position = Vector2( 4389.59, -797.188 )
 position = Vector2( 6157.06, 592.045 )
 
 [node name="Wreckage3" parent="Test" instance=ExtResource( 4 )]
-position = Vector2( 7708.72, 1203.45 )
+position = Vector2( 8036.48, 1028.35 )
 rotation = 0.664152
 
 [node name="Artifact" parent="Test" instance=ExtResource( 5 )]
