@@ -125,6 +125,6 @@ __meta__ = {
 [node name="Ambient" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 489.921, 297.48 )
 stream = ExtResource( 1 )
-volume_db = -19.299
+volume_db = -19.0
 autoplay = true
 attenuation = 0.03983

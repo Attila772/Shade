@@ -8,6 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var masterBus=AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(masterBus,-24)
 	pass
 func _process(delta):
 	if !$Ambient.playing:
