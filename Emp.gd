@@ -26,6 +26,7 @@ func _process(delta):
 		$Label.visible = true
 		if Input.is_action_pressed("interact") and visible ==true:
 			visible=false	
+			Global.Gadget ="Emp"
 			get_parent().get_node("Test").get_node("Player").Gadget = "Emp"
 			get_parent().get_node("Test").get_node("Player").gadgetpickedup()
 	else:
